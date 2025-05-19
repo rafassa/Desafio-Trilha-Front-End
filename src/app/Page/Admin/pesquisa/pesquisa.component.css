@@ -1,34 +1,47 @@
-#inputPesquisa::placeholder{
-color: white;
+.container {
+  max-width: 90%;
 }
 
-
-
-
-
-td {
-    
-    background-color: #ffffff; 
-    color: #000000; 
+.input-group .form-control {
+  border-radius: 0.5rem;
 }
 
-/* Estilo padrão para a tabela */
-.table-container {
+.alert-danger {
+  border-radius: 0.5rem;
+}
+
+.table {
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.table-dark {
+  background-color: #343a40;
+  color: #ffc107;
+}
+
+.table-secondary {
+  background-color: #6c757d;
+}
+
+.table-responsive {
+  display: block;
   width: 100%;
-  margin: auto;
+  overflow-x: auto;
 }
 
-/* Em telas com largura de 550px ou menos, diminua a tabela */
-@media (max-width: 550px) {
-  .table-container {
-    width: 90%; /* Ajuste conforme necessário */
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
   }
-  
-  /* Reduz tamanho de fonte e espaçamentos para caber melhor */
-  .table-container table,
-  .table-container th,
-  .table-container td {
-    font-size: 0.8rem; /* Reduz a fonte */
-    padding: 0.4rem;   /* Diminui o espaçamento interno */
+
+  .input-group .form-control {
+      width: 100%;
+  }
+
+  .table {
+      font-size: 14px;
   }
 }

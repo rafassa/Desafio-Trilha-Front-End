@@ -13,31 +13,29 @@
   </div>
 
   
- <div class="d-flex justify-content-center">
-  <div *ngIf="dataList" >
+  <div class="table-responsive">
     <table class="table table-bordered w-100">
-      <thead class="table-dark text-warning">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Odômetro</th>
-          <th scope="col">Nível Combustível</th>
-          <th scope="col">Status</th>
-          <th scope="col">Latitude</th>
-          <th scope="col">Longitude</th>
-        </tr>
-      </thead>
-      <tbody class="table-secondary text-light">
-        <tr *ngFor="let item of dataList">
-          <td>{{ item['id'] }}</td>
-          <td>{{ item['odometro'] }}</td>
-          <td>{{ item['nivelCombustivel'] }}</td>
-          <td>{{ item['status'] }}</td>
-          <td>{{ item['lat'] }}</td>
-          <td>{{ item['long'] }}</td>
-        </tr>
-      </tbody>
+        <thead class="table-dark text-warning">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Odômetro</th>
+                <th scope="col">Nível Combustível</th>
+                <th scope="col">Status</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+            </tr>
+        </thead>
+        <tbody class="table-secondary text-light">
+            <tr *ngFor="let item of dataList">
+                <td>{{ item['id'] }}</td>
+                <td>{{ item['odometro'] }}</td>
+                <td>{{ item['nivelCombustivel'] }}</td>
+                <td>{{ item['status'] }}</td>
+                <td>{{ item['lat'] }}</td>
+                <td>{{ item['long'] }}</td>
+            </tr>
+        </tbody>
     </table>
-  </div>
 </div>
 
 </div>

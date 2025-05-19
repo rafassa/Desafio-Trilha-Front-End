@@ -1,3 +1,9 @@
-#imagens{
-    width: 100%;
-}
+.custom-btn {
+    border-radius: 10px; /* Menos arredondado */
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .custom-btn:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+  }

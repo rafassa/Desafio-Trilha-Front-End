@@ -6,12 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PesquisaPipePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-   if(!value) return null;
-    if(!args) return value;
-    args =args.toLowerCase();
-    return value.filter(function(item:any){
-      return JSON.stringify(item).toLowerCase().includes(args)
-    })
+    if (!Array.isArray(value)) return []; // Retorna um array vazio se `value` não for um array
+    if (!args) return value;
+    args = args.toLowerCase();
+    return value.filter((item: any) => JSON.stringify(item).toLowerCase().includes(args));
   }
+  
 
 }

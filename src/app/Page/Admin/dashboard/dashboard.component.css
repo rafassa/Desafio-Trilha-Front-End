@@ -28,3 +28,10 @@
         flex-direction: column !important;
     }
 }
+
+
+app-select-dash-board {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+}

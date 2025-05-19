@@ -11,7 +11,7 @@ export class FreteService {
  http = inject(HttpClient)
 
  getFrete(): Observable<Mercado[]> {
-  return this.http.get<Mercado[]>('http://localhost:3000/mercados');
+  return this.http.get<Mercado[]>('http://localhost:3000/frete');
 }
 
 

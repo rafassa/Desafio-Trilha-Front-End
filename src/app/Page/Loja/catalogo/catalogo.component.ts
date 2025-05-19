@@ -41,6 +41,7 @@ adicionar(){
 enviarProduto(produto:Produto){
 this.service.PegarLocalInfo(produto)
 console.log(produto)
+ console.log("LocalStorage:", localStorage.getItem("produto"));
 }
 
 }

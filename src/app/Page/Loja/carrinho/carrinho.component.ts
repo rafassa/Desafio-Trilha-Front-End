@@ -48,7 +48,7 @@ export class CarrinhoComponent {
 
   levarTotal(){
 this.service.pegarValor(this.getTotal())
-this.router.navigate(['/mercado'])
+this.router.navigate(['/frete'])
   }
 }
 

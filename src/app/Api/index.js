@@ -17,18 +17,21 @@ app.use(express.static(path.join(__dirname)));
 
 // 📌 Rota de produtos
 const resposta = [
-  { nome: "macarrão", preco: 5, quantidade: 1, img: "http://localhost:3000/img/macarrao.png" },
-  { nome: "feijão", preco: 6, quantidade: 1, img: "http://localhost:3000/img/feijao.png" },
-  { nome: "arroz", preco: 8, quantidade: 1, img: "http://localhost:3000/img/arroz.png" },
+  { nome: "Filtro de óleo", preco: 50, quantidade: 1, img: "http://localhost:3000/img/filtro.png" },
+  { nome: "Pastilhas de freio", preco: 190, quantidade: 1, img: "http://localhost:3000/img/pastilha.png" },
+  { nome: "Bateria", preco: 550, quantidade: 1, img: "http://localhost:3000/img/bateria.png" },
+  { nome: "Correia dentada", preco: 120, quantidade: 1, img: "http://localhost:3000/img/correia.png" },
+  { nome: "Amortecedores", preco: 437, quantidade: 1, img: "http://localhost:3000/img/amortecedor.png" },
+  { nome: "Velas de ignição", preco: 600, quantidade: 1, img: "http://localhost:3000/img/ignicao.png" },
 ];
 
 app.get("/", (req, res) => res.json(resposta));
 
 // 📌 Rota de fretes
 const frete = [
-  { nome: "frete1", multiplicador: 1.1 },
-  { nome: "frete2", multiplicador: 1.3 },
-  { nome: "frete3", multiplicador: 1.4 },
+  { nome: "frete1", multiplicador: 1.12 },
+  { nome: "frete2", multiplicador: 1.11 },
+  { nome: "frete3", multiplicador: 1.13 },
 ];
 
 app.get("/frete", (req, res) => res.json(frete));
@@ -79,12 +82,22 @@ app.post("/vehicleData", (req, res) => {
 });
 
 const carouselImg =[
-  {img: "http://localhost:3000/img/XLCabine.jpg", descricao:"Esta é a nova Ranger Ford 2022.Verifique as novidades"},
-  {img: "http://localhost:3000/img/xlsdiesel.jpg", descricao:"Ford a nossa historia"},
-  {img: "http://localhost:3000/img/storm.jpg", descricao:"Nova Ford Bronco Sport 2022"},
+  {img: "http://localhost:3000/img/XLCabine.png", descricao:"Esta é a nova Ranger Ford 2022.Verifique as novidades"},
+  {img: "http://localhost:3000/img/xlsdiesel.png", descricao:"Ford a nossa historia"},
+  {img: "http://localhost:3000/img/storm.png", descricao:"Nova Ford Bronco Sport 2022"},
 ]
 app.get("/carouselImg", (req, res) => res.json(carouselImg));
 
+
+
+const lancamentoCarros =[
+  {id:0, img: "http://localhost:3000/img/XLCabine.png", modelo:"XL", preco:"132.000", alturaCacamba:"511",alturaVeiculo:"1821", AlturaLivre:"232", capacidadeCarga:"1234",motor:"2.2",potencia:"160",volumeCacamba:"1420",roda:"Aço Estampado 16"},
+  {id:1, img: "http://localhost:3000/img/xlsdiesel.png",modelo:"xls", preco:"150.000", alturaCacamba:"511",alturaVeiculo:"1821", AlturaLivre:"232", capacidadeCarga:"1076",motor:"2.2",potencia:"160",volumeCacamba:"1180",roda:"Aço Estampado 16"},
+  {id:2, img: "http://localhost:3000/img/storm.png", modelo:"Storm", preco:"172.000", alturaCacamba:"511",alturaVeiculo:"1821", AlturaLivre:"232", capacidadeCarga:"1040",motor:"3.2",potencia:"200",volumeCacamba:"1180",roda:"Liga Leve 17"},
+]
+
+
+app.get("/lancamentoCarros", (req, res) => res.json(lancamentoCarros));
 
 // Inicializa o servidor
 app.listen(PORT, () => console.log(`✅ Servidor rodando na porta ${PORT}`));

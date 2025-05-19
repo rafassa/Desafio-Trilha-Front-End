@@ -1,3 +1,46 @@
-#Card__Principal{
+#Card__Principal {
   width: 11rem;
+  border: 2px solid #004A99; /* Azul Ford */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: none; /* Remove a transição */
+}
+
+#Card__Principal:hover {
+  transform: none; /* Remove efeito de escala */
+  box-shadow: none; /* Remove sombra */
+}
+
+.card-img-top {
+  transition: none; /* Remove transição de imagem */
+}
+
+#Card__Principal:hover .card-img-top {
+  transform: none; /* Remove efeito de zoom na imagem */
+}
+
+.card-body {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-top: 2px solid #004A99;
+}
+
+.card-text i {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.small-button {
+  background-color: #004A99; 
+  color: white;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.small-button:hover {
+  background-color: #003366; 
+  transform: scale(1.1);
+}
+
+.text-success {
+  color: #004A99 !important; /* Azul Ford */
 }

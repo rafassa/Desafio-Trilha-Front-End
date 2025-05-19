@@ -21,16 +21,25 @@ ngOnInit(produto:Produto){
     }
 
     PegarLocalInfo(produto: Produto) {
-      
       const valor = localStorage.getItem("produto");
-      let produtos: Produto[] = valor ? JSON.parse(valor) : [];   
-
-   const produtoExistente = produtos.find(p => p.nome === produto.nome);
+      
+     
+      let produtos: Produto[] = valor ? JSON.parse(valor) : [];
+      if (!Array.isArray(produtos)) {
+        produtos = [];
+      }
+    
+      const produtoExistente = produtos.find(p => p.nome === produto.nome);
       if (produtoExistente) {
-        produtoExistente.quantidade += 1; 
-      } 
+        produtoExistente.quantidade += 1;
+      } else {
+        produtos.push({ ...produto, quantidade: 1 }); 
+      }
+    
       localStorage.setItem("produto", JSON.stringify(produtos));
+      console.log(localStorage.getItem("produto"));
     }
+    
 
 
    
