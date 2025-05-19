@@ -1,1 +1,64 @@
-<p>contato works!</p>
+<form class="container mt-4 p-4 border rounded shadow">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img class="img-fluid rounded" src="./xls" alt="Imagem xls">
+        </div>
+        <div class="col-md-8">
+            <h4 class="mb-3">Sobre você</h4>
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL">
+            </div>
+
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input class="form-control" required name="cpf" type="text" placeholder="Digite seu CPF">
+            </div>
+
+            <div class="mb-3">
+                <label for="sobrenome" class="form-label">Sobrenome</label>
+                <input class="form-control" required name="sobrenome" type="text" placeholder="Digite seu sobrenome">
+            </div>
+
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="mb-3">
+                <label for="contato" class="form-label">Preferência de Contato</label>
+                <select class="form-select" name="contato" id="opcao">
+                    <option value="Email">Email</option>
+                    <option value="Telefone">Telefone</option>
+                </select>
+            </div>
+
+            <p class="small text-muted">
+                Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. 
+                <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
+            </p>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input" required id="termoAceito" type="checkbox" onclick="controlarBotao()">
+                <label class="form-check-label" for="termoAceito">
+                    Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
+                </label>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    Sim, também quero receber descontos e novidades
+                </label>
+            </div>
+
+            <button id="botao" class="btn btn-primary w-100" type="submit" onclick="Post(this.form)" disabled>Enviar</button>
+        </div>
+    </div>
+</form>
