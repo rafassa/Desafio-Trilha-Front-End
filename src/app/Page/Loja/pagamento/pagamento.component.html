@@ -44,6 +44,26 @@
                         <input type="text" id="endereco" class="form-control rounded-pill shadow-sm" name="endereco" placeholder="Digite seu endereço" formControlName="endereco">
                          <span class="alert alert-danger" role="alert" *ngIf="endereco?.hasError('required')&&(endereco?.dirty || endereco?.touched) ">Endereço invalido</span>
                     </div>
+
+
+                    <p class="small text-muted">
+                Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. 
+                <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
+            </p>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input"  id="termoAceito" type="checkbox" formControlName="termoAceito">
+                <label class="form-check-label" for="termoAceito">
+                    Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
+                </label>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">
+                    Sim, também quero receber descontos e novidades
+                </label>
+            </div>
                     <button  type="submit" class="btn btn-primary w-100 mt-3 rounded-pill shadow-lg" [disabled]="form.invalid ">
                         <i class="bi bi-check-circle-fill"></i> Confirmar Pagamento
                     </button>

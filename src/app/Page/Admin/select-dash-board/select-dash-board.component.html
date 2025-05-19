@@ -1,5 +1,5 @@
 <select class="form-select form-select-lg d-flex mb-3 bg-dark text-light " name="SelectDoDashboard" id="SelectDoDashboard" [(ngModel)]="carSelect" (change)="carroSelecionado()">
-    <option value="" disabled selected>Selecione uma opção</option>
+    <option value="0" disabled selected>Selecione uma opção</option>
     <option value="0">Ranger</option>
     <option value="1">Mustang</option>
     <option value="2">Territory</option>
@@ -8,16 +8,16 @@
 
 <div *ngIf="carros && carros[carSelect]" class="text-center d-flex flex-wrap">
     <div class="border rounded card-body">
-        <h6 class="card-title mb-0 text-light">Veículo:</h6>
-        <p class="card-text fs-6 text-light mb-0">{{carros[carSelect].vehicle}}</p>
+        <h6 class="card-title mb-0 text-dark">Veículo:</h6>
+        <p class="card-text fs-6 text-dark mb-0">{{carros[carSelect].vehicle}}</p>
     </div>
     <div class="border rounded card-body">
-        <h6 class="card-title mb-0 text-light">Conectado:</h6>
-        <p class="card-text fs-6 text-light mb-0">{{carros[carSelect].connected}}</p>
+        <h6 class="card-title mb-0 text-dark">Conectado:</h6>
+        <p class="card-text fs-6 text-dark mb-0">{{carros[carSelect].connected}}</p>
     </div>
     <div class="border rounded card-body">
-        <h6 class="card-title mb-0 text-light">Software:</h6>
-        <p class="card-text fs-6 text-light mb-0">{{carros[carSelect].softwareUpdates}}</p>
+        <h6 class="card-title mb-0 text-dark">Software:</h6>
+        <p class="card-text fs-6 text-dark mb-0">{{carros[carSelect].softwareUpdates}}</p>
     </div>
 </div>
 

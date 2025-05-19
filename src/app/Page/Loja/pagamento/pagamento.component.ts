@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BoletoInfoService } from '../../../services/boleto-info.service';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-pagamento',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })
@@ -15,7 +15,7 @@ export class PagamentoComponent {
 
   service = inject(BoletoInfoService)
   router = inject(Router)
-  
+
   
   
   form = new FormGroup({
@@ -25,7 +25,8 @@ export class PagamentoComponent {
   cartao: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^[0-9]+$')]),
   vencimento: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^[0-9]+$')]),
   cvv: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[0-9]+$')]),
-  endereco: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)])
+  endereco: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]),
+  termoAceito:  new FormControl(false, [Validators.requiredTrue])
 });
 
 
@@ -51,6 +52,9 @@ export class PagamentoComponent {
   }
   get endereco(){
     return this.form.get('endereco')
+  }
+  get termoAceito(){
+ return this.form.get('termoAceito')
   }
 
 
