@@ -1,0 +1,9 @@
+<div class="carousel d-flex w-100 align-items-center justify-content-center h-100">
+
+  <button  class="h-25" (click)="prevImage()">&#10094;</button>
+  <div class="d-flex flex-column">
+  <img [src]="imagens[index].img" class="img-fluid" alt="Carousel Image" id="imagens">
+  <p>{{ imagens[index].descricao }}</p>
+  </div>
+  <button class="h-25" (click)="nextImage()">&#10095;</button>
+</div>

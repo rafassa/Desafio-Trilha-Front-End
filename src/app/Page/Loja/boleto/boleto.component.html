@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="card shadow-lg p-4 animate__animated animate__fadeIn">
+    <h5 class="text-primary"><i class="bi bi-receipt"></i> Detalhes do Boleto</h5>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h6 class="fw-bold"><i class="bi bi-person-circle"></i> Nome:</h6>
+        <p class="text-muted">{{ boletoForm.nome }}</p>
+      </div>
+      <div class="col-md-6">
+        <h6 class="fw-bold"><i class="bi bi-geo-alt"></i> Endereço:</h6>
+        <p class="text-muted">{{ boletoForm.endereco }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h6 class="fw-bold"><i class="bi bi-credit-card"></i> Forma de pagamento:</h6>
+        <p class="text-muted">{{ boletoForm.pagamento }}</p>
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100 animate__animated animate__pulse animate__infinite" (click)="gerarPDF()">
+      <i class="bi bi-file-earmark-pdf"></i> Gerar Boleto
+    </button>
+  </div>
+</div>

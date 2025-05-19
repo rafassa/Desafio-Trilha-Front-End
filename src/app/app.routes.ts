@@ -1,0 +1,50 @@
+import { Routes } from '@angular/router';
+import { boasVindasComponent } from './Page/Admin/boas-vindas/home.component';
+import { LoginComponent } from './Page/Admin/login/login.component';
+import { DashboardComponent } from './Page/Admin/dashboard/dashboard.component';
+import { LojaComponent } from './Page/Loja/loja/loja.component';
+import { FreteComponent } from './Page/Loja/Fretes/fretes.component';
+import { CompraComponent } from './Page/Loja/compra/compra.component';
+import { PaginaInicialComponent } from './Page/Inicio/pagina-inicial/pagina-inicial.component';
+
+
+export const routes: Routes = [
+
+    {
+        path:'',
+        redirectTo:'home',
+        pathMatch:'full'
+
+    },
+    {
+    path:'home',
+    component:PaginaInicialComponent
+   },
+   {
+    path:'homeAdmin',
+    component:boasVindasComponent
+   },
+   {
+    path:'login',
+    component:LoginComponent,
+    
+   },
+   {
+    path:'dashboard',
+    component:DashboardComponent,
+   },
+   {
+    path:'loja',
+    component:LojaComponent
+   },
+   {
+    path:'frete',
+    component:FreteComponent
+   },
+   {
+    path:'compra',
+    component:CompraComponent
+   },
+   
+
+];

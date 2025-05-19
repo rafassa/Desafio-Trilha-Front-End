@@ -1,0 +1,23 @@
+
+
+<div class="d-flex gap-5  flex-wrap justify-content-center">
+  <div *ngFor="let produto of produtos|filter:valorPesquisa" class="d-flex justify-content-center">
+    <div class="card d-flex text-center" id="Card__Principal">
+      <img [src]="produto.img" class="card-img-top img-fluid" alt="Card image cap" />
+      <div class="card-body">
+        <p class="card-text d-flex gap-2 align-items-center justify-content-center">
+          <i class="bi bi-box-seam text-primary"></i> {{ produto.nome }}
+        </p>
+        <p class="card-text d-flex gap-2 align-items-center justify-content-center">
+          Preço:
+          <span class="fw-semibold text-success">R$ {{ produto.preco }}</span>
+        </p>
+      </div>
+      <div class="p-2 d-flex justify-content-center">
+        <button (click)="enviarProduto(produto)" class="btn btn-success small-button w-100">
+          <i class="bi bi-cart-plus-fill me-1"></i> Adicionar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

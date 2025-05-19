@@ -1,0 +1,34 @@
+#inputPesquisa::placeholder{
+color: white;
+}
+
+
+
+
+
+td {
+    
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+/* Estilo padrão para a tabela */
+.table-container {
+  width: 100%;
+  margin: auto;
+}
+
+/* Em telas com largura de 550px ou menos, diminua a tabela */
+@media (max-width: 550px) {
+  .table-container {
+    width: 90%; /* Ajuste conforme necessário */
+  }
+  
+  /* Reduz tamanho de fonte e espaçamentos para caber melhor */
+  .table-container table,
+  .table-container th,
+  .table-container td {
+    font-size: 0.8rem; /* Reduz a fonte */
+    padding: 0.4rem;   /* Diminui o espaçamento interno */
+  }
+}

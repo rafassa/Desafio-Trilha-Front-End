@@ -1,0 +1,56 @@
+
+.input-group {
+  transition: all 0.3s ease-in-out;
+}
+
+.input-group:hover {
+  transform: scale(1.02);
+}
+
+
+#search-button {
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+#search-button:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05);
+}
+
+.offcanvas {
+  transition: transform 0.4s ease-in-out;
+}
+
+.offcanvas.show {
+  transform: translateX(0);
+}
+
+
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.btn-success {
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-success:hover {
+  background-color: #218838; 
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}

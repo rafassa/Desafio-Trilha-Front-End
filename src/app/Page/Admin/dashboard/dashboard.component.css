@@ -1,0 +1,30 @@
+:host{
+    display: flex;
+    flex: 1;
+}
+
+#imagem__De__Fundo__Dashboard {
+    background-image: url('/teste.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    width: 100vw; 
+    height: 100vh; 
+}
+
+
+#cor{
+    background-color:  #FFA500;
+}
+
+@media (min-width: 768px) {
+    .d-flex-custom {
+        flex-direction: row !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .d-flex-custom {
+        flex-direction: column !important;
+    }
+}

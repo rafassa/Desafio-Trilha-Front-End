@@ -1,0 +1,24 @@
+
+
+
+.valor-container {
+    max-width: 400px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.valor-container:hover {
+    transform: scale(1.05);
+}
+
+
+.valor-container {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    border: 3px solid #0056b3;
+}
+

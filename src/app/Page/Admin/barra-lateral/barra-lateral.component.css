@@ -1,0 +1,19 @@
+li{
+    list-style: none;
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-custom {
+    background-color: #002868; /* Azul escuro clássico da Ford */
+    color: white; /* Mantém o ícone visível */
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #001a48; /* Azul um pouco mais escuro ao passar o mouse */
+}

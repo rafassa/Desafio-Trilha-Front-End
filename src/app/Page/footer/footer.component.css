@@ -1,0 +1,15 @@
+.footer {
+    background-color: #002868; /* Mesma cor do header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .social-icons a {
+    color: white; /* Ícones sociais brancos */
+    font-size: 1.5rem;
+}
+
+.footer .social-icons a:hover {
+    color: #ffd700; /* Efeito hover dourado */
+}
