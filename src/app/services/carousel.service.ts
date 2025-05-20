@@ -8,7 +8,7 @@ import { CarouselImage } from '../Interface/CarouselImage.interface';
 export class CarouselService {
 
 http = inject(HttpClient)
-private url= 'http://localhost:3000/carouselImg'
+private url= 'https://api-desafio-trilha-front-end.onrender.com/carouselImg'
 
 pegarImagem():Observable<CarouselImage[]>{
 return this.http.get<CarouselImage[]>(this.url);

@@ -14,7 +14,7 @@ export class BarraService {
 
 
   PostSearch(SearchValue:string):Observable<Data[]>{
-    const apiUrl="http://localhost:3000/vehicleData"
+    const apiUrl="https://api-desafio-trilha-front-end.onrender.com/vehicleData"
     return  this.http.post<Data[]>(apiUrl, { vin:SearchValue})
     
   }

@@ -13,7 +13,7 @@ export class SelectService {
 
 
   getApi():Observable<Carro[]>{
-    const apiUrl="http://localhost:3000/vehicles"
+    const apiUrl="https://api-desafio-trilha-front-end.onrender.com/vehicles"
     return  this.http.get<Carro[]>(apiUrl)
   }
 

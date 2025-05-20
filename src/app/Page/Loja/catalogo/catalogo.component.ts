@@ -27,7 +27,7 @@ this.valorPesquisa = pesquisa
 
 adicionar(){
   this.service.adicionar().subscribe({
-    next:(item:any)=>{
+    next:(item:Produto[])=>{
       
       this.produtos = item
     

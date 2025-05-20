@@ -12,7 +12,7 @@ export class TableCarroService {
 
 
     getApi():Observable<Lancamento[]>{
-      const apiUrl="http://localhost:3000/lancamentoCarros"
+      const apiUrl="https://api-desafio-trilha-front-end.onrender.com/lancamentoCarros"
       return  this.http.get<Lancamento[]>(apiUrl)
     }
 }

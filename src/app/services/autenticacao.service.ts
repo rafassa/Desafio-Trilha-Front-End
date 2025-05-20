@@ -31,7 +31,7 @@ localStorage.removeItem('valor')
 }
 
 postAPI(user:Usuario[]):Observable<Usuario[]>{
-  const apiUrl="http://localhost:3000/login"
+  const apiUrl="https://api-desafio-trilha-front-end.onrender.com/login"
   return this.http.post<Usuario[]>(apiUrl, user)
 }
 

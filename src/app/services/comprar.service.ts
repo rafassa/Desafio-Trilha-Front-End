@@ -15,7 +15,7 @@ ngOnInit(produto:Produto){
     constructor(private http:HttpClient) { }
 
     adicionar():Observable<Produto[]>{
-    const url = "http://localhost:3000/"
+    const url = "https://api-desafio-trilha-front-end.onrender.com/produtos"
       return this.http.get<Produto[]>(url)
 
     }
