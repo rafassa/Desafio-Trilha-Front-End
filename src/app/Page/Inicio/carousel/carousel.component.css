@@ -8,10 +8,5 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
 
-@media (max-width:500px){
-#imagensDiv{
-  width: 100%;
-  flex-direction: column-reverse;
-  }
-}
+
   

@@ -1,3 +1,10 @@
 #textoHome{
     text-align: justify;
 }
+
+
+@media (max-width:700px){
+#divHome{
+  flex-direction: column-reverse;
+  }
+}
