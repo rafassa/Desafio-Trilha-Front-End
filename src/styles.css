@@ -12,6 +12,6 @@ app-root{
 
 
 html, body {
-  overflow: auto;
-  height: 100%;
+  overflow: auto !important;
+  height: 100% !important;
 }

@@ -4,13 +4,14 @@ import { FreteService } from '../../../services/Frete.service';
 import { CommonModule } from '@angular/common';
 import { ComprarService } from '../../../services/comprar.service';
 import { Mercado } from '../../../Interface/Mercado.interface';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-escolha',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './escolha.component.html',
   styleUrl: './escolha.component.css'
 })
@@ -23,6 +24,8 @@ export class EscolhaComponent {
   mercadoSelecionado: string = '';
   valorSalvo:number = 0
   valorSelecionado:number = 0
+isInputSelected = false;
+  index=0
 
   resultados: { mercado: string; valorFinal: number; }[] = [];
 
@@ -37,20 +40,29 @@ export class EscolhaComponent {
           valorFinal: +(this.valor * mercado.multiplicador).toFixed(0)
         }));
       });
+
+      this.index = this.resultados.length;
     };
   
-
+   
 
     pagar(){
       this.service.salvarValor(this.valorSelecionado)
       this.router.navigate(['/compra'])
     }
 
-
+   
     pegarResultado(valor:any){
       this.valorSelecionado = valor
-     
+      this.isInputSelected = true
+
     }
+
+
+    
+
+
+    
   }
 
 

@@ -14,9 +14,13 @@ export class AppComponent {
   title = 'Projeto-Final';
 
   constructor(private router: Router) {
+  
+}
+
+ngOnInit(){
   this.router.events.subscribe((event: Event) => {
     if (event instanceof NavigationEnd) {
-      window.scrollTo(0, 0); // Reseta a rolagem ao trocar de página
+      window.scrollTo(0, 0); 
     }
   });
 }

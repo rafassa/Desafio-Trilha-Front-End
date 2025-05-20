@@ -9,16 +9,21 @@
     </h3>
 
     <ul class="list-group">
-      <li *ngFor="let resultado of resultados; let i = index"
+      <li *ngFor="let resultado of resultados; let i = index;"
           class="list-group-item d-flex justify-content-between align-items-center border-0 mb-2 rounded-3 shadow-sm bg-light">
         <span class="fw-bold text-dark">
           <i class="bi bi-shop text-primary"></i> {{ resultado.mercado }}
         </span>
-
+    
         <div class="d-flex gap-3 align-items-center">
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="radio" name="resultadoSelecionado" (focus)="pegarResultado(resultado.valorFinal)">
-            <label class="form-check-label" for="radio">
+            <input class="form-check-input"
+                   type="radio"
+                   id="radio-{{i}}" 
+                   name="resultadoSelecionado"
+                   [value]="resultado.valorFinal"
+                   (change)="pegarResultado(resultado.valorFinal)">
+            <label class="form-check-label" for="radio-{{i}}">
               <span class="badge bg-info text-dark fs-6 p-2 rounded-pill">
                 <i class="bi bi-currency-dollar"></i> R$ {{ resultado.valorFinal }}
               </span>
@@ -27,11 +32,12 @@
         </div>
       </li>
     </ul>
+    
 
   
 
     <div class="d-flex justify-content-center mt-4">
-      <button (click)="pagar()" class="btn btn-lg btn-primary shadow-sm px-4 fw-bold">
+      <button (click)="pagar()" [disabled]="!isInputSelected " class="btn btn-lg btn-primary shadow-sm px-4 fw-bold">
         <i class="bi bi-cart-check"></i> Comprar Agora
       </button>
     </div>
