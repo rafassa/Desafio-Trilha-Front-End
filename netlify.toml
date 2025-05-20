@@ -1,0 +1,3 @@
+[build]
+publish = "dist/Desafio-Trilha-Ford-End/browser"
+command = "ng build --configuration=production"

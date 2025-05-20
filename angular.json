@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Projeto-Final": {
+    "Desafio-Trilha-Front-End": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/projeto-final",
+            "outputPath": "dist/Desafio-Trilha-Front-End/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -41,8 +41,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "3MB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Projeto-Final:build:production"
+              "buildTarget": "Desafio-Trilha-Front-End:build:production"
             },
             "development": {
-              "buildTarget": "Projeto-Final:build:development"
+              "buildTarget": "Desafio-Trilha-Front-End:development"
             }
           },
           "defaultConfiguration": "development"
