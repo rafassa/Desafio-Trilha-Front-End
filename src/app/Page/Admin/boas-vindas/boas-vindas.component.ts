@@ -29,6 +29,9 @@ export class boasVindasComponent {
     }else{
       this.router.navigateByUrl('/login')
     }
+
+
+    
   }
 
   service = inject(AutenticacaoService)

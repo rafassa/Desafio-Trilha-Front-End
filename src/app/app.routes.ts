@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { boasVindasComponent } from './Page/Admin/boas-vindas/home.component';
+import { boasVindasComponent } from './Page/Admin/boas-vindas/boas-vindas.component';
 import { LoginComponent } from './Page/Admin/login/login.component';
 import { DashboardComponent } from './Page/Admin/dashboard/dashboard.component';
 import { LojaComponent } from './Page/Loja/loja/loja.component';
@@ -23,19 +23,22 @@ export const routes: Routes = [
     path:'home',
     component:PaginaInicialComponent
    },
-   {
-    path:'homeAdmin',
-    component:boasVindasComponent
-   },
+  
    {
     path:'login',
     component:LoginComponent,
-    
-   },
-   {
+    children:[
+    {
     path:'dashboard',
     component:DashboardComponent,
    },
+    {
+    path:'homeAdmin',
+    component:boasVindasComponent
+   },
+    ]
+   },
+  
    {
     path:'loja',
     component:LojaComponent
