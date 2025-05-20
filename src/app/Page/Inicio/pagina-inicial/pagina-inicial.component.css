@@ -7,4 +7,9 @@
 #divHome{
   flex-direction: column-reverse;
   }
+
+
+  #textoDiv{
+    width: 100%;
+  }
 }
