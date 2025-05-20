@@ -1,22 +1,22 @@
 /* Botão Abrir Carrinho */
 .btn-warning {
-  background-color: #004A99 !important; /* Azul Ford */
+  background-color: #004A99 !important; 
   color: white !important;
   border: 2px solid #003366;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .btn-warning:hover {
-  background-color: #003366 !important; /* Azul escuro Ford */
+  background-color: #003366 !important; 
   transform: scale(1.05);
 }
 
-/* Offcanvas Cabeçalho */
+
 .offcanvas-header {
-  background: linear-gradient(45deg, #004A99, #003366); /* Azul Ford */
+  background: linear-gradient(45deg, #004A99, #003366); 
 }
 
-/* Texto do Carrinho */
+
 .card-title i {
   color: #004A99 !important;
 }
@@ -25,19 +25,19 @@
   text-align: justify;
 }
 
-/* Botão Comprar */
+
 .btn-success {
-  background-color: #004A99 !important; /* Azul Ford */
+  background-color: #004A99 !important; 
   border: 2px solid #003366;
   color: white !important;
 }
 
 .btn-success:hover {
-  background-color: #003366 !important; /* Azul mais escuro */
+  background-color: #003366 !important; 
   transform: scale(1.05);
 }
 
-/* Valor Total */
+
 .text-success {
   color: #004A99 !important;
 }

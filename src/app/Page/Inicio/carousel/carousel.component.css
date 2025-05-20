@@ -1,9 +1,17 @@
 .custom-btn {
-    border-radius: 10px; /* Menos arredondado */
+    border-radius: 10px; 
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .custom-btn:hover {
-    transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
+
+@media (max-width:500px){
+#imagensDiv{
+  width: 100%;
+  flex-direction: column-reverse;
+  }
+}
+  

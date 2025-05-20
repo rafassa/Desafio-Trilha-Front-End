@@ -31,7 +31,7 @@
   overflow-x: auto;
 }
 
-/* Ajuste para dispositivos móveis */
+
 @media (max-width: 768px) {
   .container {
       padding: 10px;

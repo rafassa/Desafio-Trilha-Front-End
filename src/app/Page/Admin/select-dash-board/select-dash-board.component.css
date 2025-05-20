@@ -1,5 +1,5 @@
 .img-fluid {
     width: 100% !important;
-    max-width: 600px; /* Ajuste conforme necessário */
+    max-width: 600px; 
     height: auto;
 }
