@@ -1,7 +1,5 @@
-@media (max-width:700px){}
-    #containerwrap{
+@media (max-width: 768px) {
+    .container {
         flex-direction: column;
     }
-
-
-    
+}
