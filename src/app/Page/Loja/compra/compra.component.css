@@ -3,13 +3,3 @@
         flex-direction: column;
     }
 }
-.row {
-    min-height: 100vh; 
-}
-
-.col-md-6,
-.col-12 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
