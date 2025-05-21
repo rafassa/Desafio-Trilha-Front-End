@@ -13,7 +13,7 @@ export class ChildRouteGuard implements CanActivate {
     if (previousUrl === '/login') {
       return true;
     } else {
-      this.router.navigate(['/pagina-inicial']);
+      this.router.navigate(['/home']);
       return false;
     }
   }
