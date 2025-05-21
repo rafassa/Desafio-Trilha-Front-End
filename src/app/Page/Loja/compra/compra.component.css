@@ -3,12 +3,6 @@
         display: flex;
         flex-wrap: wrap;
     }
-    #divPagamento{
-        width: 50%;
-    }
 
-    @media  (max-width:900) {
-        #divPagamento{
-            width: 100%;
-        }
-    }
+
+    
