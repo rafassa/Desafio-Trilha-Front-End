@@ -22,7 +22,7 @@ export class PagamentoComponent {
   nome: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]),
   cpf: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]+$')]),
   pagamento: new FormControl('', [Validators.required]),
-  cartao: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^[0-9]+$')]),
+  cartao: new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern('^[0-9]+$')]),
   vencimento: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^[0-9]+$')]),
   cvv: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[0-9]+$')]),
   endereco: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]),
