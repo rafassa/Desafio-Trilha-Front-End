@@ -5,7 +5,7 @@
 
 @media (max-width:700px){
 #divHome{
-  flex-direction: column-reverse;
+  flex-direction: column;
   }
 
 
