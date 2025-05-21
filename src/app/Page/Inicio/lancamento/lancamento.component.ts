@@ -4,26 +4,22 @@ import { FormArray, FormBuilder, FormGroup, FormsModule, NgModel } from '@angula
 import { Lancamento } from '../../../Interface/Lancamento.interface';
 import { TableCarroService } from '../../../services/table-carro.service';
 
+
 @Component({
   selector: 'app-lacamento',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, FormsModule],
   templateUrl: './lancamento.component.html',
   styleUrl: './lancamento.component.css'
 })
 export class LancamentoComponent {
   
-  carForm: FormGroup;
-  selectedCars: any[] = [];
-  showPopup = false;
+ 
   lancamentoCarros: Lancamento[] | null=null
-
+  arrayCarroSelecionado:Lancamento[]=[]
 
   service = inject(TableCarroService)
-  constructor(private fb: FormBuilder) {
-    this.carForm = this.fb.group({
-      selectedCars: this.fb.array([])
-      
-    });
+  constructor() {
+  
   }
 
 
@@ -33,25 +29,27 @@ export class LancamentoComponent {
       this.lancamentoCarros = data
     })
     
-  }
 
-  mudou(event: any, car: any) {
-    const selectedCarsArray = this.carForm.get('selectedCars') as FormArray;
-    if (event.target.checked) {
-      selectedCarsArray.push(this.fb.control(car));
-    } else {
-      const index = selectedCarsArray.controls.findIndex(ctrl => ctrl.value.id === car.id);
-      selectedCarsArray.removeAt(index);
-    }
 
     
-    if (selectedCarsArray.length === 2) {
-      this.selectedCars = selectedCarsArray.value;
-      this.showPopup = true;
-    } else {
-      this.showPopup = false;
-    }
   }
+
+
+
+  carroSelecionado(carroUsado:Lancamento, event:Event){
+    const checkbox = event.target as HTMLInputElement
+    if(checkbox.checked){
+      this.arrayCarroSelecionado.push(carroUsado)
+    }else{
+      this.arrayCarroSelecionado = this.arrayCarroSelecionado.filter(item => item!== carroUsado)
+    }
+
+
+    
+
+   
+  }
+   
   }
   
 
