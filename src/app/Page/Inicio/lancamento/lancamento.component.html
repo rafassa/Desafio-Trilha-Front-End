@@ -2,12 +2,14 @@
     <div class="row align-items-center">
         <div class="col-md-6">
             <p class="paragrafo__div">
-                A Ford Ranger 2022 é uma picape média que combina robustez, tecnologia avançada e desempenho de alto nível...
+                A Ford Ranger 2022 é uma picape média que combina robustez, tecnologia avançada e desempenho de alto
+                nível...
             </p>
         </div>
         <div class="col-md-6">
             <div class="video-container">
-                <iframe class="video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="https://www.youtube.com/embed/vQsryuNmsL0"></iframe>
+                <iframe class="video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                    src="https://www.youtube.com/embed/vQsryuNmsL0"></iframe>
             </div>
         </div>
     </div>
@@ -24,7 +26,8 @@
                         <p class="price mb-0">{{ car.preco }}</p>
                     </div>
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" [disabled]="checkboxFalsa(car)" (change)="carroSelecionado(car , $event)"> 
+                        <input class="form-check-input me-2" type="checkbox" [disabled]="checkboxFalsa(car)"
+                            (change)="carroSelecionado(car , $event)">
                         <i class="bi bi-info-circle text-primary fs-4"></i>
                     </div>
                 </div>
@@ -36,9 +39,9 @@
 
 
 <div class="d-flex w-100 justify-content-center p-3">
-<button class="btn btn-primary p-3" data-bs-toggle="offcanvas" data-bs-target="#carPopup">
-    Ver Carros Selecionados
-</button>
+    <button class="btn btn-primary p-3" data-bs-toggle="offcanvas" data-bs-target="#carPopup">
+        Ver Carros Selecionados
+    </button>
 </div>
 
 <div class="offcanvas offcanvas-center offcanvas-custom" tabindex="-1" id="carPopup">
@@ -47,28 +50,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-        <div class="container d-flex justify-content-center">
-            <div class="col-md-6 d-flex h-100" *ngFor="let car of arrayCarroSelecionado">
-                <div class="card p-2 flex-grow-1 h-100">
-                    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6" *ngFor="let car of arrayCarroSelecionado">
+                    <div class="card p-2 h-100">
                         <img [src]="car.img" [alt]="car.modelo" class="imagemL2 w-100">
+                        <h6 class="fw-bold mt-2 text-center">{{ car.modelo }} - {{ car.preco }}</h6>
+                        <ul class="list-unstyled text-center">
+                            <li><strong>Altura da Caçamba:</strong> {{ car.cacamba }} mm</li>
+                            <li><strong>Altura do Veículo:</strong> {{ car.altura }} mm</li>
+                            <li><strong>Altura Livre do Solo:</strong> {{ car.solo }} mm</li>
+                            <li><strong>Capacidade de Carga:</strong> {{ car.capacidade }} Kg</li>
+                            <li><strong>Motor:</strong> {{ car.moto }}</li>
+                            <li><strong>Potência:</strong> {{ car.potencia }} cv</li>
+                            <li><strong>Volume da Caçamba:</strong> {{ car.volume }} L</li>
+                            <li><strong>Roda:</strong> {{ car.roda }}</li>
+                        </ul>
                     </div>
-                    <h6 class="fw-bold">{{ car.modelo }} - {{ car.preco }}</h6>
-                    <ul class="list-unstyled">
-                        <li><strong>Altura da Caçamba:</strong> {{ car.cacamba }} mm</li>
-                        <li><strong>Altura do Veículo:</strong> {{ car.altura }} mm</li>
-                        <li><strong>Altura Livre do Solo:</strong> {{ car.solo }} mm</li>
-                        <li><strong>Capacidade de Carga:</strong> {{ car.capacidade }} Kg</li>
-                        <li><strong>Motor:</strong> {{ car.moto }}</li>
-                        <li><strong>Potência:</strong> {{ car.potencia }} cv</li>
-                        <li><strong>Volume da Caçamba:</strong> {{ car.volume }} L</li>
-                        <li><strong>Roda:</strong> {{ car.roda }}</li>
-                    </ul>
                 </div>
             </div>
-            
-    
+        </div>
     </div>
 </div>
-
-
