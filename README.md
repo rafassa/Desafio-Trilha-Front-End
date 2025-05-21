@@ -47,8 +47,4 @@ Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvida
 - **Header** 🔍 – Criação da navegação da página para facilitar a experiência do usuário.  
 - **Footer** 🏁 – Adição de texto e ícone para manter a autoria da *Ford-Enter*.  
 
----
-
-## 📂 Estrutura do Projeto  
-Aqui está um breve resumo da organização dos arquivos:  
 
