@@ -11,11 +11,11 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    // Verifica se o usuário veio da rota pai
-    const cameFromParent = state.url.startsWith('/login');
+    
+    const cameFromParent = state.url.startsWith('/home');
 
     if (!cameFromParent) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
       return false;
     }
 
