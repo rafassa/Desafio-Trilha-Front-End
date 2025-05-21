@@ -36,20 +36,21 @@ export class LancamentoComponent {
 
 
 
-  carroSelecionado(carroUsado:Lancamento, event:Event){
-    const checkbox = event.target as HTMLInputElement
-    if(checkbox.checked){
-      this.arrayCarroSelecionado.push(carroUsado)
-    }else{
-      this.arrayCarroSelecionado = this.arrayCarroSelecionado.filter(item => item!== carroUsado)
+  carroSelecionado(carro: Lancamento, event: Event) {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkbox && checkbox.checked) {
+      this.arrayCarroSelecionado.push(carro);
+    } else {
+      this.arrayCarroSelecionado = this.arrayCarroSelecionado.filter(item => item !== carro);
     }
+  }
 
 
     
 
-   
+  
   }
    
-  }
+  
   
 
