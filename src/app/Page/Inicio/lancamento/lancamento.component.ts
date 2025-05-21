@@ -36,8 +36,8 @@ export class LancamentoComponent {
 
 
 
-  carroSelecionado(carro: Lancamento, event: Event) {
-    const checkbox = event.target as HTMLInputElement;
+  carroSelecionado(carro: Lancamento, evento: Event) {
+    const checkbox = evento.target as HTMLInputElement;
     if (checkbox && checkbox.checked) {
       this.arrayCarroSelecionado.push(carro);
     } else {

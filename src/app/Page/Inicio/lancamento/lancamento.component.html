@@ -24,7 +24,7 @@
                         <p class="price mb-0">{{ car.preco }}</p>
                     </div>
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" [disabled]="this.arrayCarroSelecionado.length >= 2" [(ngModel)]="carroSelecionado(car.id, $event)"> 
+                        <input class="form-check-input me-2" type="checkbox" [disabled]="this.arrayCarroSelecionado.length >= 2" (change)="carroSelecionado(car , $event)"> 
                         <i class="bi bi-info-circle text-primary fs-4"></i>
                     </div>
                 </div>
