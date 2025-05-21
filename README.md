@@ -1,6 +1,6 @@
 # Desafio Trilha Front End 🚀  
 
-## Boas-vindas! 👋  
+## Boas-vindas!   
 Este é o projeto **Trilha Front End**, onde registro todas as atividades realizadas ao longo do percurso da *Ford-Enter*.  
 
 ---
@@ -37,6 +37,15 @@ Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvida
 - **Home** 🏠 – Criação do *carousel* de imagens, com texto descritivo e detalhamento do *carousel*.  
 - **Lançamento** 🚗 – Implementação de vídeo, descrição ao lado do vídeo, tabela de carros e *popup* de comparação.  
 - **Contato** 📩 – Imagem centralizada de carro, além de formulário de contato integrado à imagem.  
+- **Login** 🔑 – Criação de imagem e formulário com autenticação.  
+- **Boas-vindas** 🎉 – Imagem de carro de fundo e mensagem personalizada com o nome do usuário.  
+- **Dashboard** 📊 – Barra de pesquisa para busca de VIN e seleção de carros para visualização da produção.  
+- **Loja** 🛒 – Criação do catálogo de itens para compra, carrinho para adicionar/remover produtos e barra de pesquisa para filtragem.  
+- **Seleção de Fretes** 🚚 – Implementação do sistema de escolha de fretes.  
+- **Pagamento** 💳 – Formulário para pagamento e caixa de mensagem informando o valor a ser pago.  
+- **Boleto** 🏦 – Tela com informações do cliente e botão para geração de boleto.  
+- **Header** 🔍 – Criação da navegação da página para facilitar a experiência do usuário.  
+- **Footer** 🏁 – Adição de texto e ícone para manter a autoria da *Ford-Enter*.  
 
 ---
 
