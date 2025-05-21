@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     
-    const cameFromParent = state.url.startsWith('/home');
+    const cameFromParent = state.url.startsWith('/login');
 
     if (!cameFromParent) {
       this.router.navigate(['/home']);
