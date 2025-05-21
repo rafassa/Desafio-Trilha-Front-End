@@ -23,14 +23,15 @@
                 <i class="bi bi-box-seam text-primary"></i> {{ produto.nome }}
               </h5>
               <p class="card-text text-muted">Quantidade: {{ produto.quantidade }}</p>
-              <div class="d-flex justify-content-center gap-2">
-                <button (click)="removerItem(produto)" class="btn btn-danger flex-fill">
-                  <i class="bi bi-trash-fill"></i> Remover
+              <div class="d-flex justify-content-between">
+                <button (click)="removerItem(produto)" class="btn btn-sm btn-danger">
+                  <i class="bi bi-dash"></i>
                 </button>
-                <button (click)="adicionarItem(produto)" class="btn btn-success flex-fill">
-                  <i class="bi bi-plus-circle-fill"></i> Adicionar
+                <button (click)="adicionarItem(produto)" class="btn btn-sm btn-success">
+                  <i class="bi bi-plus"></i>
                 </button>
               </div>
+
             </div>
           </div>
         </div>
