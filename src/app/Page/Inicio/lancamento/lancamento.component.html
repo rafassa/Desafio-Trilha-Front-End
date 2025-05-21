@@ -24,7 +24,7 @@
                         <p class="price mb-0">{{ car.preco }}</p>
                     </div>
                     <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" [disabled]="this.arrayCarroSelecionado.length >= 2" (change)="carroSelecionado(car , $event)"> 
+                        <input class="form-check-input me-2" type="checkbox" [disabled]="checkboxFalsa(car)" (change)="carroSelecionado(car , $event)"> 
                         <i class="bi bi-info-circle text-primary fs-4"></i>
                     </div>
                 </div>
@@ -55,13 +55,13 @@
                     </div>
                     <h6 class="fw-bold">{{ car.modelo }} - {{ car.preco }}</h6>
                     <ul class="list-unstyled">
-                        <li><strong>Altura da Caçamba:</strong> {{ car.alturaCacamba }} mm</li>
-                        <li><strong>Altura do Veículo:</strong> {{ car.alturaVeiculo }} mm</li>
-                        <li><strong>Altura Livre do Solo:</strong> {{ car.AlturaLivre }} mm</li>
-                        <li><strong>Capacidade de Carga:</strong> {{ car.capacidadeCarga }} Kg</li>
-                        <li><strong>Motor:</strong> {{ car.motor }}</li>
+                        <li><strong>Altura da Caçamba:</strong> {{ car.cacamba }} mm</li>
+                        <li><strong>Altura do Veículo:</strong> {{ car.altura }} mm</li>
+                        <li><strong>Altura Livre do Solo:</strong> {{ car.solo }} mm</li>
+                        <li><strong>Capacidade de Carga:</strong> {{ car.capacidade }} Kg</li>
+                        <li><strong>Motor:</strong> {{ car.moto }}</li>
                         <li><strong>Potência:</strong> {{ car.potencia }} cv</li>
-                        <li><strong>Volume da Caçamba:</strong> {{ car.volumeCacamba }} L</li>
+                        <li><strong>Volume da Caçamba:</strong> {{ car.volume }} L</li>
                         <li><strong>Roda:</strong> {{ car.roda }}</li>
                     </ul>
                 </div>

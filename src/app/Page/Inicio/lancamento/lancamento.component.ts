@@ -45,8 +45,9 @@ export class LancamentoComponent {
     }
   }
 
-
-    
+ checkboxFalsa(carro: Lancamento){
+  return !this.arrayCarroSelecionado.includes(carro) && this.arrayCarroSelecionado.length >= 2;
+}
 
   
   }
