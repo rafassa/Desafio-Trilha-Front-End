@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class ChildRouteGuard implements CanActivate {
   constructor(private router: Router) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
-    
-    const cameFromParent = state.url.startsWith('/login');
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const previousUrl = this.router.getCurrentNavigation()?.previousNavigation?.finalUrl?.toString();
 
-    if (!cameFromParent) {
-      this.router.navigate(['/home']);
+    if (previousUrl === '/login') {
+      return true;
+    } else {
+      this.router.navigate(['/pagina-inicial']);
       return false;
     }
-
-    return true;
   }
 }
