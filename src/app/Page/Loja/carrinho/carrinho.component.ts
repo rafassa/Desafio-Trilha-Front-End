@@ -40,9 +40,16 @@ export class CarrinhoComponent {
   }
 
 
-  adicionarItem(produto:any){
-      this.service.PegarLocalInfo(produto)
-  }
+  adicionarItem(produto: Produto) {
+    const index = this.produtosSelecionados.findIndex(p => p.nome === produto.nome);
+
+    if (index !== -1) {
+        
+        this.produtosSelecionados[index].quantidade += 1;
+    } 
+    localStorage.setItem("produto", JSON.stringify(this.produtosSelecionados));
+}
+
 
 
   getTotal(): number {
