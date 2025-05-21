@@ -9,7 +9,7 @@ import { PaginaInicialComponent } from './Page/Inicio/pagina-inicial/pagina-inic
 import { BoletoComponent } from './Page/Loja/boleto/boleto.component';
 import { LancamentoComponent } from './Page/Inicio/lancamento/lancamento.component';
 import { ContatoComponent } from './Page/Inicio/contato/contato.component';
-import { ChildRouteGuard } from './Segurança/auth.guard';
+
 
 
 export const routes: Routes = [
@@ -28,7 +28,7 @@ export const routes: Routes = [
    {
     path:'login',
     component:LoginComponent,
-    children:[
+   }
     {
     path:'dashboard',
     component:DashboardComponent,
@@ -37,11 +37,8 @@ export const routes: Routes = [
     {
     path:'homeAdmin',
     component:boasVindasComponent,
-    canActivate: [ChildRouteGuard]
+   
    },
-    ]
-   },
-  
    {
     path:'loja',
     component:LojaComponent
