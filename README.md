@@ -1,59 +1,50 @@
-# ProjetoFinal
+# Desafio Trilha Front End 🚀  
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+## Boas-vindas!   
+Este é o projeto **Trilha Front End**, onde registro todas as atividades realizadas ao longo do percurso da *Ford-Enter*.  
 
-## Development server
+---
 
-To start a local development server, run:
+## 🌐 Acesso ao Site  
+🔗 [Ford-Enter Trilha](https://ford-enter-trilha.netlify.app/home)  
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠 Aplicativos Utilizados  
+Aqui estão as ferramentas essenciais para o desenvolvimento:  
 
-## Code scaffolding
+- **Angular** 🅰️ – Framework para criação das estruturas das páginas.  
+- **Bootstrap** 🎨 – Estilização da página juntamente com a responsividade.  
+- **Netlify** 🌍 – Necessário para fazer o *host* da aplicação Angular.  
+- **Render** 🔗 – Necessário para fazer o *host* da API.  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🏗 Sprint Backlog  
+O desafio proposto exigiu a criação de um novo site utilizando os conhecimentos adquiridos. A partir das sprints anteriores, o objetivo foi reunir e aprimorar os elementos já desenvolvidos, garantindo um site **funcional**, **responsivo** e **bem estilizado**, utilizando:  
+✔️ CSS  
+✔️ Bootstrap  
+✔️ Angular  
+✔️ Outros elementos essenciais para a construção do projeto.  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O projeto também inclui a **página de login administrativo**.  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🔄 Sprint Retrospective  
+Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvidas, atendendo às demandas necessárias:  
 
-To build the project run:
+- **Home** 🏠 – Criação do *carousel* de imagens, com texto descritivo e detalhamento do *carousel*.  
+- **Lançamento** 🚗 – Implementação de vídeo, descrição ao lado do vídeo, tabela de carros e *popup* de comparação.  
+- **Contato** 📩 – Imagem centralizada de carro, além de formulário de contato integrado à imagem.  
+- **Login** 🔑 – Criação de imagem e formulário com autenticação.  
+- **Boas-vindas** 🎉 – Imagem de carro de fundo e mensagem personalizada com o nome do usuário.  
+- **Dashboard** 📊 – Barra de pesquisa para busca de VIN e seleção de carros para visualização da produção.  
+- **Loja** 🛒 – Criação do catálogo de itens para compra, carrinho para adicionar/remover produtos e barra de pesquisa para filtragem.  
+- **Seleção de Fretes** 🚚 – Implementação do sistema de escolha de fretes.  
+- **Pagamento** 💳 – Formulário para pagamento e caixa de mensagem informando o valor a ser pago.  
+- **Boleto** 🏦 – Tela com informações do cliente e botão para geração de boleto.  
+- **Header** 🔍 – Criação da navegação da página para facilitar a experiência do usuário.  
+- **Footer** 🏁 – Adição de texto e ícone para manter a autoria da *Ford-Enter*.  
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
