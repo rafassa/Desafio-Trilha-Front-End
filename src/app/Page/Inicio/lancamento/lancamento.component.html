@@ -49,7 +49,7 @@
     <div class="offcanvas-body">
         <div class="container d-flex justify-content-center">
             <div class="row d-flex align-items-stretch" *ngIf="selectedCars.length > 0">
-                <div class="col-md-6 d-flex h-100" *ngFor="let car of selectedCars">
+                <div class="col-md-6 d-flex h-100" *ngFor="let car of lancamentoCarros">
                     <div class="card p-2 flex-grow-1 h-100">
                         <div>
                         <img [src]="car.img" [alt]="car.modelo" class="imagemL2 w-100 ">
@@ -57,7 +57,7 @@
                         <h6 class="fw-bold">{{ car.modelo }} - {{ car.preco }}</h6>
                         <ul class="list-unstyled">
                             <li><strong>Altura da Caçamba:</strong> {{ car.alturaCacamba }} mm</li>
-                            <li><strong>Altura do Veículo:</strong> {{ car.alturaVeiculo }} mm</li>
+                            <li><strong>Altura do Veículo:</strong> {{car.alturaVeiculo}} mm</li>
                             <li><strong>Altura Livre do Solo:</strong> {{ car.AlturaLivre }} mm</li>
                             <li><strong>Capacidade de Carga:</strong> {{ car.capacidadeCarga }} Kg</li>
                             <li><strong>Motor:</strong> {{ car.motor }}</li>

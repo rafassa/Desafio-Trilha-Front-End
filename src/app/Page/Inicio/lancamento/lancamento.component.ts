@@ -32,6 +32,7 @@ export class LancamentoComponent {
     this.service.getApi().subscribe((data)=>{
       this.lancamentoCarros = data
     })
+    
   }
 
   mudou(event: any, car: any) {
@@ -43,7 +44,7 @@ export class LancamentoComponent {
       selectedCarsArray.removeAt(index);
     }
 
-    // Exibir pop-up se houver exatamente 2 carros selecionados
+    
     if (selectedCarsArray.length === 2) {
       this.selectedCars = selectedCarsArray.value;
       this.showPopup = true;
