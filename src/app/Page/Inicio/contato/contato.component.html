@@ -14,26 +14,31 @@
       <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
         <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome" formControlName="nome">
+        <span class="alert alert-danger" role="alert"  *ngIf="nome?.hasError('required')&&(nome?.dirty || nome?.touched) ">*</span>
       </div>
 
       <div class="mb-3">
         <label for="sobrenome" class="form-label">Sobrenome</label>
         <input class="form-control" required name="sobrenome" type="text" placeholder="Digite seu sobrenome" formControlName="sobrenome">
+        <span class="alert alert-danger" role="alert"  *ngIf="sobrenome?.hasError('required')&&(sobrenome?.dirty || sobrenome?.touched) ">*</span>
       </div>
 
       <div class="mb-3">
         <label for="cpf" class="form-label">CPF</label>
         <input class="form-control" required name="cpf" type="text" placeholder="Digite seu CPF" formControlName="cpf">
+        <span class="alert alert-danger" role="alert"  *ngIf="cpf?.hasError('required')&&(cpf?.dirty || cpf?.touched) ">*</span>
       </div>
 
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL" formControlName="email">
+        <span class="alert alert-danger" role="alert"  *ngIf="email?.hasError('required')&&(email?.dirty || email?.touched) ">*</span>
       </div>
 
       <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
         <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone" formControlName="telefone">
+        <span class="alert alert-danger" role="alert"  *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">*</span>
       </div>
 
       <div class="mb-3">
@@ -43,12 +48,15 @@
           <option value="Email">Email</option>
           <option value="Telefone">Telefone</option>
         </select>
+        <span class="alert alert-danger" role="alert"  *ngIf="preferencia?.hasError('required')&&(preferencia?.dirty || preferencia?.touched) ">*</span>
       </div>
 
       <p class="small text-muted">
         Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. 
         <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
       </p>
+      <span class="alert alert-danger" role="alert"  *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">*</span>
+
 
       <div class="form-check mb-2">
         <input class="form-check-input" id="termoAceito" type="checkbox" formControlName="termoAceito">
