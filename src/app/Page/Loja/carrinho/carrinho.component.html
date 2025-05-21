@@ -25,6 +25,9 @@
               <button (click)="removerItem(produto)" class="btn btn-danger w-100 mt-auto ">
                 <i class="bi bi-trash-fill"></i><p id="textoBotão"> Remover </p>
               </button>
+              <button (click)="adicionarItem(produto)" class="btn btn-success w-100 mt-auto ">
+                <i class="bi bi-trash-fill"></i><p id="textoBotão"> Adicionar </p>
+              </button>
             </div>
           </div>
         </div>
@@ -35,7 +38,7 @@
         <span class="text-success">{{ getTotal() | currency:'BRL' }}</span>
       </h4>
     </div>
-    <button (click)="levarTotal()" class="btn btn-lg btn-success w-100 shadow-sm fw-bold rounded-pill">
+    <button (click)="levarTotal()" [disabled]="getTotal() <=0" class="btn btn-lg btn-success w-100 shadow-sm fw-bold rounded-pill">
       <i class="bi bi-cart-check-fill"></i>Comprar
     </button>
 

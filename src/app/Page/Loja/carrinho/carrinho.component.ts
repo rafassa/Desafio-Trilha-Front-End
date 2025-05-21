@@ -40,6 +40,11 @@ export class CarrinhoComponent {
   }
 
 
+  adicionarItem(produto:any){
+      this.service.PegarLocalInfo(produto)
+  }
+
+
   getTotal(): number {
     return this.produtosSelecionados.reduce((total, item) => {
       return total + (item.preco * item.quantidade);
