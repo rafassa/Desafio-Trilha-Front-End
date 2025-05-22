@@ -34,12 +34,17 @@ postAPI(user:Usuario[]):Observable<Usuario[]>{
   return this.http.post<Usuario[]>(apiUrl, user)
 }
 
+ngOnInit(){
+  const checkboxValor = localStorage.getItem('valorDataRapida')
+if(checkboxValor){
+  localStorage.setItem('valorData', JSON.stringify(checkboxValor))
+}
+}
 
 pegarValorCheck(valorcheck:any, valorData:any){
-  const checkboxvalor = localStorage.getItem('valorcheck')
+  
 localStorage.setItem('valorcheck', JSON.stringify(valorcheck))
-if(checkboxvalor)
-localStorage.setItem('valorData', JSON.stringify(valorData))
+localStorage.setItem('valorDataRapida', JSON.stringify(valorData))
 }
 
 
