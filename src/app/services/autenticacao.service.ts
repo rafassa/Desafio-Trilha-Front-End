@@ -14,15 +14,13 @@ export class AutenticacaoService {
 
   
 constructor(private http:HttpClient){
-const loginEstado = localStorage.getItem("autoLogin")
-this.autoLogin = loginEstado === 'true'
 }
 loginInputInfo:string []=[]
-private autoLogin = false
+
 
 getApiInformation(apiInfo:Usuario[]){
 console.log(apiInfo)
-sessionStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
+localStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
 }
 
 removeStorage(){

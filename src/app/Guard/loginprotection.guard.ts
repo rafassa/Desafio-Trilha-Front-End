@@ -3,12 +3,22 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const loginprotectionGuard: CanActivateFn = (route, state) => {
   const router = inject(Router)
-  const dataLogada = sessionStorage.getItem('apiUsuarios');
+  const dataLogada = localStorage.getItem('apiUsuarios');
+  const checkboxMarcada= localStorage.getItem('valor')
   if(dataLogada !==null){
     return true;
   }
   else{
     router.navigateByUrl('login')
   }
+
+  if(checkboxMarcada === 'true'){
+    const urlAtiva = state.url
+    router.navigateByUrl(urlAtiva)
+  }
   return true;
+
+
+
+ 
 };
