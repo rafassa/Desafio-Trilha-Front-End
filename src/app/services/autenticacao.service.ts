@@ -14,6 +14,10 @@ export class AutenticacaoService {
 
   
 constructor(private http:HttpClient){
+   const checkboxValor = localStorage.getItem('valorDataRapida')
+if(checkboxValor){
+  localStorage.setItem('valorData', checkboxValor)
+}
 }
 loginInputInfo:string []=[]
 
@@ -35,16 +39,13 @@ postAPI(user:Usuario[]):Observable<Usuario[]>{
 }
 
 ngOnInit(){
-  const checkboxValor = localStorage.getItem('valorDataRapida')
-if(checkboxValor){
-  localStorage.setItem('valorData', JSON.stringify(checkboxValor))
-}
+ 
 }
 
 pegarValorCheck(valorcheck:any, valorData:any){
   
 localStorage.setItem('valorcheck', JSON.stringify(valorcheck))
-localStorage.setItem('valorDataRapida', JSON.stringify(valorData))
+sessionStorage.setItem('valorDataRapida', JSON.stringify(valorData))
 }
 
 
