@@ -28,10 +28,7 @@ sessionStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
 }
 
 removeStorage(){
-sessionStorage.removeItem('apiUsuarios')
-localStorage.removeItem('valorData')
-localStorage.removeItem('valorcheck')
-sessionStorage.removeItem('valorDataRapida')
+localStorage.clear();
 }
 
 postAPI(user:Usuario[]):Observable<Usuario[]>{
