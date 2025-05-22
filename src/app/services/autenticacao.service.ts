@@ -24,8 +24,9 @@ localStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
 }
 
 removeStorage(){
-localStorage.removeItem('apiUsuarios')
-localStorage.removeItem('valor')
+sessionStorage.removeItem('apiUsuarios')
+localStorage.removeItem('valorData')
+localStorage.removeItem('valorcheck')
 }
 
 postAPI(user:Usuario[]):Observable<Usuario[]>{
@@ -34,9 +35,9 @@ postAPI(user:Usuario[]):Observable<Usuario[]>{
 }
 
 
-pegarValorCheck(valor:any){
-localStorage.setItem('valor', JSON.stringify(valor))
-
+pegarValorCheck(valorcheck:any, valorData:any){
+localStorage.setItem('valorcheck', JSON.stringify(valorcheck))
+localStorage.setItem('valorData', JSON.stringify(valorData))
 }
 
 

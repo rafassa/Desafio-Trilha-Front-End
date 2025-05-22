@@ -19,7 +19,7 @@ export class LoginComponent {
   isChecked = false;
 checkboxVar:any
 ngOnInit(){
-  const checkbox = localStorage.getItem('valor',)
+  const checkbox = localStorage.getItem('valorcheck',)
   if(checkbox){
     this.checkboxVar = JSON.parse(checkbox)
   }
@@ -36,7 +36,7 @@ ngOnInit(){
       next: (data:Usuario[]) =>{
         this.router.navigateByUrl('/homeAdmin')
         this.service.getApiInformation(data)
-       this.service.pegarValorCheck(this.isChecked)
+       this.service.pegarValorCheck(this.isChecked, data)
       },
       error:(error)=> {
         this.mensagemDeErro=error.error.message

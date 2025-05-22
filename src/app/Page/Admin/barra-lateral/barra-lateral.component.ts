@@ -31,6 +31,6 @@ export class BarraLateralComponent {
   logOut(){
     
     this.service.removeStorage()
-    this.router.navigateByUrl('')
+    this.router.navigateByUrl('/login')
   }
 }

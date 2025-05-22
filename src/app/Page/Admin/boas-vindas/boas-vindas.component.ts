@@ -23,20 +23,26 @@ export class boasVindasComponent {
 
   ngOnInit():void{
     const nomeUsuario = sessionStorage.getItem('apiUsuarios')
+    const nomeUsuarioCheck = localStorage.getItem('valorData')
     if(nomeUsuario){
       this.name = JSON.parse(nomeUsuario)
       
+    }else if(nomeUsuarioCheck){
+      this.name = JSON.parse(nomeUsuarioCheck)
     }else{
       this.router.navigateByUrl('/login')
     }
 
+    }
+
 
     
-  }
+
 
   service = inject(AutenticacaoService)
 
   constructor(private router:Router, private route:ActivatedRoute){}
-  
-
 }
+
+
+
