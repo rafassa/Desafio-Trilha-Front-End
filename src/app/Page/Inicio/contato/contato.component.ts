@@ -10,9 +10,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class ContatoComponent {
 formContato = new FormGroup({
-  nome: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]),
-  sobrenome: new FormControl ('', [Validators.required, Validators.minLength(10), Validators.maxLength(50)]),
-  cpf: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]+$')]),
+  nome: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
+  sobrenome: new FormControl ('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
   email: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]),
   telefone:  new FormControl('',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^[0-9]+$')]),
   preferencia: new FormControl('', [Validators.required]),
@@ -25,9 +24,6 @@ get nome(){
   }
   get sobrenome(){
     return this.formContato.get('sobrenome')
-  }
-  get cpf(){
-    return this.formContato.get('cpf')
   }
   get email(){
     return this.formContato.get('email')
