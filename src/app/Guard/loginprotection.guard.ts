@@ -12,10 +12,7 @@ export const loginprotectionGuard: CanActivateFn = (route, state) => {
     router.navigateByUrl('login')
   }
 
-  if(checkboxMarcada === 'true'){
-    const urlAtiva = state.url
-    router.navigateByUrl(urlAtiva)
-  }
+ 
   return true;
 
 
