@@ -25,7 +25,7 @@ ngOnInit(){
   }
 
   if(this.checkboxVar == true){
-    this.router.navigateByUrl('/homeAdmin')
+    this.router.navigateByUrl('/login/homeAdmin')
   }
 }
   
