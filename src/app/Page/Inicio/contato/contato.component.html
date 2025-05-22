@@ -11,32 +11,32 @@
     <div class="">
       <h4 class="mb-3">Sobre você</h4>
 
-      <div class="mb-3">
+      <div class="mb-3 gap-1">
         <label for="nome" class="form-label">Nome</label>
         <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome" formControlName="nome">
         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="nome?.hasError('required')&&(nome?.dirty || nome?.touched) ">Nome invalido</span>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 gap-1">
         <label for="sobrenome" class="form-label">Sobrenome</label>
         <input class="form-control" required name="sobrenome" type="text" placeholder="Digite seu sobrenome" formControlName="sobrenome">
         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="sobrenome?.hasError('required')&&(sobrenome?.dirty || sobrenome?.touched) ">Sobrenome invalido</span>
       </div>
 
 
-      <div class="mb-3">
+      <div class="mb-3 gap-1">
         <label for="email" class="form-label">E-mail</label>
         <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL" formControlName="email">
         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="email?.hasError('required')&&(email?.dirty || email?.touched) ">Email Invalido</span>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 gap-1">
         <label for="telefone" class="form-label">Telefone</label>
         <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone" formControlName="telefone">
         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">Número invalido</span>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 gap-1">
         <label for="contato" class="form-label">Preferência de Contato</label>
         <select class="form-select" name="contato" id="opcao" formControlName="preferencia">
           <option value="" selected>Selecione uma opção</option>
@@ -58,7 +58,7 @@
         <label class="form-check-label" for="termoAceito">
           Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
         </label>
-         <span  class="alert alert-danger" role="alert"  *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">Nescessário</span>
+         <span  class="alert alert-danger" role="alert"  *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">*</span>
       </div>
 
       <div class="form-check mb-3">
