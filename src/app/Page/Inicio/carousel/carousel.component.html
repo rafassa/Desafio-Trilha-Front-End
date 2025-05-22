@@ -1,14 +1,17 @@
-<div class="carousel d-flex align-items-center justify-content-center">
-  <div class="controls">
-    <button class="custom-btn btn btn-primary" onclick="prevImage()">&#10094;</button>
+<div class="carousel d-flex w-100 align-items-center justify-content-center h-100 p-md-3 bg-light border rounded shadow-sm">
+  <div class="p-1">
+    <button class="btn btn-outline-primary btn-sm px-3 py-1" (click)="prevImage()">&#10094;</button>
   </div>
-  <div class="image-container">
-    <img src="{{ imagens[index].img }}" class="custom-img rounded border border-primary" alt="Carousel Image" id="imagens">
-    <a class="description-link" href="{{ imagens[index].link }}">
-      <p class="text-center">{{ imagens[index].descricao }}</p>
+
+  <div class="d-flex flex-column text-center w-75" id="imagensDiv">
+    <img [src]="imagens[index].img" class="img-fluid rounded shadow-sm mb-2" alt="Carousel Image" id="imagens">
+    
+    <a class="mt-2 fw-bold text-decoration-none text-dark" [href]="imagens[index].link">
+      <p class="mb-0 fs-6 lh-sm">{{ imagens[index].descricao }}</p>
     </a>
   </div>
-  <div class="controls">
-    <button class="custom-btn btn btn-primary" onclick="nextImage()">&#10095;</button>
+
+  <div class="p-1">
+    <button class="btn btn-outline-primary btn-sm px-3 py-1" (click)="nextImage()">&#10095;</button>
   </div>
 </div>
