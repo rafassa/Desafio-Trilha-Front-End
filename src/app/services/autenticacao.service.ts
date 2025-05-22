@@ -22,7 +22,7 @@ private autoLogin = false
 
 getApiInformation(apiInfo:Usuario[]){
 console.log(apiInfo)
-localStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
+sessionStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
 }
 
 removeStorage(){
