@@ -29,7 +29,7 @@ sessionStorage.setItem('apiUsuarios', JSON.stringify(apiInfo))
 
 removeStorage(){
 localStorage.clear();
-sessionStorage.clear()
+sessionStorage.clear();
 }
 
 postAPI(user:Usuario[]):Observable<Usuario[]>{
