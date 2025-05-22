@@ -29,7 +29,7 @@ export const routes: Routes = [
    {
     path:'login',
     component:LoginComponent,
-    children:[
+   },
          {
     path:'dashboard',
     component:DashboardComponent,
@@ -40,10 +40,6 @@ export const routes: Routes = [
     component:boasVindasComponent,
     canActivate:[loginprotectionGuard]
    },
-           
-    ]
-   },
-
    {
     path:'loja',
     component:LojaComponent,

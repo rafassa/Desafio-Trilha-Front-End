@@ -25,7 +25,7 @@ ngOnInit(){
   }
 
   if(this.checkboxVar == true){
-    this.router.navigateByUrl('/login/homeAdmin')
+    this.router.navigateByUrl('/homeAdmin')
   }
 }
   
@@ -34,7 +34,7 @@ ngOnInit(){
     console.log(user)
     this.service.postAPI(user).subscribe({
       next: (data:Usuario[]) =>{
-        this.router.navigateByUrl('/login/homeAdmin')
+        this.router.navigateByUrl('/homeAdmin')
         this.service.getApiInformation(data)
        this.service.pegarValorCheck(this.isChecked)
       },
