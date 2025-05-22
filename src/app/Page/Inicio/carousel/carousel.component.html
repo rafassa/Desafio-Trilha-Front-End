@@ -1,14 +1,14 @@
-<div class="carousel">
+<div class="carousel d-flex align-items-center justify-content-center">
   <div class="controls">
-    <button class="custom-btn" onclick="prevImage()">&#10094;</button>
+    <button class="custom-btn btn btn-primary" onclick="prevImage()">&#10094;</button>
   </div>
   <div class="image-container">
-    <img src="{{ imagens[index].img }}" class="custom-img" alt="Carousel Image" id="imagens">
+    <img src="{{ imagens[index].img }}" class="custom-img rounded border border-primary" alt="Carousel Image" id="imagens">
     <a class="description-link" href="{{ imagens[index].link }}">
-      <p>{{ imagens[index].descricao }}</p>
+      <p class="text-center">{{ imagens[index].descricao }}</p>
     </a>
   </div>
   <div class="controls">
-    <button class="custom-btn" onclick="nextImage()">&#10095;</button>
+    <button class="custom-btn btn btn-primary" onclick="nextImage()">&#10095;</button>
   </div>
 </div>
