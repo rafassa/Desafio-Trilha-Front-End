@@ -34,7 +34,7 @@ ngOnInit(){
     console.log(user)
     this.service.postAPI(user).subscribe({
       next: (data:Usuario[]) =>{
-        this.router.navigateByUrl('/homeAdmin')
+        this.router.navigateByUrl('/login/homeAdmin')
         this.service.getApiInformation(data)
        this.service.pegarValorCheck(this.isChecked)
       },
