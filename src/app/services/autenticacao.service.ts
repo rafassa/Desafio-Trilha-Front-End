@@ -36,7 +36,9 @@ postAPI(user:Usuario[]):Observable<Usuario[]>{
 
 
 pegarValorCheck(valorcheck:any, valorData:any){
+  const checkboxvalor = localStorage.getItem('valorcheck')
 localStorage.setItem('valorcheck', JSON.stringify(valorcheck))
+if(checkboxvalor)
 localStorage.setItem('valorData', JSON.stringify(valorData))
 }
 
