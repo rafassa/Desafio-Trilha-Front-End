@@ -31,6 +31,7 @@ removeStorage(){
 sessionStorage.removeItem('apiUsuarios')
 localStorage.removeItem('valorData')
 localStorage.removeItem('valorcheck')
+sessionStorage.removeItem('valorDataRapida')
 }
 
 postAPI(user:Usuario[]):Observable<Usuario[]>{
@@ -38,9 +39,7 @@ postAPI(user:Usuario[]):Observable<Usuario[]>{
   return this.http.post<Usuario[]>(apiUrl, user)
 }
 
-ngOnInit(){
- 
-}
+
 
 pegarValorCheck(valorcheck:any, valorData:any){
   
