@@ -1,43 +1,29 @@
-/* Botão Abrir Carrinho */
-.btn-warning {
-  background-color: #004A99 !important; 
-  color: white !important;
-  border: 2px solid #003366;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+.card {
+  background: linear-gradient(45deg, #007bff, #00509d); 
+  color: white; 
+  border: none;
 }
 
-.btn-warning:hover {
-  background-color: #003366 !important; 
-  transform: scale(1.05);
+
+.btn-success, .btn-warning {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  border: none;
+  color: white;
+}
+
+.btn-success:hover, .btn-warning:hover {
+  background: linear-gradient(45deg, #00509d, #440085); 
 }
 
 
 .offcanvas-header {
-  background: linear-gradient(45deg, #004A99, #003366); 
+  background: linear-gradient(45deg, #007bff, #6610f2);
 }
 
-
-.card-title i {
-  color: #004A99 !important;
-}
-
-.card-text {
-  text-align: justify;
-}
-
-
-.btn-success {
-  background-color: #004A99 !important; 
-  border: 2px solid #003366;
-  color: white !important;
-}
-
-.btn-success:hover {
-  background-color: #003366 !important; 
-  transform: scale(1.05);
-}
-
-
-.text-success {
-  color: #004A99 !important;
+.card-img-top {
+  height: 120px; 
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }

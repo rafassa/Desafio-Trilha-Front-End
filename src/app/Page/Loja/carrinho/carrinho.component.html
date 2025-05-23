@@ -17,7 +17,7 @@
       <div class="row">
         <div class="w-50 p-1" *ngFor="let produto of produtosSelecionados">
           <div class="card h-100 shadow-sm border-0 rounded-3">
-            <img [src]="produto.img" class="card-img-top rounded-top " alt="Imagem do produto">
+            <img [src]="produto.img" class="card-img-top fixed-img rounded-top" alt="Imagem do produto">
             <div class="card-body d-flex flex-column text-center">
               <h5 class="card-title text-dark">
                 <i class="bi bi-box-seam text-primary"></i> {{ produto.nome }}
