@@ -13,7 +13,7 @@
     </div>
     <div class="table-responsive">
         <table class="table table-bordered w-100 ">
-            <thead class="table text-dark bg-light rounded">
+            <thead class="table text-dark bg-light rounded-top">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Odômetro</th>
@@ -23,7 +23,7 @@
                     <th scope="col">Longitude</th>
                 </tr>
             </thead>
-            <tbody class="table-light text-dark rounded">
+            <tbody class="table-light text-dark rounded-bottom">
                 <tr *ngFor="let item of dataList">
                     <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
                     <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
