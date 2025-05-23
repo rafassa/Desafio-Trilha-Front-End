@@ -1,9 +1,10 @@
 #Card__Principal {
   width: 11rem;
-  border: 2px solid #004A99;
   border-radius: 10px;
   overflow: hidden;
   transition: none; 
+   background: linear-gradient(135deg, #f8f9fa, #e0eaff);
+    border: 2px solid #007bff;
 }
 
 #Card__Principal:hover {
@@ -15,14 +16,11 @@
   transition: none; 
 }
 
-#Card__Principal:hover .card-img-top {
-  transform: none; 
-}
 
 .card-body {
   background-color: #f8f9fa;
   padding: 20px;
-  border-top: 2px solid #004A99;
+  border: 2px solid #007bff;
 }
 
 .card-text i {
@@ -42,7 +40,7 @@
 }
 
 .text-success {
-  color: #004A99 !important; 
+  color: #009921 !important; 
 }
 
 
