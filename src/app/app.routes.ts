@@ -43,8 +43,8 @@ export const routes: Routes = [
    {
     path:'loja',
     component:LojaComponent,
-    children:[
-{
+   },
+   {
     path:'frete',
     component:FreteComponent,
    },
@@ -55,8 +55,6 @@ export const routes: Routes = [
    {
     path:'boleto',
     component:BoletoComponent
-   },
-    ]
    },
    {
     path:'lancamento',
