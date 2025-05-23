@@ -14,7 +14,7 @@
   <div class="offcanvas-body p-3">
     <div class="container-fluid">
       <div class="row">
-        <div class="w-50 p-1" *ngFor="let produto of produtosSelecionados">
+        <div  id="card-body" class="w-50 p-1" *ngFor="let produto of produtosSelecionados">
           <div class="card h-100 shadow-sm border-0 rounded-3 gradient-card d-flex flex-column">
             <img [src]="produto.img" class="card-img-top fixed-img rounded-top" alt="Imagem do produto">
             <div class="card-body flex-grow-1 d-flex flex-column justify-content-between text-center">

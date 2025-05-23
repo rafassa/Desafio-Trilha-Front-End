@@ -26,3 +26,13 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+
+
+
+#card-body{
+  background: linear-gradient(135deg, #f8f9fa, #e0eaff);
+    border: 2px solid #007bff;
+}
+
+
+

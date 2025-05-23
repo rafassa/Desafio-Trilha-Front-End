@@ -34,6 +34,11 @@ isInputSelected = false;
       this.valor = ValorInicio ? JSON.parse(ValorInicio): null
       console.log(this.valor)
 
+
+      if(this.valor == 0 || this.valor == null){
+
+      }
+
       this.service.getFrete().subscribe((mercados: Mercado[]) => {
         this.resultados = mercados.map(mercado => ({
           mercado: mercado.nome,
