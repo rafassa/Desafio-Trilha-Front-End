@@ -55,19 +55,21 @@
         </div>
 
 
-        <div class="mb-3 gap-1">
-          <label for="novaOpcao" class="form-label">Escolha uma categoria</label>
-          <select class="form-select" name="novaOpcao" id="novaOpcao" formControlName="novaOpcao">
-            <option value="" disabled >Selecione uma categoria</option>
-            <option value="Consulta">Consulta</option>
-            <option value="Sugestão">Sugestão</option>
-            <option value="Reclamação">Reclamação</option>
+           <div class="mb-3 gap-1">
+          <label for="contato" class="form-label">Motivos</label>
+          <select class="form-select" name="opcapo" id="opcao" formControlName="opcao">
+            <option value="" selected >Selecione uma opção</option>
+            <option value="Reclamacao">reclamação</option>
+            <option value="Elogio">elogio</option>
+            <option value="Duvida">dúvida</option>
           </select>
           <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
             *ngIf="opcao?.hasError('required')&&(opcao?.dirty || opcao?.touched) ">Nenhuma opção
             selecionada</span>
-
         </div>
+
+
+        
 
         <div class="mb-3 gap-1">
           <label for="comentario" class="form-label">Comentário</label>
