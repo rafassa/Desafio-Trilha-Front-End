@@ -1,100 +1,110 @@
-
-
-<div class="p-3 d-flex align-items-center justify-content-center"id="DivPrincipal">
-    <div class="w-100  d-flex align-items-center justify-content-center">
+<div class="p-3 d-flex align-items-center justify-content-center" id="DivPrincipal">
+  <div class="w-100  d-flex align-items-center justify-content-center">
     <div class="w-100 d-flex align-items-center justify-content-center">
       <img class="img-fluid rounded w-100" src="./xlsdiesel.png" alt="Imagem xls">
     </div>
-    </div>
-<form [formGroup]="formContato" class="container m-0 p-4 w-100 border rounded shadow">
-  <div class="row">
-    <div class="">
-      <h4 class="mb-3">Formulário para contato</h4>
-
-      <div class="mb-3 gap-1">
-        <label for="nome" class="form-label">Nome</label>
-        <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome" formControlName="nome">
-        <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="nome?.hasError('required')&&(nome?.dirty || nome?.touched) ">Nome invalido</span>
-      </div>
-
-      <div class="mb-3 gap-1">
-        <label for="sobrenome" class="form-label">Sobrenome</label>
-        <input class="form-control" required name="sobrenome" type="text" placeholder="Digite seu sobrenome" formControlName="sobrenome">
-        <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="sobrenome?.hasError('required')&&(sobrenome?.dirty || sobrenome?.touched) ">Sobrenome invalido</span>
-      </div>
-
-
-      <div class="mb-3 gap-1">
-        <label for="email" class="form-label">E-mail</label>
-        <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL" formControlName="email">
-        <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="email?.hasError('required')&&(email?.dirty || email?.touched) ">Email Invalido</span>
-      </div>
-
-      <div class="mb-3 gap-1">
-        <label for="telefone" class="form-label">Telefone</label>
-        <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone" formControlName="telefone">
-        <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">Número invalido</span>
-      </div>
-
-      <div class="mb-3 gap-1">
-        <label for="contato" class="form-label">Preferência de Contato</label>
-        <select class="form-select" name="contato" id="opcao" formControlName="preferencia">
-          <option value="" selected>Selecione uma opção</option>
-          <option value="Email">Email</option>
-          <option value="Telefone">Telefone</option>
-        </select>
-        <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="preferencia?.hasError('required')&&(preferencia?.dirty || preferencia?.touched) ">Nenhuma opção selecionada</span>
-      </div>
-
-
-       <div class="mb-3 gap-1">
-                    <label for="novaOpcao" class="form-label">Escolha uma categoria</label>
-                    <select class="form-select" name="novaOpcao" id="novaOpcao" formControlName="novaOpcao">
-                        <option value="" disabled selected>Selecione uma categoria</option>
-                        <option value="Consulta">Consulta</option>
-                        <option value="Sugestão">Sugestão</option>
-                        <option value="Reclamação">Reclamação</option>
-                    </select>
-                    <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-                        *ngIf="opcao?.hasError('required') && (opcao?.dirty || opcao?.touched)">
-                        Nenhuma categoria selecionada
-                    </span>
-                </div>
+  </div>
+  <form [formGroup]="formContato" class="container m-0 p-4 w-100 border rounded shadow">
+    <div class="row">
+      <div class="">
+        <h4 class="mb-3">Formulário para contato</h4>
 
         <div class="mb-3 gap-1">
-                    <label for="comentario" class="form-label">Comentário adicional</label>
-                    <textarea class="form-control" name="comentario" placeholder="Digite seu comentário"
-                        formControlName="comentario"></textarea>
-                    <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-                        *ngIf="comentario?.hasError('required') && (comentario?.dirty || comentario?.touched)">
-                        O campo não pode estar vazio
-                    </span>
-                </div>
+          <label for="nome" class="form-label">Nome</label>
+          <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome"
+            formControlName="nome">
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="nome?.hasError('required')&&(nome?.dirty || nome?.touched) ">Nome invalido</span>
+        </div>
 
-      <p class="small text-muted">
-        Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. 
-        <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
-      </p>
-     
+        <div class="mb-3 gap-1">
+          <label for="sobrenome" class="form-label">Sobrenome</label>
+          <input class="form-control" required name="sobrenome" type="text" placeholder="Digite seu sobrenome"
+            formControlName="sobrenome">
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="sobrenome?.hasError('required')&&(sobrenome?.dirty || sobrenome?.touched) ">Sobrenome invalido</span>
+        </div>
 
 
-      <div class="form-check mb-2">
-        <input class="form-check-input" id="termoAceito" type="checkbox" formControlName="termoAceito">
-        <label class="form-check-label" for="termoAceito">
-          Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
-        </label>
-         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">Nescessário</span>
+        <div class="mb-3 gap-1">
+          <label for="email" class="form-label">E-mail</label>
+          <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL"
+            formControlName="email">
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="email?.hasError('required')&&(email?.dirty || email?.touched) ">Email Invalido</span>
+        </div>
+
+        <div class="mb-3 gap-1">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone"
+            formControlName="telefone">
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">Número invalido</span>
+        </div>
+
+        <div class="mb-3 gap-1">
+          <label for="contato" class="form-label">Preferência de Contato</label>
+          <select class="form-select" name="contato" id="opcao" formControlName="preferencia">
+            <option value="" selected>Selecione uma opção</option>
+            <option value="Email">Email</option>
+            <option value="Telefone">Telefone</option>
+          </select>
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="preferencia?.hasError('required')&&(preferencia?.dirty || preferencia?.touched) ">Nenhuma opção
+            selecionada</span>
+        </div>
+
+
+        <div class="mb-3 gap-1">
+          <label for="novaOpcao" class="form-label">Escolha uma categoria</label>
+          <select class="form-select" name="novaOpcao" id="novaOpcao" formControlName="novaOpcao">
+            <option value="" disabled selected>Selecione uma categoria</option>
+            <option value="Consulta">Consulta</option>
+            <option value="Sugestão">Sugestão</option>
+            <option value="Reclamação">Reclamação</option>
+          </select>
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="opcao?.hasError('required')&&(opcao?.dirty || opcao?.touched) ">Nenhuma opção
+            selecionada</span>
+
+        </div>
+
+        <div class="mb-3 gap-1">
+          <label for="comentario" class="form-label">Comentário</label>
+          <textarea class="form-control" name="comentario" placeholder="Digite seu comentário"
+            formControlName="comentario"></textarea>
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="comentario?.hasError('required') && (comentario?.dirty || comentario?.touched)">
+            adicione um comentario
+          </span>
+        </div>
+
+        <p class="small text-muted">
+          Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será
+          possível editar ou remover tais dados.
+          <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
+        </p>
+
+
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" id="termoAceito" type="checkbox" formControlName="termoAceito">
+          <label class="form-check-label" for="termoAceito">
+            Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
+          </label>
+          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+            *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">Nescessário</span>
+        </div>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">
+            Sim, também quero receber descontos e novidades
+          </label>
+        </div>
+
+        <button id="botao" class="btn btn-primary w-100" type="submit" [disabled]="formContato.invalid">Enviar</button>
       </div>
-
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox">
-        <label class="form-check-label">
-          Sim, também quero receber descontos e novidades
-        </label>
-      </div>
-
-      <button id="botao" class="btn btn-primary w-100" type="submit" [disabled]="formContato.invalid">Enviar</button>
     </div>
-  </div>
-</form>
+  </form>
 </div>
