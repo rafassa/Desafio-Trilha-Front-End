@@ -16,12 +16,10 @@ export class BarraLateralComponent {
 
   
   name:Usuario | null=null
-
   ngOnInit():void{
-    const nomeUsuario = localStorage.getItem('apiUsuarios')
+    const nomeUsuario = sessionStorage.getItem('apiUsuarios')
     if(nomeUsuario){
-      this.name = JSON.parse(nomeUsuario)
-      
+      this.name = JSON.parse(nomeUsuario) 
     }
   }
 
