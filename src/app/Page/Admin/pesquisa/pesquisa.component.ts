@@ -14,7 +14,7 @@ import { BarraService } from '../../../services/barra.service';
 export class PesquisaComponent {
   service = inject(BarraService)
 pesquisaControl: FormControl = new FormControl("");
-dataList:Data[]| null=null
+dataList:Data[] = []
 mensagemDeErro: string | null=null
 
 constructor(){
@@ -24,7 +24,7 @@ constructor(){
     switchMap(search => this.service.PostSearch(search).pipe(
       catchError(()=>{
         this.mensagemDeErro = "VIN não encontrado";
-        this.dataList = null; 
+        this.dataList =[]; 
         return of(null);
       })
     ))
