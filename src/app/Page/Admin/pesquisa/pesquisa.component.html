@@ -9,9 +9,9 @@
   <div *ngIf="mensagemDeErro" class="p-2 w-25 alert alert-danger text-center border-warning">
     <p class="mb-0">{{ mensagemDeErro }}</p>
   </div>
-
+ac
   <div class="table-responsive">
-    <table class="table table-bordered rounded w-100 ">
+    <table class="table table-bordered w-100 ">
       <thead class="table text-dark bg-light">
         <tr>
           <th scope="col">ID</th>
@@ -22,16 +22,16 @@
           <th scope="col">Longitude</th>
         </tr>
       </thead>
-    <tbody class="table-light text-dark">
-  <tr *ngFor="let item of dataList">
-    <td>{{ item['id'] || '&nbsp;' }}</td>
-    <td>{{ item['odometro'] || '&nbsp;' }}</td>
-    <td>{{ item['nivelCombustivel'] || '&nbsp;' }}</td>
-    <td>{{ item['status'] || '&nbsp;' }}</td>
-    <td>{{ item['lat'] || '&nbsp;' }}</td>
-    <td>{{ item['long'] || '&nbsp;' }}</td>
-  </tr>
-</tbody>
+      <tbody class="table-light text-dark">
+        <tr *ngFor="let item of dataList">
+          <td>{{ item['id'] }}</td>
+          <td>{{ item['odometro'] }}</td>
+          <td>{{ item['nivelCombustivel'] }}</td>
+          <td>{{ item['status'] }}</td>
+          <td>{{ item['lat'] }}</td>
+          <td>{{ item['long'] }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
