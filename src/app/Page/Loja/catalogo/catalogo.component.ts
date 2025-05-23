@@ -44,4 +44,11 @@ console.log(produto)
  console.log("LocalStorage:", localStorage.getItem("produto"));
 }
 
+
+adicionarProduto(produto: any) {
+  produto.clicado = true;
+  setTimeout(() => {
+    produto.clicado = false; 
+  }, 500);
+}
 }
