@@ -5,8 +5,8 @@
 
 <div class="offcanvas offcanvas-end shadow-lg border-0 rounded-3" tabindex="-1" id="meuOffcanvas"
   aria-labelledby="meuOffcanvasLabel">
-  <div class="offcanvas-header text-white gradient-ford">
-    <h5 class="offcanvas-title fw-bold" id="meuOffcanvasLabel">
+  <div class="offcanvas-header gradient-ford">
+    <h5 class="offcanvas-title fw-bold text-white" id="meuOffcanvasLabel">
       <i class="bi bi-basket-fill"></i> Carrinho
     </h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -21,7 +21,7 @@
               <h5 class="card-title text-white small">
                 <i class="bi bi-box-seam"></i> {{ produto.nome }}
               </h5>
-              <p class="card-text text-light small">Quantidade: {{ produto.quantidade }}</p>
+              <p class="card-text text-dark small">Quantidade: {{ produto.quantidade }}</p>
               <div class="d-flex justify-content-between">
                 <button (click)="removerItem(produto)" class="btn btn-sm btn-danger border-0 rounded-pill">
                   <i class="bi bi-dash"></i>
@@ -36,12 +36,12 @@
       </div>
     </div>
     <div class="text-end border-top pt-3">
-      <h4 class="fw-bold text-white">Total:
+      <h4 class="fw-bold text-dark">Total:
         <span class="text-warning">{{ getTotal() | currency:'BRL' }}</span>
       </h4>
     </div>
-    <button (click)="levarTotal()" [disabled]="getTotal() <=0"
-      class="btn btn-lg btn-success w-100 shadow-sm fw-bold rounded-pill border-0">
+    <button (click)="levarTotal()" [disabled]="getTotal() <= 0"
+      class="btn btn-lg btn-success w-100 shadow-sm fw-bold text-white rounded-pill border-0">
       <i class="bi bi-cart-check-fill"></i> Comprar
     </button>
   </div>
