@@ -12,8 +12,8 @@
         <p class="mb-0">{{ mensagemDeErro }}</p>
     </div>
     <div class="table-responsive">
-        <table class="table table-bordered w-100 rounded">
-            <thead class="table text-dark bg-light">
+        <table class="table table-bordered w-100 ">
+            <thead class="table text-dark bg-light rounded">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Odômetro</th>
@@ -23,7 +23,7 @@
                     <th scope="col">Longitude</th>
                 </tr>
             </thead>
-            <tbody class="table-light text-dark">
+            <tbody class="table-light text-dark rounded">
                 <tr *ngFor="let item of dataList">
                     <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
                     <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
