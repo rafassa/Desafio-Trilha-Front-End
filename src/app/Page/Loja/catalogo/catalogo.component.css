@@ -20,7 +20,7 @@
 .card-body {
   background-color: #f8f9fa;
   padding: 20px;
-  border: 2px solid #007bff;
+
 }
 
 .card-text i {
@@ -40,7 +40,7 @@
 }
 
 .text-success {
-  color: #009921 !important; 
+  color: #007bff  !important;
 }
 
 
