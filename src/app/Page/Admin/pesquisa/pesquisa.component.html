@@ -1,48 +1,50 @@
-<div class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded bg-white">
+<div
+    class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded bg-white">
 
-  <div class="input-group w-100 d-flex justify-content-center">
-    <div class="w-75">
-      <input id="inputPesquisa" type="text" [formControl]="pesquisaControl" class="form-control font-center w-100 bg-light text-dark" placeholder="Pesquisa do código do veículo">
+    <div class="input-group w-100 d-flex justify-content-center">
+        <div class="w-75">
+            <input id="inputPesquisa" type="text" [formControl]="pesquisaControl"
+                class="form-control font-center w-100 bg-light text-dark" placeholder="Pesquisa do código do veículo">
+        </div>
     </div>
-  </div>
 
-  <div *ngIf="mensagemDeErro" class="p-2 w-25 alert alert-danger text-center border-warning">
-    <p class="mb-0">{{ mensagemDeErro }}</p>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-bordered w-100 ">
-      <thead class="table text-dark bg-light">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Odômetro</th>
-          <th scope="col">Nível Combustível</th>
-          <th scope="col">Status</th>
-          <th scope="col">Latitude</th>
-          <th scope="col">Longitude</th>
-        </tr>
-      </thead>
-      <tbody class="table-light text-dark">
-        <tr *ngFor="let item of dataList">
-          <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
-          <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
-          <td>{{ item['nivelCombustivel'] }}<span style="display: none;">placeholder</span></td>
-          <td>{{ item['status'] }}<span style="display: none;">placeholder</span></td>
-          <td>{{ item['lat'] }}<span style="display: none;">placeholder</span></td>
-          <td>{{ item['long'] }}<span style="display: none;">placeholder</span></td>
-        </tr>
-          <tr *ngIf="dataList.length === 0">
-    <td colspan="6" class="text-center">&nbsp;</td>
-    <td colspan="6" class="text-center">&nbsp;</td>
-    <td colspan="6" class="text-center">&nbsp;</td>
-    <td colspan="6" class="text-center">&nbsp;</td>
-    <td colspan="6" class="text-center">&nbsp;</td>
-    <td colspan="6" class="text-center">&nbsp</td>
-  </tr>
+    <div *ngIf="mensagemDeErro" class="p-2 w-25 alert alert-danger text-center border-warning">
+        <p class="mb-0">{{ mensagemDeErro }}</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered w-100 ">
+            <thead class="table text-dark bg-light">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Odômetro</th>
+                    <th scope="col">Nível Combustível</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                </tr>
+            </thead>
+            <tbody class="table-light text-dark">
+                <tr *ngFor="let item of dataList">
+                    <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
+                    <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
+                    <td>{{ item['nivelCombustivel'] }}<span style="display: none;">placeholder</span></td>
+                    <td>{{ item['status'] }}<span style="display: none;">placeholder</span></td>
+                    <td>{{ item['lat'] }}<span style="display: none;">placeholder</span></td>
+                    <td>{{ item['long'] }}<span style="display: none;">placeholder</span></td>
+                </tr>
+                <tr *ngIf="dataList.length === 0">
+                    <td class="text-center">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
+                </tr>
 
 
-    
-      </tbody>
-    </table>
-  </div>
+
+            </tbody>
+        </table>
+    </div>
 
 </div>
