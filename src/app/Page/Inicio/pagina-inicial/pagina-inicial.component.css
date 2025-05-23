@@ -1,3 +1,7 @@
 #textoPaginaInicial{
   text-align: justify;
 }
+
+:host{
+  height: 100%;
+}
