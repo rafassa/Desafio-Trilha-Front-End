@@ -1,31 +1,32 @@
 <div class="card card-raised card-carousel">
   <div id="customCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
     
-    <!-- Indicadores -->
-    <ol class="carousel-indicators">
-      <li *ngFor="let img of imagens; let i = index" [attr.data-bs-target]="'#customCarousel'" [attr.data-bs-slide-to]="i"
-        [class.active]="i === index"></li>
-    </ol>
+    <div class="carousel-indicators">
+      <span *ngFor="let img of imagens; let i = index" class="indicator-dot"
+        [class.active]="i === index"></span>
+    </div>
 
-    <!-- Imagens -->
     <div class="carousel-inner">
       <div *ngFor="let img of imagens; let i = index" class="carousel-item" [class.active]="i === index">
         <img class="d-block w-100 img-fluid rounded border border-primary shadow" [src]="img.img" alt="Carousel Image">
         <div class="carousel-caption d-none d-md-block">
           <h4>
-            <i class="bi bi-geo-alt-fill"></i> {{ img.descricao }}
+            <a [href]="img.link" class="text-white text-decoration-none">
+              <i class="bi bi-geo-alt-fill"></i> {{ img.descricao }}
+            </a>
           </h4>
         </div>
       </div>
     </div>
 
-    <!-- Botões de navegação -->
-    <button class="carousel-control-prev btn btn-outline-primary btn-sm px-3 py-1" (click)="prevImage()">
-      <i class="bi bi-arrow-left-circle-fill"></i>
-    </button>
-    
-    <button class="carousel-control-next btn btn-outline-primary btn-sm px-3 py-1" (click)="nextImage()">
-      <i class="bi bi-arrow-right-circle-fill"></i>
-    </button>
+   
+    <button class="carousel-control-prev btn btn-outline-primary btn-lg px-4 py-2" (click)="prevImage()">
+  <i class="bi bi-arrow-left-circle-fill fs-2"></i>
+</button>
+
+<button class="carousel-control-next btn btn-outline-primary btn-lg px-4 py-2" (click)="nextImage()">
+  <i class="bi bi-arrow-right-circle-fill fs-2"></i>
+</button>
+
   </div>
 </div>
