@@ -7,7 +7,7 @@
     <option value="3">Bronco Sport</option>
 </select>
 
-<div *ngIf="carros && carros[carSelect]" class="text-center d-flex flex-wrap">
+<div *ngIf="carros && carros[carSelect]" class="text-center d-flex flex-wrap gap-3">
     <div class="border rounded card-body bg-white text-dark">
         <h6 class="card-title mb-0">Veículo:</h6>
         <p class="card-text fs-6 mb-0">{{carros[carSelect].vehicle}}</p>
