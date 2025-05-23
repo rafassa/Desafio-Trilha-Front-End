@@ -9,7 +9,7 @@
 <form [formGroup]="formContato" class="container m-0 p-4 w-100 border rounded shadow">
   <div class="row">
     <div class="">
-      <h4 class="mb-3">Sobre você</h4>
+      <h4 class="mb-3">Formulário para contato</h4>
 
       <div class="mb-3 gap-1">
         <label for="nome" class="form-label">Nome</label>
@@ -45,6 +45,31 @@
         </select>
         <span  class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"  *ngIf="preferencia?.hasError('required')&&(preferencia?.dirty || preferencia?.touched) ">Nenhuma opção selecionada</span>
       </div>
+
+
+       <div class="mb-3 gap-1">
+                    <label for="novaOpcao" class="form-label">Escolha uma categoria</label>
+                    <select class="form-select" name="novaOpcao" id="novaOpcao" formControlName="novaOpcao">
+                        <option value="" disabled selected>Selecione uma categoria</option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Sugestão">Sugestão</option>
+                        <option value="Reclamação">Reclamação</option>
+                    </select>
+                    <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+                        *ngIf="opcao?.hasError('required') && (opcao?.dirty || opcao?.touched)">
+                        Nenhuma categoria selecionada
+                    </span>
+                </div>
+
+        <div class="mb-3 gap-1">
+                    <label for="comentario" class="form-label">Comentário adicional</label>
+                    <textarea class="form-control" name="comentario" placeholder="Digite seu comentário"
+                        formControlName="comentario"></textarea>
+                    <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
+                        *ngIf="comentario?.hasError('required') && (comentario?.dirty || comentario?.touched)">
+                        O campo não pode estar vazio
+                    </span>
+                </div>
 
       <p class="small text-muted">
         Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. 

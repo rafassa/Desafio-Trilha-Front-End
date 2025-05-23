@@ -15,6 +15,8 @@ formContato = new FormGroup({
   email: new FormControl('', [ Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]),
   telefone:  new FormControl('',[Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^[0-9]+$')]),
   preferencia: new FormControl('', [Validators.required]),
+  opcao: new FormControl('', [Validators.required]),
+  comentario: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(150)]),
   termoAceito: new FormControl(false, [Validators.requiredTrue])
 
 })
@@ -33,6 +35,12 @@ get nome(){
   }
   get preferencia(){
     return this.formContato.get('preferencia')
+  }
+  get opcao(){
+    return this.formContato.get('opcao')
+  }
+  get comentario(){
+    return this.formContato.get('comentario')
   }
    get termoAceito(){
  return this.formContato.get('termoAceito')
