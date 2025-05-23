@@ -15,7 +15,12 @@ export class PagamentoComponent {
 
   service = inject(BoletoInfoService)
   router = inject(Router)
-
+constructor(){
+  const valorComFreteVer = localStorage.getItem('valorTransferencia')
+  if(valorComFreteVer == null){
+    this.router.navigateByUrl('/loja')
+  }
+}
   
   
   form = new FormGroup({
