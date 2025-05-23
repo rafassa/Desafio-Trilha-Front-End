@@ -9,7 +9,6 @@
   <div *ngIf="mensagemDeErro" class="p-2 w-25 alert alert-danger text-center border-warning">
     <p class="mb-0">{{ mensagemDeErro }}</p>
   </div>
-ac
   <div class="table-responsive">
     <table class="table table-bordered w-100 ">
       <thead class="table text-dark bg-light">
@@ -30,6 +29,16 @@ ac
           <td>{{ item['status'] }}</td>
           <td>{{ item['lat'] }}</td>
           <td>{{ item['long'] }}</td>
+        </tr>
+
+
+        <tr *ngFor="let i of [1,2,3,4,5]">
+          <td><span style="display: none;">placeholder</span></td>
+          <td><span style="display: none;">placeholder</span></td>
+          <td><span style="display: none;">placeholder</span></td>
+          <td><span style="display: none;">placeholder</span></td>
+          <td><span style="display: none;">placeholder</span></td>
+          <td><span style="display: none;">placeholder</span></td>
         </tr>
       </tbody>
     </table>
