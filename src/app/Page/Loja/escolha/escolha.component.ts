@@ -36,7 +36,7 @@ isInputSelected = false;
 
 
       if(this.valor == 0 || this.valor == null){
-
+        this.router.navigateByUrl('/loja')
       }
 
       this.service.getFrete().subscribe((mercados: Mercado[]) => {
