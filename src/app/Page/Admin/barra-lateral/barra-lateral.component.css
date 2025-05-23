@@ -17,3 +17,9 @@ a{
 .btn-custom:hover {
     background-color: #001a48; 
 }
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
