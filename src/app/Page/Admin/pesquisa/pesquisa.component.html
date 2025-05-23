@@ -1,5 +1,4 @@
-<div class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded ">
-
+<div class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded">
     <div class="input-group w-100 d-flex justify-content-center">
         <div class="w-75">
             <input id="inputPesquisa" type="text" [formControl]="pesquisaControl"
@@ -10,40 +9,32 @@
     <div *ngIf="mensagemDeErro" class="p-2 w-25 alert alert-danger text-center border-warning">
         <p class="mb-0">{{ mensagemDeErro }}</p>
     </div>
-    <div class="table-responsive">
-  <table class="table table-bordered table-sm w-100">
-            <thead class="table text-dark bg-light rounded-top">
+
+    <div class="table-responsive w-100">
+        <table class="table table-bordered table-sm">
+            <thead class="table text-dark bg-light">
                 <tr>
-                    <th class="rounded-top" scope="col">ID</th>
-                    <th class="rounded-top" scope="col">Odômetro</th>
-                    <th class="rounded-top" scope="col">Nível Combustível</th>
-                    <th class="rounded-top" scope="col">Status</th>
-                    <th class="rounded-top" scope="col">Latitude</th>
-                    <th class="rounded-top" scope="col">Longitude</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Odômetro</th>
+                    <th scope="col">Nível Combustível</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
                 </tr>
             </thead>
-            <tbody class="table-light text-dark rounded-bottom">
+            <tbody class="table-light text-dark">
                 <tr *ngFor="let item of dataList">
-                    <td class="rounded-bottom">{{ item['id'] }}</td>
-                    <td class="rounded-bottom">{{ item['odometro'] }}</td>
-                    <td class="rounded-bottom">{{ item['nivelCombustivel'] }}</td>
-                    <td class="rounded-bottom">{{ item['status'] }}</td>
-                    <td class="rounded-bottom">{{ item['lat'] }}</td>
-                    <td class="rounded-bottom">{{ item['long'] }}></td>
+                    <td>{{ item['id'] }}</td>
+                    <td>{{ item['odometro'] }}</td>
+                    <td>{{ item['nivelCombustivel'] }}</td>
+                    <td>{{ item['status'] }}</td>
+                    <td>{{ item['lat'] }}</td>
+                    <td>{{ item['long'] }}</td>
                 </tr>
                 <tr *ngIf="dataList.length === 0">
-                    <td class="rounded-botto text-center">&nbsp;</td>
-                    <td class="text-center">&nbsp;</td>
-                    <td class="text-center">&nbsp;</td>
-                    <td class="text-center">&nbsp;</td>
-                    <td class="text-center">&nbsp;</td>
-                    <td class="text-center">&nbsp;</td>
+                    <td colspan="6" class="text-center">Nenhum dado encontrado</td>
                 </tr>
-
-
-
             </tbody>
         </table>
     </div>
-
 </div>
