@@ -1,5 +1,4 @@
-<div
-    class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded ">
+<div class="container w-100 d-flex flex-column align-items-center gap-2 text-dark p-3 justify-content-center rounded ">
 
     <div class="input-group w-100 d-flex justify-content-center">
         <div class="w-75">
@@ -15,25 +14,25 @@
         <table class="table table-bordered w-100 ">
             <thead class="table text-dark bg-light rounded-top">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Odômetro</th>
-                    <th scope="col">Nível Combustível</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Latitude</th>
-                    <th scope="col">Longitude</th>
+                    <th class="rounded-top" scope="col">ID</th>
+                    <th class="rounded-top" scope="col">Odômetro</th>
+                    <th class="rounded-top" scope="col">Nível Combustível</th>
+                    <th class="rounded-top" scope="col">Status</th>
+                    <th class="rounded-top" scope="col">Latitude</th>
+                    <th class="rounded-top" scope="col">Longitude</th>
                 </tr>
             </thead>
             <tbody class="table-light text-dark rounded-bottom">
                 <tr *ngFor="let item of dataList">
-                    <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
-                    <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
-                    <td>{{ item['nivelCombustivel'] }}<span style="display: none;">placeholder</span></td>
-                    <td>{{ item['status'] }}<span style="display: none;">placeholder</span></td>
-                    <td>{{ item['lat'] }}<span style="display: none;">placeholder</span></td>
-                    <td>{{ item['long'] }}<span style="display: none;">placeholder</span></td>
+                    <td class="rounded-bottom">{{ item['id'] }}</td>
+                    <td class="rounded-bottom">{{ item['odometro'] }}</td>
+                    <td class="rounded-bottom">{{ item['nivelCombustivel'] }}</td>
+                    <td class="rounded-bottom">{{ item['status'] }}</td>
+                    <td class="rounded-bottom">{{ item['lat'] }}</td>
+                    <td class="rounded-bottom">{{ item['long'] }}></td>
                 </tr>
                 <tr *ngIf="dataList.length === 0">
-                    <td class="text-center">&nbsp;</td>
+                    <td class="rounded-botto text-center">&nbsp;</td>
                     <td class="text-center">&nbsp;</td>
                     <td class="text-center">&nbsp;</td>
                     <td class="text-center">&nbsp;</td>
