@@ -7,9 +7,9 @@ export class BoletoInfoService {
 
   constructor() { }
 
-  pegaInfoBoleto(info:any){
-    localStorage.setItem('boletoValor', JSON.stringify(info))
-    console.log(info)
+  pegaInfoBoleto(info:any, valor:any){
+    localStorage.setItem('boletoValor', JSON.stringify(info));
+    localStorage.setItem('valorBoleto', JSON.stringify(valor));
   }
 
 

@@ -76,9 +76,11 @@ export class PagamentoComponent {
   
 
 pagar(){
-  
-  this.service.pegaInfoBoleto(this.form.value)
-  localStorage.removeItem("produto"); // Remove os produtos antigos
+  const valorComFrete = localStorage.getItem('valorTransferencia')
+  this.service.pegaInfoBoleto(this.form.value, valorComFrete)
+  localStorage.removeItem("produto");
+  localStorage.removeItem("valor");
+  localStorage.removeItem("valorTransferencia"); 
   this.router.navigate(['/boleto'])
 }
 
