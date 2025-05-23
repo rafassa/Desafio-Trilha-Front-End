@@ -23,18 +23,16 @@
       </thead>
       <tbody class="table-light text-dark">
         <tr *ngFor="let item of dataList">
-          <td>{{ item['id'] }}</td>
-          <td>{{ item['odometro'] }}</td>
-          <td>{{ item['nivelCombustivel'] }}</td>
-          <td>{{ item['status'] }}</td>
-          <td>{{ item['lat'] }}</td>
-          <td>{{ item['long'] }}</td>
+          <td>{{ item['id'] }}<span style="display: none;">placeholder</span></td>
+          <td>{{ item['odometro'] }}<span style="display: none;">placeholder</span></td>
+          <td>{{ item['nivelCombustivel'] }}<span style="display: none;">placeholder</span></td>
+          <td>{{ item['status'] }}<span style="display: none;">placeholder</span></td>
+          <td>{{ item['lat'] }}<span style="display: none;">placeholder</span></td>
+          <td>{{ item['long'] }}<span style="display: none;">placeholder</span></td>
         </tr>
 
 
-        <tr *ngFor="let i of [1,2,3,4,5]">
-          <td><span style="display: none;">placeholder</span></td>
-        </tr>
+    
       </tbody>
     </table>
   </div>
