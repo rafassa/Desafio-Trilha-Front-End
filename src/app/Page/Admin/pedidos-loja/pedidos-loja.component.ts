@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pedidos-loja',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css'
 })
