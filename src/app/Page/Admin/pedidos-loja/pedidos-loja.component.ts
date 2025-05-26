@@ -13,7 +13,11 @@ export class PedidosLojaComponent {
 produtoLista: Produto[]=[]
 valorLista:number = 0
 ngOnInit(){
- const produtos = localStorage.getItem('produtoLista')
+
+}
+
+click(){
+  const produtos = localStorage.getItem('produtoLista')
   if(produtos){
     this.produtoLista =  produtos ? JSON.parse(produtos) : [];
   }
