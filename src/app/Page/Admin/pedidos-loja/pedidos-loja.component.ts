@@ -19,7 +19,7 @@ ngOnInit(){
 }
 
 click(){
-  const produtos = localStorage.getItem('produtoLista')
+  const produtos = localStorage.getItem('itemLista')
   if(produtos){
     this.produtoLista =  produtos ? JSON.parse(produtos) : [];
   }
