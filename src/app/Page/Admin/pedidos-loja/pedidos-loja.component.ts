@@ -10,13 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class PedidosLojaComponent {
 
-produtoLista: Produto[]=[]
+produtoLista: Produto[] |null=null
 valorLista:number = 0
 ngOnInit(){
-
-}
-
-click(){
   const produtos = localStorage.getItem('produtoLista')
   if(produtos){
     this.produtoLista =  produtos ? JSON.parse(produtos) : [];
@@ -25,5 +21,9 @@ click(){
   if(valores){
     this.valorLista = JSON.parse(valores)
   }
+}
+
+click(){
+  
 }
 }
