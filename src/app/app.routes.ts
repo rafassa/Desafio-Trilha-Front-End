@@ -11,6 +11,7 @@ import { LancamentoComponent } from './Page/Inicio/lancamento/lancamento.compone
 import { ContatoComponent } from './Page/Inicio/contato/contato.component';
 import { loginprotectionGuard } from './Guard/loginprotection.guard';
 import { PedidosLojaComponent } from './Page/Admin/pedidos-loja/pedidos-loja.component';
+import { PedidosContatoComponent } from './Page/Admin/pedidos-contato/pedidos-contato.component';
 
 
 
@@ -68,6 +69,10 @@ export const routes: Routes = [
    {
     path:'listaLoja',
     component:PedidosLojaComponent
+   },
+   {
+    path:'listaContato',
+    component:PedidosContatoComponent
    }
 
 ];
