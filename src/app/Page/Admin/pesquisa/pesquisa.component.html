@@ -14,22 +14,22 @@
         <table class="table table-bordered table-sm">
             <thead class="table text-dark bg-light">
                 <tr class="rounded">
-                    <th scope="col">ID</th>
-                    <th scope="col">Odômetro</th>
-                    <th scope="col">Nível Combustível</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Latitude</th>
-                    <th scope="col">Longitude</th>
+                    <th class="rounded" scope="col">ID</th>
+                    <th class="rounded" scope="col">Odômetro</th>
+                    <th class="rounded" scope="col">Nível Combustível</th>
+                    <th class="rounded" scope="col">Status</th>
+                    <th class="rounded" scope="col">Latitude</th>
+                    <th class="rounded"  scope="col">Longitude</th>
                 </tr>
             </thead>
             <tbody class="table-light text-dark">
                 <tr *ngFor="let item of dataList" class="rounded">
-                    <td>{{ item['id'] }}</td>
-                    <td>{{ item['odometro'] }}</td>
-                    <td>{{ item['nivelCombustivel'] }}</td>
-                    <td>{{ item['status'] }}</td>
-                    <td>{{ item['lat'] }}</td>
-                    <td>{{ item['long'] }}</td>
+                    <td class="rounded">{{ item['id'] }}</td>
+                    <td class="rounded">{{ item['odometro'] }}</td>
+                    <td class="rounded">{{ item['nivelCombustivel'] }}</td>
+                    <td class="rounded">{{ item['status'] }}</td>
+                    <td class="rounded">{{ item['lat'] }}</td>
+                    <td class="rounded">{{ item['long'] }}</td>
                 </tr>
                 <tr *ngIf="dataList.length === 0">
                     <td colspan="6" class="text-center">Nenhum dado encontrado</td>
