@@ -50,8 +50,10 @@ ngOnInit(produto:Produto){
     produto.quantidade++
     this.pegarValor
   }
-  pegarValor(valor:number){
+  pegarValor(valor:number, itens:Produto[]){
     localStorage.setItem('valor', JSON.stringify(valor))
+    localStorage.setItem('valorLista', JSON.stringify(valor))
+    localStorage.setItem('itemLista', JSON.stringify(itens))
   }
 
   }

@@ -70,8 +70,8 @@ apagarItem(produto: Produto) {
   }
 
   levarTotal(){
-    console.log(this.produtosSelecionados)
-this.service.pegarValor(this.getTotal())
+    console.log()
+this.service.pegarValor(this.getTotal(), this.produtosSelecionados)
 this.router.navigate(['/frete'])
   }
 }
