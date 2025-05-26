@@ -13,9 +13,17 @@ export class PedidosLojaComponent {
 produtoLista: Produto[] |null=null
 valorLista:number = 0
 ngOnInit(){
-  
+  const produtos = localStorage.getItem('itemLista')
+  if(produtos){
+    this.produtoLista =  produtos ? JSON.parse(produtos) : [];
+  }
+  const valores = localStorage.getItem('valorLista')
+  if(valores){
+    this.valorLista = JSON.parse(valores)
+  }
 
-  
+  console.log(this.produtoLista)
+  console.log(this.valorLista)
 }
 
 click(){
