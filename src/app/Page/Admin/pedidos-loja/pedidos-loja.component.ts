@@ -13,7 +13,9 @@ export class PedidosLojaComponent {
 produtoLista: Produto[] |null=null
 valorLista:number = 0
 ngOnInit(){
+  
 
+  
 }
 
 click(){
@@ -25,5 +27,8 @@ click(){
   if(valores){
     this.valorLista = JSON.parse(valores)
   }
+
+  console.log(this.produtoLista)
+  console.log(this.valorLista)
 }
 }
