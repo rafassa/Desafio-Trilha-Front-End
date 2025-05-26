@@ -51,6 +51,17 @@ export class CarrinhoComponent {
 }
 
 
+apagarItem(produto: Produto) {
+  const index = this.produtosSelecionados.findIndex(p => p.nome === produto.nome);
+
+  if (index !== -1) {
+    this.produtosSelecionados.splice(index, 1);
+  } 
+  localStorage.setItem("produto", JSON.stringify(this.produtosSelecionados));
+}
+
+
+
 
   getTotal(): number {
     return this.produtosSelecionados.reduce((total, item) => {
@@ -59,6 +70,7 @@ export class CarrinhoComponent {
   }
 
   levarTotal(){
+    console.log(this.produtosSelecionados)
 this.service.pegarValor(this.getTotal())
 this.router.navigate(['/frete'])
   }

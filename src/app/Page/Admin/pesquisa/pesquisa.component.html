@@ -14,22 +14,22 @@
         <table class="table table-bordered table-sm rounded overflow-hidden">
             <thead class="table text-dark bg-light">
                 <tr>
-                    <th class="border rounded-3" scope="col">ID</th>
-                    <th class="border rounded-3" scope="col">Odômetro</th>
-                    <th class="border rounded-3" scope="col">Nível Combustível</th>
-                    <th class="border rounded-3" scope="col">Status</th>
-                    <th class="border rounded-3" scope="col">Latitude</th>
-                    <th class="border rounded-3" scope="col">Longitude</th>
+                    <th class="border rounded" scope="col">ID</th>
+                    <th class="border rounded" scope="col">Odômetro</th>
+                    <th class="border rounded" scope="col">Nível Combustível</th>
+                    <th class="border rounded" scope="col">Status</th>
+                    <th class="border rounded" scope="col">Latitude</th>
+                    <th class="border rounded" scope="col">Longitude</th>
                 </tr>
             </thead>
             <tbody class="table-light text-dark">
                 <tr *ngFor="let item of dataList">
-                    <td class="border rounded-3">{{ item['id'] }}</td>
-                    <td class="border rounded-3">{{ item['odometro'] }}</td>
-                    <td class="border rounded-3">{{ item['nivelCombustivel'] }}</td>
-                    <td class="border rounded-3">{{ item['status'] }}</td>
-                    <td class="border rounded-3">{{ item['lat'] }}</td>
-                    <td class="border rounded-3">{{ item['long'] }}</td>
+                    <td class="border rounded">{{ item['id'] }}</td>
+                    <td class="border rounded">{{ item['odometro'] }}</td>
+                    <td class="border rounded">{{ item['nivelCombustivel'] }}</td>
+                    <td class="border rounded">{{ item['status'] }}</td>
+                    <td class="border rounded">{{ item['lat'] }}</td>
+                    <td class="border rounded">{{ item['long'] }}</td>
                 </tr>
                 <tr *ngIf="dataList.length === 0">
                     <td colspan="6" class="text-center">Nenhum dado encontrado</td>

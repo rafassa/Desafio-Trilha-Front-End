@@ -45,10 +45,4 @@ console.log(produto)
 }
 
 
-adicionarProduto(produto: any) {
-  produto.clicado = true;
-  setTimeout(() => {
-    produto.clicado = false; 
-  }, 500);
-}
 }
