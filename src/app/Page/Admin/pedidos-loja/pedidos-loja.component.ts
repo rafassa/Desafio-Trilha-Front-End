@@ -57,7 +57,7 @@ click(){
 
 
 limparPedidos() {
-  localStorage.removeItem('pedidos'); // Remove do localStorage
-  this.pedidos = []; // Esvazia o array de pedidos na memória
+  localStorage.removeItem('pedidos');
+  this.pedidos = []; 
 }
 }
