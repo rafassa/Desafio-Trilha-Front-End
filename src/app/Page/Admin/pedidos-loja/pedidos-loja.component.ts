@@ -20,8 +20,16 @@ ngOnInit() {
   const pedidosSalvos = localStorage.getItem('pedidos');
   this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
 
-  console.log("Pedidos carregados:", this.pedidos); 
+  // **Converte os produtos para um array válido**
+  this.pedidos.forEach((pedido) => {
+    if (typeof pedido.produtos === 'string') {
+      pedido.produtos = JSON.parse(pedido.produtos);
+    }
+  });
+
+  console.log("Pedidos carregados corretamente:", this.pedidos);
 }
+
 
 
 
