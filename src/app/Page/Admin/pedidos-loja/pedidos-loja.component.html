@@ -1,3 +1,8 @@
+
+<div class="d-flex">
+    <app-barra-lateral class="p-1"></app-barra-lateral>
+</div>
+
 <div *ngFor="let produto of produtoLista">
     <p>{{produto.nome}}</p>
     <p>{{produto.preco}}</p>
@@ -6,4 +11,4 @@
 </div>
 
 
-<button (click)="click()">clique para atualizar</button>
+<button (click)="click()"><i class="bi bi-arrow-clockwise"></i></button>

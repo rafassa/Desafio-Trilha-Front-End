@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
+import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
 
 @Component({
   selector: 'app-pedidos-loja',
-  imports: [CommonModule],
+  imports: [CommonModule, BarraLateralComponent],
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css'
 })
