@@ -41,7 +41,7 @@ click(){
 
  if(this.produtoLista){
   const pedido ={
-    produtos:[...this.produtoLista],
+    produtos:this.produtoLista,
     valor:this.valorLista,
     nome:this.nomeLista
   }
