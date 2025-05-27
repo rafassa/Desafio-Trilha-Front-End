@@ -3,10 +3,12 @@
     <h3>Pedido {{ i + 1 }}</h3>
     <p><strong>Valor total:</strong> R$ {{ pedido.valor }}</p>
     <p><strong>Nome do pedido:</strong> {{ pedido.nome }}</p>
-    <div *ngFor="let produto of produtoLista">
+    <div *ngFor="let produto of pedido.produtos">
         <p><strong>Nome:</strong> {{ produto.nome }}</p>
         <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
         <p><strong>Quantidade:</strong> {{ produto.quantidade }}</p>
     </div>
     <hr>
 </div>
+<button (click)="ngOnInit()">Atualizar pedidos</button>
+

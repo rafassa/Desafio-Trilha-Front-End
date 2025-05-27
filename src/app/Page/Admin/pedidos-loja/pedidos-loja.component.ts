@@ -16,12 +16,35 @@ valorLista:number = 0
 nomeLista:string = ''
 pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
-ngOnInit(){
- 
+ngOnInit() {
+  // Recupera os pedidos salvos no localStorage
   const pedidosSalvos = localStorage.getItem('pedidos');
   this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
-  this.click()
+
+  // Recupera os dados do novo pedido
+  const produtos = localStorage.getItem('itemLista');
+  const valores = localStorage.getItem('valorLista');
+  const nome = localStorage.getItem('nomePedido');
+
+  if (produtos && valores && nome) {
+    const pedidoNovo = {
+      produtos: JSON.parse(produtos),
+      valor: JSON.parse(valores),
+      nome: JSON.parse(nome),
+    };
+
+    // Verifica se o pedido já existe na lista antes de adicionar
+    const pedidoExiste = this.pedidos.some(
+      (p) => JSON.stringify(p) === JSON.stringify(pedidoNovo)
+    );
+
+    if (!pedidoExiste) {
+      this.pedidos.push(pedidoNovo);
+      localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
+    }
+  }
 }
+
 
 click(){
   const produtos = localStorage.getItem('itemLista')
