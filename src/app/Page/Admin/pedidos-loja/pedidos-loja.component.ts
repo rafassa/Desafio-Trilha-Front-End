@@ -20,7 +20,7 @@ ngOnInit(){
  
   const pedidosSalvos = localStorage.getItem('pedidos');
   this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
-
+  this.click()
 }
 
 click(){
