@@ -3,7 +3,7 @@
 <div *ngFor="let pedido of pedidos; let i = index">
     <h3>Pedido {{ i + 1 }}</h3>
     <p><strong>Valor total:</strong> R$ {{ pedido.valor }}</p>
-
+    <p><strong>Nome pedido:</strong> R$ {{ pedido.nome }}</p>
     <div *ngFor="let produto of pedido.produtos">
         <p><strong>Nome:</strong> {{ produto.nome }}</p>
         <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
@@ -13,5 +13,3 @@
     <hr>
 </div>
 
-
-<button (click)="click()">clique para atualizar</button>

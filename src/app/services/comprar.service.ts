@@ -52,8 +52,7 @@ ngOnInit(produto:Produto){
   }
   pegarValor(valor:number, itens:Produto[]){
     localStorage.setItem('valor', JSON.stringify(valor))
-    localStorage.setItem('valorLista', JSON.stringify(valor))
-    localStorage.setItem('itemLista', JSON.stringify(itens))
+    localStorage.setItem('produtoLista', JSON.stringify(itens))
   }
 
   }

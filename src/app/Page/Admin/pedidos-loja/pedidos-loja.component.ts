@@ -13,7 +13,8 @@ export class PedidosLojaComponent {
 
 produtoLista: Produto[] |null=null
 valorLista:number = 0
-pedidos:{produtos:Produto[], valor:number}[]=[]
+nomeLista:string = ''
+pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit(){
  
@@ -32,12 +33,19 @@ click(){
     this.valorLista = JSON.parse(valores)
   }
 
+
+  const nome = localStorage.getItem('nomePedido')
+  if(nome){
+    this.nomeLista = JSON.parse(nome)
+  }
+
  if(this.produtoLista){
   const pedido ={
     produtos:[...this.produtoLista],
-    valor:this.valorLista
+    valor:this.valorLista,
+    nome:this.nomeLista
   }
-  this.pedidos.push(pedido)
+  this.pedidos = [...this.pedidos, pedido]
  }
 
 

@@ -82,10 +82,15 @@ constructor(){
 
 pagar(){
   const valorComFrete = localStorage.getItem('valorTransferencia')
+  const valorLista = localStorage.getItem('valoresLista')
+  const itemLista = localStorage.getItem('produtoLista')
   this.service.pegaInfoBoleto(this.form.value, valorComFrete)
   localStorage.removeItem("produto");
   localStorage.removeItem("valor");
   localStorage.removeItem("valorTransferencia"); 
+  localStorage.setItem('valorLista', JSON.stringify(valorLista))
+  localStorage.setItem('itemLista', JSON.stringify(itemLista))
+  localStorage.setItem('nomePedido', JSON.stringify(this.nome?.value))
   this.router.navigate(['/boleto'])
 }
 
