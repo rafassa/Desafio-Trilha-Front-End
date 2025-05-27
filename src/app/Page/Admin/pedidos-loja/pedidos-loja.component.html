@@ -1,15 +1,9 @@
-<app-barra-lateral></app-barra-lateral>
-
-
-<div *ngFor="let pedido of pedidosLista">
-    <h3>Pedido {{pedido.numero}}</h3>
-    <div *ngFor="let produto of pedido.produtos">
-        <p><strong>Nome:</strong> {{produto.nome}}</p>
-        <p><strong>Preço:</strong> R$ {{produto.preco}}</p>
-        <p><strong>Quantidade:</strong> {{produto.quantidade}}</p>
-    </div>
+<div *ngFor="let produto of produtoLista">
+    <p>{{produto.nome}}</p>
+    <p>{{produto.preco}}</p>
+    <p>{{produto.quantidade}}</p>
+   
 </div>
-
 
 
 <button (click)="click()">clique para atualizar</button>
