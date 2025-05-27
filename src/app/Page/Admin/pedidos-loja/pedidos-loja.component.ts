@@ -13,7 +13,7 @@ export class PedidosLojaComponent {
 
 produtoLista: Produto[] |null=null
 valorLista:number = 0
-pedidos:any
+pedidos:{produtos:Produto[], valor:number}[]=[]
 
 ngOnInit(){
  
