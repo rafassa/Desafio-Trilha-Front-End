@@ -13,6 +13,9 @@ export class PedidosLojaComponent {
 
 produtoLista: Produto[] |null=null
 valorLista:number = 0
+
+pedidosLista:any
+
 ngOnInit(){
   const produtos = localStorage.getItem('itemLista')
   if(produtos){
@@ -23,8 +26,15 @@ ngOnInit(){
     this.valorLista = JSON.parse(valores)
   }
 
-  console.log(this.produtoLista)
-  console.log(this.valorLista)
+
+  const pedidosMap = new Map<number, any>()
+this.produtoLista?.forEach((produto, index) =>{
+ 
+pedidosMap.set(index +1, {numero:index + 1, produtos:[produto]})
+})
+
+this.pedidosLista = Array.from(pedidosMap.values())
+
 }
 
 click(){
