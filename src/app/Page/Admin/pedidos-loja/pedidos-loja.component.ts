@@ -18,8 +18,8 @@ pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit(){
  
-
-  this.click()
+  const pedidosSalvos = localStorage.getItem('pedidos');
+  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
 
 }
 
@@ -45,7 +45,8 @@ click(){
     valor:this.valorLista,
     nome:this.nomeLista
   }
-  this.pedidos = [...this.pedidos, pedido]
+  this.pedidos.push(pedido)
+  localStorage.setItem('pedidos', JSON.stringify(this.pedidos))
  }
 
 
