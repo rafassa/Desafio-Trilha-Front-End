@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
+import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
 
 @Component({
   selector: 'app-pedidos-loja',
-  imports: [CommonModule],
+  imports: [CommonModule, BarraLateralComponent],
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css'
 })
@@ -12,26 +13,12 @@ export class PedidosLojaComponent {
 
 produtoLista: Produto[] |null=null
 valorLista:number = 0
-pedidoLista:any
+pedidos:any
+
 ngOnInit(){
-  const produtos = localStorage.getItem('itemLista')
-  if(produtos){
-    this.produtoLista =  produtos ? JSON.parse(produtos) : [];
-  }
-  const valores = localStorage.getItem('valorLista')
-  if(valores){
-    this.valorLista = JSON.parse(valores)
-  }
+ 
 
-
-  const pedidosMap = new Map<number, any>();
-
-
-  this.produtoLista?.forEach((produto , index)=>{
-    pedidosMap.set(index+1, {numero:index +1, produtos:[produto]})
-  })
-
-  this.pedidoLista = Array.from(pedidosMap.values())
+  this.click()
 
 }
 
@@ -45,7 +32,15 @@ click(){
     this.valorLista = JSON.parse(valores)
   }
 
-  console.log(this.produtoLista)
-  console.log(this.valorLista)
+ if(this.produtoLista){
+  const pedido ={
+    produtos:[...this.produtoLista],
+    valor:this.valorLista
+  }
+  this.pedidos.push(pedido)
+ }
+
+
+  
 }
 }
