@@ -17,17 +17,7 @@ nomeLista:string = ''
 pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit() {
-  const pedidosSalvos = localStorage.getItem('pedidos');
-  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
-
-  // **Converte os produtos para um array válido**
-  this.pedidos.forEach((pedido) => {
-    if (typeof pedido.produtos === 'string') {
-      pedido.produtos = JSON.parse(pedido.produtos);
-    }
-  });
-
-  console.log("Pedidos carregados corretamente:", this.pedidos);
+ this.click()
 }
 
 
@@ -59,7 +49,17 @@ click(){
   localStorage.setItem('pedidos', JSON.stringify(this.pedidos))
  }
 
+  const pedidosSalvos = localStorage.getItem('pedidos');
+  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
 
+
+  this.pedidos.forEach((pedido) => {
+    if (typeof pedido.produtos === 'string') {
+      pedido.produtos = JSON.parse(pedido.produtos);
+    }
+  });
+
+  console.log("Pedidos carregados corretamente:", this.pedidos);
   
 }
 
