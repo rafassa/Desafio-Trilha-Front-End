@@ -18,11 +18,21 @@ nomeLista:string = ''
 pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit() {
+  this.carregarPedidos();
  this.click();
  this.adicionarPedido();
 
  
 }
+
+
+
+carregarPedidos() {
+  const pedidosSalvos = localStorage.getItem('pedidos');
+  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
+}
+
+
 adicionarPedido(){
   const pedido = {
     produtos: typeof this.produtoLista === "string" ? JSON.parse(this.produtoLista) : this.produtoLista, 
@@ -30,7 +40,9 @@ adicionarPedido(){
     nome: this.nomeLista,
   };
 
-  this.pedidos = [...this.pedidos, pedido];
+    this.pedidos.push(pedido);
+
+  localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
   console.log(this.pedidos);
 }
 
