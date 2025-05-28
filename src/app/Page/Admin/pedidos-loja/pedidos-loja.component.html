@@ -1,20 +1,30 @@
 <app-barra-lateral></app-barra-lateral>
 
-<div *ngFor="let pedido of pedidos; let i = index">
-   
-    <h3>Pedido {{ i + 1 }}</h3>
-    <p><strong>Valor total:</strong> R$ {{ pedido.valor }}</p>
-    <p><strong>Nome do pedido:</strong> {{ pedido.nome }}</p>
+
+
+<div class="accordion" id="listaPedidos">
+  <div class="accordion-item" *ngFor="let pedido of pedidos; let i = index">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+        [attr.data-bs-target]="'#pedido' + i">
+        Pedido {{ i + 1 }}
+      </button>
+    </h2>
+    <div [id]="'pedido' + i" class="accordion-collapse collapse" data-bs-parent="#listaPedidos">
+      <div class="accordion-body">
+        <p><strong>Valor total:</strong> R$ {{ pedido.valor }}</p>
+        <p><strong>Nome do pedido:</strong> {{ pedido.nome }}</p>
         <div *ngFor="let produto of pedido.produtos">
-            <p><strong>Nome:</strong> {{ produto.nome }}</p>
-            <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
-            <p><strong>Quantidade:</strong> {{ produto.quantidade }}</p>
+          <p><strong>Nome:</strong> {{ produto.nome }}</p>
+          <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+          <p><strong>Quantidade:</strong> {{ produto.quantidade }}</p>
         </div>
+      </div>
     </div>
-    <hr>
+  </div>
+</div>
 
 
 
 <button (click)="click()">adicionar Todos os Pedidos</button>
 <button (click)="limparPedidos()">Limpar Todos os Pedidos</button>
-
