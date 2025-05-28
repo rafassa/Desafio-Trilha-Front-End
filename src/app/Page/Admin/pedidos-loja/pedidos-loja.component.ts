@@ -33,17 +33,23 @@ carregarPedidos() {
 }
 
 
-adicionarPedido(){
+adicionarPedido() {
   const pedido = {
     produtos: typeof this.produtoLista === "string" ? JSON.parse(this.produtoLista) : this.produtoLista, 
     valor: this.valorLista,
     nome: this.nomeLista,
   };
 
-    this.pedidos.push(pedido);
+  
+  const pedidoExiste = this.pedidos.some(p => JSON.stringify(p) === JSON.stringify(pedido));
 
-  localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
-  console.log(this.pedidos);
+  if (!pedidoExiste) {
+    this.pedidos.push(pedido);
+    localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
+    console.log("Pedidos atualizados:", this.pedidos);
+  } else {
+    console.log("Pedido já existe, não será duplicado.");
+  }
 }
 
 
