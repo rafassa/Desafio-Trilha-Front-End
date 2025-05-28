@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
+import { json } from 'stream/consumers';
 
 @Component({
   selector: 'app-pedidos-loja',
@@ -11,56 +12,40 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 })
 export class PedidosLojaComponent {
 
-produtoLista: Produto[] |null=null
+produtoLista: Produto[]=[]
 valorLista:number = 0
 nomeLista:string = ''
 pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit() {
  this.click()
+
+
+ const pedido ={
+  produtos: this.produtoLista,
+  valor:this.valorLista,
+  nome:this.nomeLista,
+ }
+
+this.pedidos.push(pedido)
 }
 
 
 
 
 click(){
-  const produtos = localStorage.getItem('itemLista')
-  if(produtos){
+  const produtos = localStorage.getItem('itemLista');
+  const nome = localStorage.getItem('nomePedido');
+  const valores = localStorage.getItem('valorLista');
+  if(produtos && valores && nome){
     this.produtoLista =  produtos ? JSON.parse(produtos) : [];
+    this.valorLista = JSON.parse(valores);
+      this.nomeLista = JSON.parse(nome);
   }
-  const valores = localStorage.getItem('valorLista')
-  if(valores){
-    this.valorLista = JSON.parse(valores)
-  }
-
-
-  const nome = localStorage.getItem('nomePedido')
-  if(nome){
-    this.nomeLista = JSON.parse(nome)
-  }
-
- if(this.produtoLista){
-  const pedido ={
-    produtos:this.produtoLista,
-    valor:this.valorLista,
-    nome:this.nomeLista
-  }
-  this.pedidos.push(pedido)
-  localStorage.setItem('pedidos', JSON.stringify(this.pedidos))
- }
-
-  const pedidosSalvos = localStorage.getItem('pedidos');
-  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
-
-
-  this.pedidos.forEach((pedido) => {
-    if (typeof pedido.produtos === 'string') {
-      pedido.produtos = JSON.parse(pedido.produtos);
-    }
-  });
-
-  console.log("Pedidos carregados corretamente:", this.pedidos);
   
+
+
+ 
 }
 
 
