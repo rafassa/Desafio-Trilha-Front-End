@@ -18,18 +18,21 @@ nomeLista:string = ''
 pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
 
 ngOnInit() {
- this.click()
+ this.click();
+ this.adicionarPedido();
 
-
- const pedido ={
+ 
+}
+adicionarPedido(){
+  const pedido ={
   produtos: this.produtoLista,
   valor:this.valorLista,
   nome:this.nomeLista,
  }
 
-this.pedidos.push(pedido)
+this.pedidos = [...this.pedidos, pedido];
+console.log(this.pedidos)
 }
-
 
 
 
