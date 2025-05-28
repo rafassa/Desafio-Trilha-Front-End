@@ -24,15 +24,16 @@ ngOnInit() {
  
 }
 adicionarPedido(){
-  const pedido ={
-  produtos: this.produtoLista,
-  valor:this.valorLista,
-  nome:this.nomeLista,
- }
+  const pedido = {
+    produtos: typeof this.produtoLista === "string" ? JSON.parse(this.produtoLista) : this.produtoLista, 
+    valor: this.valorLista,
+    nome: this.nomeLista,
+  };
 
-this.pedidos = [...this.pedidos, pedido];
-console.log(this.pedidos)
+  this.pedidos = [...this.pedidos, pedido];
+  console.log(this.pedidos);
 }
+
 
 
 
@@ -40,11 +41,14 @@ click(){
   const produtos = localStorage.getItem('itemLista');
   const nome = localStorage.getItem('nomePedido');
   const valores = localStorage.getItem('valorLista');
-  if(produtos && valores && nome){
-    this.produtoLista =  produtos ? JSON.parse(produtos) : [];
+
+  if (produtos && valores && nome) {
+    this.produtoLista = produtos ? JSON.parse(produtos) : []; 
     this.valorLista = JSON.parse(valores);
-      this.nomeLista = JSON.parse(nome);
+    this.nomeLista = JSON.parse(nome);
   }
+}
+
   
 
 
@@ -52,8 +56,4 @@ click(){
 }
 
 
-limparPedidos() {
-  localStorage.removeItem('pedidos');
-  this.pedidos = []; 
-}
-}
+
