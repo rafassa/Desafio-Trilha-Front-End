@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
-import { json } from 'stream/consumers';
+
 
 @Component({
   selector: 'app-pedidos-loja',
