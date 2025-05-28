@@ -40,7 +40,6 @@ adicionarPedido() {
     nome: this.nomeLista,
   };
 
-  
   const pedidoExiste = this.pedidos.some(p => JSON.stringify(p) === JSON.stringify(pedido));
 
   if (!pedidoExiste) {
@@ -68,6 +67,11 @@ click(){
 }
 
   
+limparTodosOsPedidos() {
+  localStorage.removeItem('pedidos');
+  this.pedidos = [];
+  console.log("Todos os pedidos foram apagados!");
+}
 
 
  
