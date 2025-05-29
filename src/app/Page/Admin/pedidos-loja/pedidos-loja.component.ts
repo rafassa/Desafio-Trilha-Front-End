@@ -16,8 +16,16 @@ export class PedidosLojaComponent {
   pedidos: {  valor: number; nome: string; produtos: Produto[];}[]=[];
 
   ngOnInit() {
-    this.pegarPedido()
-    this.adicionarPedidoArray()
+
+    let pedidoPego = false
+    if(this.produtoLista.length > 0){
+      this.pegarPedido();
+       pedidoPego = true
+    }
+   if(pedidoPego == true ){
+      this.adicionarPedidoArray();
+   }
+    
   }
 
   pegarPedido() {

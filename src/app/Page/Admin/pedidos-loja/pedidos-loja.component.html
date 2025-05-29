@@ -2,20 +2,10 @@
     <app-barra-lateral class="p-1"></app-barra-lateral>
 </div>
 
-<div *ngIf="pedidos && pedidos.length">
-  <h2>Lista de Pedidos</h2>
-  <div *ngFor="let pedido of pedidos">
-    <h3>Pedido: {{ pedido.nome }}</h3>
-    <p>Valor: R$ {{ pedido.valor }}</p>
-    <h4>Produtos:</h4>
-    <ul>
-      <li *ngFor="let produto of pedido.produtos">
-        {{ produto.nome }} - R$ {{ produto.preco }} - {{produto.quantidade}}
-      </li>
-    </ul>
-  </div>
-</div>
 
-<div *ngIf="!pedidos || pedidos.length === 0">
-  <p>Nenhum pedido encontrado.</p>
+<div *ngFor="let pedido of pedidos">
+    {{ pedido.nome }} {{pedido.valor}}
+    <div *ngFor="let produto of pedido.produtos">
+        {{produto.nome}}
+    </div>
 </div>
