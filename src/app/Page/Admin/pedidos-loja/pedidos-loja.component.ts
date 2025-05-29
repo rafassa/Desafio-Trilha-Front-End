@@ -10,59 +10,6 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
   styleUrl: './pedidos-loja.component.css',
 })
 export class PedidosLojaComponent {
-  produtoLista: Produto[]=[];
-  valorLista: number=0;
-  nomeLista: string='';
-  pedidos: {  valor: number; nome: string; produtos: Produto[];}[]=[];
-  pedidoPego:boolean = false
-  ngOnInit() {
-    this.carregarPedidos();
-      this.pegarPedido();
-   if(this.pedidoPego == true ){
-    this.adicionarPedidoArray()
-    this.salvarPedidos()
-   }
-    
-  }
-
-  pegarPedido() {
-    const nome = localStorage.getItem('nomePedido');
-    const valor = localStorage.getItem('valorPedido');
-    const produto = localStorage.getItem('itemPedido');
-
-    if (produto && nome && valor) {
-      this.nomeLista = nome
-      this.valorLista = JSON.parse(valor)
-      this.produtoLista = JSON.parse(produto) 
-    }
-
-    this.pedidoPego = true
-  }
-
-
-  adicionarPedidoArray(){
-    const pedido ={
-      nome:this.nomeLista,
-      valor:this.valorLista,
-      produtos:this.produtoLista
-    }
-
-    
-    this.pedidos.push(pedido)
-    this.salvarPedidos()
-  }
-
-   salvarPedidos() {
-    localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
-  }
-
-
-carregarPedidos(){
-   const pedidosSalvos = localStorage.getItem('pedidos');
-    if (pedidosSalvos) {
-      this.pedidos = JSON.parse(pedidosSalvos);
-    }
-  }
 
 
 
