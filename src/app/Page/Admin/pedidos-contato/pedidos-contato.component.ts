@@ -9,7 +9,7 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 })
 export class PedidosContatoComponent {
 nome:any = localStorage.getItem('nomeContato')
-opcao:any = localStorage.getItem('opcapContato')
+opcao:any = localStorage.getItem('opcaoContato')
 preferencia:any = localStorage.getItem('preferenciaContato')
 email:any =localStorage.getItem('emailContato')
 telefone:any = localStorage.getItem('telefonContato')
