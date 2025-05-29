@@ -14,16 +14,12 @@ export class PedidosLojaComponent {
   valorLista: number=0;
   nomeLista: string='';
   pedidos: {  valor: number; nome: string; produtos: Produto[];}[]=[];
-
+  pedidoPego:boolean = false
   ngOnInit() {
-
-    let pedidoPego = false
-    if(this.produtoLista){
+    this.carregarPedidos();
       this.pegarPedido();
-       pedidoPego = true
-    }
-   if(pedidoPego == true ){
-      this.adicionarPedidoArray();
+   if(this.pedidoPego == true ){
+    this.adicionarPedidoArray()
    }
     
   }
@@ -38,6 +34,8 @@ export class PedidosLojaComponent {
       this.valorLista = JSON.parse(valor)
       this.produtoLista = JSON.parse(produto) 
     }
+
+    this.pedidoPego = true
   }
 
 
@@ -50,5 +48,18 @@ export class PedidosLojaComponent {
 
     
     this.pedidos.push(pedido)
+    localStorage.setItem('pedidoSalvo', JSON.stringify(this.pedidos))
   }
+
+
+carregarPedidos(){
+   const pedidosSalvos = localStorage.getItem('pedidos');
+    if (pedidosSalvos) {
+      this.pedidos = JSON.parse(pedidosSalvos);
+    }
+  }
+
+
+
+
 }

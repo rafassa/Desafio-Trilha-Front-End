@@ -3,9 +3,17 @@
 </div>
 
 
-<div *ngFor="let pedido of pedidos">
-    {{ pedido.nome }} {{pedido.valor}}
-    <div *ngFor="let produto of pedido.produtos">
-        {{produto.nome}}
+<div *ngIf="pedidos.length > 0">
+    <div *ngFor="let pedido of pedidos">
+        <h3>{{ pedido.nome }} - R$ {{ pedido.valor }}</h3>
+        
+        <div *ngIf="pedido.produtos.length > 0">
+            <h4>Produtos:</h4>
+            <div *ngFor="let produto of pedido.produtos">
+                {{ produto.nome }}
+            </div>
+        </div>
     </div>
 </div>
+
+<p *ngIf="pedidos.length === 0">Nenhum pedido encontrado.</p>
