@@ -18,7 +18,7 @@ export class PedidosLojaComponent {
   ngOnInit() {
 
     let pedidoPego = false
-    if(this.produtoLista.length > 0){
+    if(this.produtoLista){
       this.pegarPedido();
        pedidoPego = true
     }
