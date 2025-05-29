@@ -105,7 +105,7 @@
           </label>
         </div>
 
-        <button id="botao" class="btn btn-primary w-100" type="submit" [disabled]="formContato.invalid">Enviar</button>
+        <button id="botao" class="btn btn-primary w-100" type="submit" (click)="pegarInfor()" [disabled]="formContato.invalid">Enviar</button>
       </div>
     </div>
   </form>
