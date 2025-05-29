@@ -15,7 +15,10 @@ export class PedidosLojaComponent {
   nomeLista: string='';
   pedidos: {  valor: number; nome: string; produtos: Produto[];}[]=[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.pegarPedido()
+    this.adicionarPedidoArray()
+  }
 
   pegarPedido() {
     const nome = localStorage.getItem('nomePedido');
