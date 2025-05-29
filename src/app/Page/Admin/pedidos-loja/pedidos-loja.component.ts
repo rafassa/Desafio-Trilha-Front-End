@@ -20,6 +20,7 @@ export class PedidosLojaComponent {
       this.pegarPedido();
    if(this.pedidoPego == true ){
     this.adicionarPedidoArray()
+    this.salvarPedidos()
    }
     
   }
@@ -48,7 +49,11 @@ export class PedidosLojaComponent {
 
     
     this.pedidos.push(pedido)
-    localStorage.setItem('pedidoSalvo', JSON.stringify(this.pedidos))
+    this.salvarPedidos()
+  }
+
+   salvarPedidos() {
+    localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
   }
 
 
