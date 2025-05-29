@@ -76,10 +76,10 @@ export class ContatoComponent {
     localStorage.setItem('nomeContato', JSON.stringify(this.nome?.value));
     localStorage.setItem('comentarioContato',JSON.stringify(this.comentario?.value));
 
-    if (this.preferencia?.value == 'email') {
+
        localStorage.setItem('emailContato', JSON.stringify(this.email?.value))
-    }else{
+    
        localStorage.setItem('telefoneContato', JSON.stringify(this.telefone?.value))
-    }
+    
   }
 }

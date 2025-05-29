@@ -3,79 +3,41 @@ import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
 
-
 @Component({
   selector: 'app-pedidos-loja',
   imports: [CommonModule, BarraLateralComponent],
   templateUrl: './pedidos-loja.component.html',
-  styleUrl: './pedidos-loja.component.css'
+  styleUrl: './pedidos-loja.component.css',
 })
 export class PedidosLojaComponent {
+  produtoLista: Produto[]=[];
+  valorLista: number=0;
+  nomeLista: string='';
+  pedidos: {  valor: number; nome: string; produtos: Produto[];}[]=[];
 
-produtoLista: Produto[]=[]
-valorLista:number = 0
-nomeLista:string = ''
-pedidos:{produtos:Produto[], valor:number, nome:string}[]=[]
+  ngOnInit() {}
 
-ngOnInit() {
-  this.carregarPedidos();
- this.click();
- this.adicionarPedido();
+  pegarPedido() {
+    const nome = localStorage.getItem('nomePedido');
+    const valor = localStorage.getItem('valorPedido');
+    const produto = localStorage.getItem('itemPedido');
 
- 
-}
-
-
-
-carregarPedidos() {
-  const pedidosSalvos = localStorage.getItem('pedidos');
-  this.pedidos = pedidosSalvos ? JSON.parse(pedidosSalvos) : [];
-}
+    if (produto && nome && valor) {
+      this.nomeLista = nome
+      this.valorLista = JSON.parse(valor)
+      this.produtoLista = JSON.parse(produto) 
+    }
+  }
 
 
-adicionarPedido() {
-  const pedido = {
-    produtos: typeof this.produtoLista === "string" ? JSON.parse(this.produtoLista) : this.produtoLista, 
-    valor: this.valorLista,
-    nome: this.nomeLista,
-  };
+  adicionarPedidoArray(){
+    const pedido ={
+      nome:this.nomeLista,
+      valor:this.valorLista,
+      produtos:this.produtoLista
+    }
 
-  const pedidoExiste = this.pedidos.some(p => JSON.stringify(p) === JSON.stringify(pedido));
-
-  if (!pedidoExiste) {
-    this.pedidos.push(pedido);
-    localStorage.setItem('pedidos', JSON.stringify(this.pedidos));
-    console.log("Pedidos atualizados:", this.pedidos);
-  } else {
-    console.log("Pedido já existe, não será duplicado.");
+    
+    this.pedidos.push(pedido)
   }
 }
-
-
-
-
-click(){
-  const produtos = localStorage.getItem('itemLista');
-  const nome = localStorage.getItem('nomePedido');
-  const valores = localStorage.getItem('valorLista');
-
-  if (produtos && valores && nome) {
-    this.produtoLista = produtos ? JSON.parse(produtos) : []; 
-    this.valorLista = JSON.parse(valores);
-    this.nomeLista = JSON.parse(nome);
-  }
-}
-
-  
-limparTodosOsPedidos() {
-  localStorage.removeItem('pedidos');
-  this.pedidos = [];
-  console.log("Todos os pedidos foram apagados!");
-}
-
-
- 
-}
-
-
-

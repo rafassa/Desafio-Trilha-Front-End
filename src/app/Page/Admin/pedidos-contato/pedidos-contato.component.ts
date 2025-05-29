@@ -8,16 +8,28 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
   styleUrl: './pedidos-contato.component.css'
 })
 export class PedidosContatoComponent {
-nome:any = localStorage.getItem('nomeContato')
-opcao:any = localStorage.getItem('opcaoContato')
-preferencia:any = localStorage.getItem('preferenciaContato')
-email:any =localStorage.getItem('emailContato')
-telefone:any = localStorage.getItem('telefonContato')
+
+
+
+  nome:string | null=null
+  motivo:string| null=null
+  preferencia:string| null=null
+  email:string| null=null
+  telefone:string| null=null
+  comentario:string| null=null
 
 
 ngOnInit(){
+
+
+this.nome = localStorage.getItem('nomeContato')
+this.motivo = localStorage.getItem('opcaoContato')
+this.preferencia = localStorage.getItem('preferenciaContato')
+this.email =localStorage.getItem('emailContato')
+this.telefone = localStorage.getItem('telefoneContato')
+this.comentario = localStorage.getItem('comentarioContato')
   console.log(this.nome);
-  console.log(this.opcao);
+  console.log(this.preferencia);
   console.log(this.preferencia);
   console.log(this.email);
   console.log(this.telefone);
