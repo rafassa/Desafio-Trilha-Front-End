@@ -18,8 +18,10 @@ export class PedidosLojaComponent implements OnInit {
 
   ngOnInit() {
     this.pegarPedido();
-    this.pedidos = this.service.devolverPedido();
-    console.log('Pedidos armazenados:', this.pedidos); 
+    setTimeout(() => {
+      this.pedidos = this.service.devolverPedido(); 
+      console.log('Pedidos armazenados:', this.pedidos);
+    }, 2000); 
   }
 
   pegarPedido() {
