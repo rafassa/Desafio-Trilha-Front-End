@@ -11,7 +11,7 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 })
 export class PedidosLojaComponent {
 
-listaPedidos: { valor: string | null, produto: string | null, nome: string | null }[] = []
+listaPedidos: { valor: number | null, produto: Produto[] | null, nome: string | null }[] = []
 
   ngOnInit() {
 

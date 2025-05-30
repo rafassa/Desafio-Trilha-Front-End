@@ -2,5 +2,6 @@
 
 
 <div *ngFor="let pedido of listaPedidos">
-{{pedido.nome}}{{pedido.valor}}
+    <div *ngFor="let produto of pedido.produto"></div>
+{{pedido.nome}}--{{pedido.valor}}
 </div>
