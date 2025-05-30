@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
@@ -10,39 +10,29 @@ import { PedidosLojaService } from '../../../services/pedidos-loja.service';
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css',
 })
-export class PedidosLojaComponent {
+export class PedidosLojaComponent implements OnInit {
 
+  pedidos: { produtos: Produto[], nome: string, valor: number }[][] = [];
 
- service = inject(PedidosLojaService)
+  constructor(private service: PedidosLojaService) {}
 
-produtos:Produto[]=[]
-nome:string =''
-valor:number=0
-
-pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
-
-ngOnInit(){
-  this.pegarPedido()
-
-  this.pedidos = this.service.devolverPedido()
-}
-
-pegarPedido(){
-  const produtoPedido = localStorage.getItem('itemPedido')
-  const nomePedido = localStorage.getItem('nomePedido')
-  const valorPedido= localStorage.getItem('valorPedido')
-
-
-  if(produtoPedido && nomePedido && valorPedido){
-    this.produtos = JSON.parse(produtoPedido)
-    this.nome = JSON.parse(nomePedido)
-    this.valor = JSON.parse(valorPedido)
+  ngOnInit() {
+    this.pegarPedido();
+    this.pedidos = this.service.devolverPedido();
+    console.log('Pedidos armazenados:', this.pedidos); 
   }
 
-this.service.pegarInformacao(this.produtos, this.nome, this.valor)
-  
+  pegarPedido() {
+    const produtoPedido = localStorage.getItem('itemPedido');
+    const nomePedido = localStorage.getItem('nomePedido');
+    const valorPedido = localStorage.getItem('valorPedido');
 
-}
-
-
+    if (produtoPedido && nomePedido && valorPedido) {
+      const produtos = JSON.parse(produtoPedido);
+      const nome = JSON.parse(nomePedido);
+      const valor = JSON.parse(valorPedido);
+      
+      this.service.pegarInformacao(produtos, nome, valor);
+    }
+  }
 }
