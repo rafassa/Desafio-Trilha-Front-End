@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Produto } from '../../../Interface/Produto.interface';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
@@ -10,31 +10,40 @@ import { PedidosLojaService } from '../../../services/pedidos-loja.service';
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css',
 })
-export class PedidosLojaComponent implements OnInit {
+export class PedidosLojaComponent {
 
-  pedidos: { produtos: Produto[], nome: string, valor: number }[][] = [];
 
-  constructor(private service: PedidosLojaService) {}
+ service = inject(PedidosLojaService)
 
-  ngOnInit() {
-    this.pegarPedido();
-    setTimeout(() => {
-      this.pedidos = this.service.devolverPedido(); 
-      console.log('Pedidos armazenados:', this.pedidos);
-    }, 2000); 
+produtos:Produto[]=[]
+nome:string =''
+valor:number=0
+
+pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
+
+ngOnInit(){
+  this.pegarPedido()
+
+  this.pedidos = this.service.devolverPedido()
+}
+
+pegarPedido(){
+  const produtoPedido = localStorage.getItem('itemPedido')
+  const nomePedido = localStorage.getItem('nomePedido')
+  const valorPedido= localStorage.getItem('valorPedido')
+
+
+  if(produtoPedido && nomePedido && valorPedido){
+    this.produtos = JSON.parse(produtoPedido)
+    this.nome = JSON.parse(nomePedido)
+    this.valor = JSON.parse(valorPedido)
   }
 
-  pegarPedido() {
-    const produtoPedido = localStorage.getItem('itemPedido');
-    const nomePedido = localStorage.getItem('nomePedido');
-    const valorPedido = localStorage.getItem('valorPedido');
+this.service.pegarInformacao(this.produtos, this.nome, this.valor)
+localStorage.removeItem('itemPedido')
+localStorage.removeItem('nomePedido')
+localStorage.removeItem('valorPedido')
+}
 
-    if (produtoPedido && nomePedido && valorPedido) {
-      const produtos = JSON.parse(produtoPedido);
-      const nome = JSON.parse(nomePedido);
-      const valor = JSON.parse(valorPedido);
-      
-      this.service.pegarInformacao(produtos, nome, valor);
-    }
-  }
+
 }

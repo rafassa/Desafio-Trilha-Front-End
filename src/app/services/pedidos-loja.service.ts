@@ -6,14 +6,24 @@ import { Produto } from '../Interface/Produto.interface';
 })
 export class PedidosLojaService {
 
-  private pedidos: { produtos: Produto[], nome: string, valor: number }[][] = [];
 
-  pegarInformacao(produtos: Produto[], nome: string, valor: number) {
-    const pedidoPassado = { produtos, nome, valor };
-    this.pedidos.push([pedidoPassado]);
+
+  private pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
+
+
+  pegarInformacao(produtos:Produto[], nome:string, valor:number){
+      const pedidoPassado = {
+        produtos:produtos,
+        nome:nome,
+        valor:valor
+      }
+
+      this.pedidos.push(pedidoPassado)
+      console.log("É esse o armazem de pedidos",this.pedidos)
   }
 
-  devolverPedido() {
-    return this.pedidos;
+
+  devolverPedido(){
+    
   }
 }
