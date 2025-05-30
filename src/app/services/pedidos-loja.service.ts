@@ -12,7 +12,7 @@ export class PedidosLojaService {
   ProdutoConvertido:Produto[]=[]
   pushLista(){
   const valorLista = localStorage.getItem('listaValor')
-  const produtoLista = localStorage.getItem('valorLista')
+  const produtoLista = localStorage.getItem('listaProdutos')
   const nomeLista = localStorage.getItem('listaNome')
 
   if(valorLista && produtoLista && nomeLista){
