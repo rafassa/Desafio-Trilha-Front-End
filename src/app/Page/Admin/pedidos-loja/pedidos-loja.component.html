@@ -1,0 +1,8 @@
+<app-barra-lateral></app-barra-lateral>
+
+
+<div *ngFor="let pedido of pedidos">
+    <div *ngFor="let produto of pedido.produtos">
+        {{pedido.nome}}--{{pedido.valor}}{{produto.nome}}--{{produto.quantidade}}
+    </div>
+</div>
