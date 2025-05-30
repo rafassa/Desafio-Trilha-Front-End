@@ -41,7 +41,7 @@ ngOnInit(){
   autoPassar(){
     this.intervalo = setInterval(() => {
       this.nextImage()
-    }, 2000);
+    }, 3000);
   }
 
   resetarPassar(){

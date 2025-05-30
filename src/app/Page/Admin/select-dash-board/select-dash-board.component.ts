@@ -21,6 +21,10 @@ export class SelectDashBoardComponent {
   selecionado=0
   carSelect:number=0
 
+ngOnInit(){
+   this.carSelect = 0;
+}
+
 carroSelecionado(){
   this.service.getApi().subscribe({
     next: (resposta:any)=>{

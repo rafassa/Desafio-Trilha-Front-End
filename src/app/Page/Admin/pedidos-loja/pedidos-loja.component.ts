@@ -5,7 +5,7 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 
 @Component({
   selector: 'app-pedidos-loja',
-  imports: [CommonModule, BarraLateralComponent],
+  imports: [CommonModule, BarraLateralComponent ],
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css',
 })
@@ -21,5 +21,10 @@ listaPedidos: { valor: number | null, produto: Produto[] | null, nome: string | 
     }
   }
 
+removerPedido(index: number) {
+    this.listaPedidos.splice(index, 1);
+    localStorage.setItem('arrayPedidos', JSON.stringify(this.listaPedidos));
+    this.ngOnInit(); 
+}
 
 }

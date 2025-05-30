@@ -7,19 +7,21 @@
     <option value="3">Bronco Sport</option>
 </select>
 
-<div *ngIf="carros && carros[carSelect]" class="text-center d-flex flex-wrap gap-3">
+<div class="text-center d-flex flex-wrap gap-3">
     <div class="border rounded card-body bg-white text-dark">
         <h6 class="card-title mb-0">Veículo:</h6>
-        <p class="card-text fs-6 mb-0">{{carros[carSelect].vehicle}}</p>
+        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].vehicle : '—' }}</p>
     </div>
     <div class="border rounded card-body bg-white text-dark">
         <h6 class="card-title mb-0">Conectado:</h6>
-        <p class="card-text fs-6 mb-0">{{carros[carSelect].connected}}</p>
+        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].connected : '—' }}</p>
     </div>
     <div class="border rounded card-body bg-white text-dark">
         <h6 class="card-title mb-0">Software:</h6>
-        <p class="card-text fs-6 mb-0">{{carros[carSelect].softwareUpdates}}</p>
+        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].softwareUpdates : '—' }}</p>
     </div>
 </div>
 
-<img class="img-fluid rounded mt-3 w-50" alt="Imagem do veículo" *ngIf="carros && carros[carSelect]" [src]="carros![carSelect].img">
+
+<img class="img-fluid rounded mt-3 w-50" alt="Imagem do veículo"
+    [src]="carros && carros[carSelect] ? carros[carSelect].img : './mustang.png'">

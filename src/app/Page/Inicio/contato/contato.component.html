@@ -37,7 +37,7 @@
         <div class="mb-3 gap-1">
           <label for="telefone" class="form-label">Telefone</label>
           <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone"
-            formControlName="telefone">
+            formControlName="telefone"  [mask]="'(00) 00000-0000'">
           <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
             *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">Número invalido</span>
         </div>

@@ -68,11 +68,13 @@ export const routes: Routes = [
    },
    {
     path:'listaLoja',
-    component:PedidosLojaComponent
+    component:PedidosLojaComponent,
+    canActivate:[loginprotectionGuard]
    },
    {
     path:'listaContato',
-    component:PedidosContatoComponent
+    component:PedidosContatoComponent,
+    canActivate:[loginprotectionGuard]
    }
 
 ];

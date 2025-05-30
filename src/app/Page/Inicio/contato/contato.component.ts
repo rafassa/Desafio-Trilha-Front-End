@@ -6,10 +6,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
+import { NgxMaskDirective } from 'ngx-mask';
 @Component({
   selector: 'app-contato',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NgxMaskDirective],
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.css',
 })

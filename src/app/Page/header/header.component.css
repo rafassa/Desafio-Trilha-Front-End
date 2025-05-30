@@ -1,18 +1,35 @@
-.navbar {
+.navbar-custom {
+    background: #003399;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    border-radius: 0; /* Remove a borda arredondada */
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+.navbar-brand img {
+    height: 50px; 
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .nav-link {
     color: white;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+.nav-link:hover {
+    background: #1C355E; 
+    transform: scale(1.05);
 }
 
 .animate-link {
@@ -20,12 +37,5 @@
 }
 
 .animate-link:hover {
-    transform: scale(1.1);
-    color: #ffea00;
+    filter: brightness(1.2);
 }
-
-.navbar-custom {
-    background-color: #002868; 
-}
-
-

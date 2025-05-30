@@ -4,11 +4,11 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { BoletoInfoService } from '../../../services/boleto-info.service';
 import { Router } from '@angular/router';
 import { PedidosLojaService } from '../../../services/pedidos-loja.service';
-
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-pagamento',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, NgxMaskDirective],
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })

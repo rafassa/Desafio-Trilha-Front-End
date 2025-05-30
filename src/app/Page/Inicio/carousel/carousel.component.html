@@ -1,5 +1,5 @@
 <div class="card card-raised card-carousel">
-  <div id="customCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  
     
     <div class="carousel-indicators">
       <span *ngFor="let img of imagens; let i = index" class="indicator-dot"
@@ -20,13 +20,13 @@
     </div>
 
    
-    <button class="carousel-control-prev btn btn-outline-primary btn-lg " (click)="prevImage()">
+    <button class="carousel-control-prev" (click)="prevImage()">
   <i class="bi bi-arrow-left-circle-fill fs-2"></i>
 </button>
 
-<button class="carousel-control-next btn btn-outline-primary btn-lg " (click)="nextImage()">
+<button class="carousel-control-next" (click)="nextImage()">
   <i class="bi bi-arrow-right-circle-fill fs-2"></i>
 </button>
 
   </div>
-</div>
+

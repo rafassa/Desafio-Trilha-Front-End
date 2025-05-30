@@ -1,7 +1,42 @@
-<app-barra-lateral></app-barra-lateral>
+<div class="d-flex">
+    <app-barra-lateral class="p-1"></app-barra-lateral>
+</div>
+<div class="container m-0 d-flex flex-column justify-content-center pt-2 pb-2 principal-conteiner">
+    <h1 class="text-center fw-bold">Pedidos da Loja</h1>
 
+    <div *ngIf="listaPedidos.length === 0" class="text-center">
+        <h3 class="fw-bold bg-ford text-white p-4 rounded">Nenhum pedido encontrado.</h3>
+    </div>
 
-<div *ngFor="let pedido of listaPedidos">
-{{pedido.nome}}--{{pedido.valor}}
-<div *ngFor="let produto of pedido.produto">{{produto.nome}}--{{produto.quantidade}}</div>
+    <div class="pedido-container d-flex flex-wrap justify-content-center">
+        <div *ngFor="let i of [1,2,3,4,5,6,7,8,9]; let index = index" class="pedido-card"
+            [ngClass]="{ 'ghost-card': index >= listaPedidos.length }">
+            <div class="pedido-header">
+                <h2 *ngIf="index < listaPedidos.length">Pedido {{ index + 1 }}</h2>
+            </div>
+            <div class="pedido-body">
+                
+                <p *ngIf="index < listaPedidos.length"><strong>Cliente:</strong> {{ listaPedidos[index].nome }}</p>
+                <p *ngIf="index < listaPedidos.length"><strong>Valor:</strong> {{ listaPedidos[index].valor }}</p>
+                
+                <div class="produto-container">
+                    <h4 *ngIf="index < listaPedidos.length">Produtos</h4>
+                    <ul *ngIf="index < listaPedidos.length">
+                        <li *ngFor="let produto of listaPedidos[index].produto">
+                            {{ produto.nome }} ({{ produto.quantidade }})
+                        </li>
+                    </ul>
+
+                </div>
+                <button *ngIf="index < listaPedidos.length" class="btn btn-danger mt-2" (click)="removerPedido(index)">
+                    Excluir Pedido
+                </button>
+
+                <div *ngIf="index >= listaPedidos.length">
+                    <div class="placeholder"></div>
+                    <div class="placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

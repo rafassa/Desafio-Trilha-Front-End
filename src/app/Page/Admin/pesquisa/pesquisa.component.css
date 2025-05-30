@@ -1,3 +1,28 @@
-td:empty::before {
-  content: "\00a0"; /* Adiciona um espaço invisível */
+.table-bordered {
+    border: 2px solid #003C7D;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #003C7D;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #1C355E;
+}
+
+tr:hover {
+    background-color: #28589D;
+    transition: 0.3s ease-in-out;
+}
+
+
+.form-control {
+    border: 2px solid #003C7D;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #003C7D;
 }
