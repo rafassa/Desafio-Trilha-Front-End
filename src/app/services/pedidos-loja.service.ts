@@ -6,33 +6,26 @@ import { Produto } from '../Interface/Produto.interface';
 })
 export class PedidosLojaService {
 
+  private pedidos: { produtos: Produto[], nome: string, valor: number }[] = [];
 
+  pegarInformacao(produtos: Produto[], nome: string, valor: number) {
+      const pedidoPassado = { produtos, nome, valor };
 
-  private pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
-  
+      
+      this.pedidos = this.devolverPedidoAntigos() || [];
 
-  pegarInformacao(produtos:Produto[], nome:string, valor:number){
-      const pedidoPassado = {
-        produtos:produtos,
-        nome:nome,
-        valor:valor
-      }
-      this.pedidos = this.devolverPedidoAntigos()
-      this.pedidos.push(pedidoPassado)
-      localStorage.setItem('pedidosSalvos', JSON.stringify(this.pedidos))
-      console.log("É esse o armazem de pedidos",this.pedidos)
+      this.pedidos.push(pedidoPassado); 
+      
+      localStorage.setItem('pedidosSalvos', JSON.stringify(this.pedidos));
+      console.log("É esse o armazém de pedidos:", this.pedidos);
   }
 
-
-  devolverPedidoAntigos():any{
-      const pedidosLocal = localStorage.getItem('pedidosSalvos')
-    if(pedidosLocal){
-      this.pedidos = JSON.parse(pedidosLocal)
-    }
+  devolverPedidoAntigos(): { produtos: Produto[], nome: string, valor: number }[] {
+      const pedidosLocal = localStorage.getItem('pedidosSalvos');
+      return pedidosLocal ? JSON.parse(pedidosLocal) : []; 
   }
 
-
-  levarPedidos(){
-    return this.pedidos
+  levarPedidos() {
+    return this.pedidos;
   }
 }
