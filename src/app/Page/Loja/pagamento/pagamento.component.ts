@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BoletoInfoService } from '../../../services/boleto-info.service';
 import { Router } from '@angular/router';
+import { PedidosLojaService } from '../../../services/pedidos-loja.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class PagamentoComponent {
 
   service = inject(BoletoInfoService)
+  servicePedidos = inject(PedidosLojaService)
   router = inject(Router)
 constructor(){
   const valorComFreteVer = localStorage.getItem('valorTransferencia')
@@ -81,16 +83,13 @@ constructor(){
   
 
 pagar(){
+  localStorage.setItem('listaNome', JSON.stringify(this.nome?.value))
+  this.servicePedidos.pushLista()
   const valorComFrete = localStorage.getItem('valorTransferencia')
-  const valorLista = localStorage.getItem('valoresLista')
-  const itemLista = localStorage.getItem('produtoLista')
   this.service.pegaInfoBoleto(this.form.value, valorComFrete)
   localStorage.removeItem("produto");
   localStorage.removeItem("valor");
   localStorage.removeItem("valorTransferencia"); 
-  localStorage.setItem('valorPedido', JSON.stringify(valorLista))
-  localStorage.setItem('itemPedido', JSON.stringify(itemLista))
-  localStorage.setItem('nomePedido', JSON.stringify(this.nome?.value))
   this.router.navigate(['/boleto'])
 }
 

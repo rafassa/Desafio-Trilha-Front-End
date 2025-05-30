@@ -11,4 +11,6 @@ import { CarrinhoComponent } from '../carrinho/carrinho.component';
 })
 export class LojaComponent {
 
+
+  
 }

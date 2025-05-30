@@ -19,7 +19,9 @@ export class FreteService {
 
 salvarValor(valor:number){
   localStorage.setItem('valorTransferencia', JSON.stringify(valor))
-  localStorage.setItem('valoresLista', JSON.stringify(valor))
+  localStorage.setItem('listaValor', JSON.stringify(valor))
 }
 
+
 }
+
