@@ -9,7 +9,7 @@ export class PedidosLojaService {
 
 
   private pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
-
+  
 
   pegarInformacao(produtos:Produto[], nome:string, valor:number){
       const pedidoPassado = {
@@ -17,13 +17,22 @@ export class PedidosLojaService {
         nome:nome,
         valor:valor
       }
-
+      this.pedidos = this.devolverPedidoAntigos()
       this.pedidos.push(pedidoPassado)
+      localStorage.setItem('pedidosSalvos', JSON.stringify(this.pedidos))
       console.log("É esse o armazem de pedidos",this.pedidos)
   }
 
 
-  devolverPedido(){
-    
+  devolverPedidoAntigos():any{
+      const pedidosLocal = localStorage.getItem('pedidosSalvos')
+    if(pedidosLocal){
+      this.pedidos = JSON.parse(pedidosLocal)
+    }
+  }
+
+
+  levarPedidos(){
+    return this.pedidos
   }
 }
