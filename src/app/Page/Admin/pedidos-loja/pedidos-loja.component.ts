@@ -24,7 +24,7 @@ pedidos: {produtos:Produto[], nome:string, valor:number}[]=[]
 ngOnInit(){
   this.pegarPedido()
 
-  this.pedidos = this.service.devolverPedido()
+  
 }
 
 pegarPedido(){
