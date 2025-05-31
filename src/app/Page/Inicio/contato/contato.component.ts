@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
+import { ContatoListaService } from '../../../services/contato-lista.service';
 @Component({
   selector: 'app-contato',
   imports: [ReactiveFormsModule, CommonModule, NgxMaskDirective],
@@ -14,15 +15,13 @@ import { NgxMaskDirective } from 'ngx-mask';
   styleUrl: './contato.component.css',
 })
 export class ContatoComponent {
+
+  service = inject(ContatoListaService)
+mostrarPopup = false;
   formContato = new FormGroup({
     nome: new FormControl('', [
       Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(50),
-    ]),
-    sobrenome: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
+      Validators.minLength(1),
       Validators.maxLength(50),
     ]),
     email: new FormControl('', [
@@ -31,12 +30,12 @@ export class ContatoComponent {
     ]),
     telefone: new FormControl('', [
       Validators.required,
-      Validators.minLength(8),
+      Validators.minLength(11),
       Validators.maxLength(20),
       Validators.pattern('^[0-9]+$'),
     ]),
     preferencia: new FormControl('', [Validators.required]),
-    opcao: new FormControl('', [Validators.required]),
+    motivo: new FormControl('', [Validators.required]),
     comentario: new FormControl('', [
       Validators.required,
       Validators.minLength(15),
@@ -48,9 +47,6 @@ export class ContatoComponent {
   get nome() {
     return this.formContato.get('nome');
   }
-  get sobrenome() {
-    return this.formContato.get('sobrenome');
-  }
   get email() {
     return this.formContato.get('email');
   }
@@ -60,8 +56,8 @@ export class ContatoComponent {
   get preferencia() {
     return this.formContato.get('preferencia');
   }
-  get opcao() {
-    return this.formContato.get('opcao');
+  get motivo() {
+    return this.formContato.get('motivo');
   }
   get comentario() {
     return this.formContato.get('comentario');
@@ -71,15 +67,18 @@ export class ContatoComponent {
   }
 
   pegarInfor() {
-    localStorage.setItem('opcaoContato', JSON.stringify(this.opcao?.value));
+    localStorage.setItem('motivoContato', JSON.stringify(this.motivo?.value));
     localStorage.setItem('preferenciaContato',JSON.stringify(this.preferencia?.value));
     localStorage.setItem('nomeContato', JSON.stringify(this.nome?.value));
     localStorage.setItem('comentarioContato',JSON.stringify(this.comentario?.value));
-
-
-       localStorage.setItem('emailContato', JSON.stringify(this.email?.value))
-    
-       localStorage.setItem('telefoneContato', JSON.stringify(this.telefone?.value))
-    
+    localStorage.setItem('emailContato', JSON.stringify(this.email?.value))
+    localStorage.setItem('telefoneContato', JSON.stringify(this.telefone?.value))
+    this.service.pushLista()
+    this.formContato.reset();
+    this.mostrarPopup = true; 
   }
+
+  fecharPopup() {
+    this.mostrarPopup = false; 
+}
 }

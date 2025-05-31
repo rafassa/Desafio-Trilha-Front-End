@@ -1,38 +1,31 @@
 import { Component } from '@angular/core';
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pedidos-contato',
-  imports: [BarraLateralComponent],
+  imports: [BarraLateralComponent, CommonModule],
   templateUrl: './pedidos-contato.component.html',
   styleUrl: './pedidos-contato.component.css'
 })
 export class PedidosContatoComponent {
 
+listaContato:{motivo:string ,preferencia:string, nome:string, comentario:string, email:string, telefone:string}[]=[]
 
 
-  nome:string | null=null
-  motivo:string| null=null
-  preferencia:string| null=null
-  email:string| null=null
-  telefone:string| null=null
-  comentario:string| null=null
+ngOnInit() {
+
+    const dados = localStorage.getItem('arrayPedidosContato');
+    if (dados) {
+      this.listaContato = JSON.parse(dados);
+    }
+  }
 
 
-ngOnInit(){
+  removerContato(index: number) {
+    this.listaContato.splice(index, 1); 
+    
+    localStorage.setItem('arrayPedidosContato', JSON.stringify(this.listaContato)); 
+  }   
 
-
-this.nome = localStorage.getItem('nomeContato')
-this.motivo = localStorage.getItem('opcaoContato')
-this.preferencia = localStorage.getItem('preferenciaContato')
-this.email =localStorage.getItem('emailContato')
-this.telefone = localStorage.getItem('telefoneContato')
-this.comentario = localStorage.getItem('comentarioContato')
-  console.log(this.nome);
-  console.log(this.preferencia);
-  console.log(this.preferencia);
-  console.log(this.email);
-  console.log(this.telefone);
-  
-}
 }

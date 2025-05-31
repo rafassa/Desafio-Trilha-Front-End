@@ -1,3 +1,45 @@
 <div class="d-flex">
     <app-barra-lateral class="p-1"></app-barra-lateral>
 </div>
+
+<div class="container m-0 d-flex flex-column justify-content-center pt-2 pb-2 principal-conteiner">
+    <h1 class="text-center fw-bold">Contatos Recebidos</h1>
+
+    <div *ngIf="listaContato.length === 0" class="text-center">
+        <h3 class="fw-bold bg-ford text-white p-4 rounded">Nenhum contato encontrado.</h3>
+    </div>
+
+    <div class="pedido-container d-flex flex-wrap justify-content-center">
+        <div *ngFor="let i of [1,2,3,4,5,6,7,8,9]; let index = index" class="pedido-card"
+            [ngClass]="{ 'ghost-card': index >= listaContato.length }">
+
+            <div class="pedido-header">
+                <h2 *ngIf="index < listaContato.length">Contato {{ index + 1 }}</h2>
+            </div>
+
+            <div class="pedido-body">
+                <p *ngIf="index < listaContato.length"><strong>Nome:</strong> {{ listaContato[index].nome }}</p>
+                <p *ngIf="index < listaContato.length"><strong>E-mail:</strong> {{ listaContato[index].email }}</p>
+                <p *ngIf="index < listaContato.length"><strong>Telefone:</strong> {{ listaContato[index].telefone }}</p>
+                <p *ngIf="index < listaContato.length"><strong>Motivo:</strong> {{ listaContato[index].motivo }}</p>
+                <p *ngIf="index < listaContato.length"><strong>Preferência:</strong> {{ listaContato[index].preferencia
+                    }}</p>
+
+                <div class="produto-container">
+                    <p *ngIf="index < listaContato.length" class="text-justify">
+                        {{ listaContato[index].comentario }}
+                    </p>
+                </div>
+
+                <button *ngIf="index < listaContato.length" class="btn btn-danger mt-2" (click)="removerContato(index)">
+                    Excluir Contato
+                </button>
+
+                <div *ngIf="index >= listaContato.length">
+                    <div class="placeholder"></div>
+                    <div class="placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

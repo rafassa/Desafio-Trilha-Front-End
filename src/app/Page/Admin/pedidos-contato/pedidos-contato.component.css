@@ -1,0 +1,105 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background: linear-gradient(to bottom, #002855, #000000);
+}
+
+.principal-conteiner {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.pedido-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pedido-card{
+    width: 400px;
+    height: 400px;
+    background: #1C355E;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ghost-card {
+    background: #111111;
+    opacity: 0.8;
+}
+
+.pedido-header {
+    background: #003399;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.pedido-body p {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.text-justify {
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+    white-space: normal;/
+}
+
+.produto-container {
+    max-height: 100px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.produto-container ul {
+    list-style: none;
+    padding-left: 0;
+    color: white;
+}
+
+.produto-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.produto-container::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+.produto-container::-webkit-scrollbar-track {
+    background: #003399;
+}
+
+.bg-ford {
+    background-color: #003C7D !important;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ghost-card .placeholder {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
