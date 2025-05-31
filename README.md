@@ -37,7 +37,7 @@ O projeto também inclui a **página de login administrativo**.
 
 ## 🔄 Sprint Retrospective
 
-Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvidas, atendendo às demandas necessárias:
+Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvidas, atendendo às demandas necessárias e **implementando novas páginas para melhorar a experiência do usuário**:
 
 - **Home** 🏠 – Criação do _carousel_ de imagens, com texto descritivo e detalhamento do _carousel_.
 - **Lançamento** 🚗 – Implementação de vídeo, descrição ao lado do vídeo, tabela de carros e _popup_ de comparação.
@@ -51,3 +51,5 @@ Com base nas sprints anteriores, todas as páginas requeridas foram desenvolvida
 - **Boleto** 🏦 – Tela com informações do cliente e botão para geração de boleto.
 - **Header** 🔍 – Criação da navegação da página para facilitar a experiência do usuário.
 - **Footer** 🏁 – Adição de texto e ícone para manter a autoria da _Ford-Enter_.
+- **Lista de Pedidos** 📜 – Adição de cards com os pedidos feitos na loja, incluindo botão de deletar.
+- **Lista de Contatos** 📇 – Adição de cards com os pedidos feitos no contato, incluindo botão de deletar.
