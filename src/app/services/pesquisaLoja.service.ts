@@ -2,18 +2,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PesquisaService {
+  constructor() {}
 
-  constructor() { }
+  private pesquisaBehavior = new BehaviorSubject<string>('');
+  pesquisaObservable = this.pesquisaBehavior.asObservable();
 
- private pesquisaBehavior = new BehaviorSubject<string>('')
- pesquisaObservable = this.pesquisaBehavior.asObservable()
-
-
-
- updatePesquisa(pesquisaValor:string){
-this.pesquisaBehavior.next(pesquisaValor)
- }
+  updatePesquisa(pesquisaValor: string) {
+    this.pesquisaBehavior.next(pesquisaValor);
+  }
 }

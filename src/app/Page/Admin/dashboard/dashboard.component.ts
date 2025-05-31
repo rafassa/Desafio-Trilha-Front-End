@@ -9,35 +9,34 @@ import { SelectService } from '../../../services/select.service';
 import { Carro } from '../../../Interface/Carro.interface';
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, FormsModule,BarraLateralComponent, PesquisaComponent, SelectDashBoardComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    BarraLateralComponent,
+    PesquisaComponent,
+    SelectDashBoardComponent,
+  ],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
+  private service = inject(SelectService);
 
-  
-  private service = inject(SelectService)
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient, ){}
+  carros: Carro[] | null = null;
+  selecionado = 0;
+  carSelect: number = 0;
 
-  carros:Carro[] | null=null
-  selecionado=0
-  carSelect:number=0
+  carroSelecionado() {
+    this.service.getApi().subscribe({
+      next: (resposta: any) => {
+        this.carros = resposta.vehicles;
+        console.log(this.carros);
 
-carroSelecionado(){
-  this.service.getApi().subscribe({
-    next: (resposta:any)=>{
-    this.carros = resposta.vehicles
-    console.log(this.carros)
-    
-      this.selecionado = this.carSelect
-      console.log(this.selecionado)
-    },
-    
-  })
-  
-}
-
-
-
+        this.selecionado = this.carSelect;
+        console.log(this.selecionado);
+      },
+    });
+  }
 }

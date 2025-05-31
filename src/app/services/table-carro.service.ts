@@ -4,15 +4,14 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TableCarroService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient){}
-
-
-    getApi():Observable<Lancamento[]>{
-      const apiUrl="https://api-desafio-trilha-front-end.onrender.com/lancamentoCarros"
-      return  this.http.get<Lancamento[]>(apiUrl)
-    }
+  getApi(): Observable<Lancamento[]> {
+    const apiUrl =
+      'https://api-desafio-trilha-front-end.onrender.com/lancamentoCarros';
+    return this.http.get<Lancamento[]>(apiUrl);
+  }
 }

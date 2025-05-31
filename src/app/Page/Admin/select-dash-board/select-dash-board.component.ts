@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,34 +9,30 @@ import { Carro } from '../../../Interface/Carro.interface';
   selector: 'app-select-dash-board',
   imports: [CommonModule, FormsModule],
   templateUrl: './select-dash-board.component.html',
-  styleUrl: './select-dash-board.component.css'
+  styleUrl: './select-dash-board.component.css',
 })
 export class SelectDashBoardComponent {
-  private service = inject(SelectService)
+  private service = inject(SelectService);
 
-  constructor(private http: HttpClient, ){}
+  constructor(private http: HttpClient) {}
 
-  carros:Carro[] | null=null
-  selecionado=0
-  carSelect:number=0
+  carros: Carro[] | null = null;
+  selecionado = 0;
+  carSelect: number = 0;
 
-ngOnInit(){
-   this.carSelect = 0;
+  ngOnInit() {
+    this.carSelect = 0;
+  }
+
+  carroSelecionado() {
+    this.service.getApi().subscribe({
+      next: (resposta: any) => {
+        this.carros = resposta.vehicles;
+        console.log(this.carros);
+
+        this.selecionado = this.carSelect;
+        console.log(this.selecionado);
+      },
+    });
+  }
 }
-
-carroSelecionado(){
-  this.service.getApi().subscribe({
-    next: (resposta:any)=>{
-    this.carros = resposta.vehicles
-    console.log(this.carros)
-    
-      this.selecionado = this.carSelect
-      console.log(this.selecionado)
-    },
-    
-  })
-  
-}
-}
-
-

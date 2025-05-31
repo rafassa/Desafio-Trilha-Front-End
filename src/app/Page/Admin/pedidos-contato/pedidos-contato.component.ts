@@ -6,26 +6,31 @@ import { CommonModule } from '@angular/common';
   selector: 'app-pedidos-contato',
   imports: [BarraLateralComponent, CommonModule],
   templateUrl: './pedidos-contato.component.html',
-  styleUrl: './pedidos-contato.component.css'
+  styleUrl: './pedidos-contato.component.css',
 })
 export class PedidosContatoComponent {
+  listaContato: {
+    motivo: string;
+    preferencia: string;
+    nome: string;
+    comentario: string;
+    email: string;
+    telefone: string;
+  }[] = [];
 
-listaContato:{motivo:string ,preferencia:string, nome:string, comentario:string, email:string, telefone:string}[]=[]
-
-
-ngOnInit() {
-
+  ngOnInit() {
     const dados = localStorage.getItem('arrayPedidosContato');
     if (dados) {
       this.listaContato = JSON.parse(dados);
     }
   }
 
-
   removerContato(index: number) {
-    this.listaContato.splice(index, 1); 
-    
-    localStorage.setItem('arrayPedidosContato', JSON.stringify(this.listaContato)); 
-  }   
+    this.listaContato.splice(index, 1);
 
+    localStorage.setItem(
+      'arrayPedidosContato',
+      JSON.stringify(this.listaContato),
+    );
+  }
 }

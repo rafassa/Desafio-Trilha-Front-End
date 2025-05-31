@@ -5,8 +5,6 @@ import { EscolhaComponent } from '../escolha/escolha.component';
   selector: 'app-mercados',
   imports: [EscolhaComponent],
   templateUrl: './fretes.component.html',
-  styleUrl: './fretes.component.css'
+  styleUrl: './fretes.component.css',
 })
-export class FreteComponent {
-
-}
+export class FreteComponent {}

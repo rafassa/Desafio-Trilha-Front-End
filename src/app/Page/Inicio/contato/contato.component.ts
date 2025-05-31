@@ -15,9 +15,8 @@ import { ContatoListaService } from '../../../services/contato-lista.service';
   styleUrl: './contato.component.css',
 })
 export class ContatoComponent {
-
-  service = inject(ContatoListaService)
-mostrarPopup = false;
+  service = inject(ContatoListaService);
+  mostrarPopup = false;
   formContato = new FormGroup({
     nome: new FormControl('', [
       Validators.required,
@@ -68,17 +67,26 @@ mostrarPopup = false;
 
   pegarInfor() {
     localStorage.setItem('motivoContato', JSON.stringify(this.motivo?.value));
-    localStorage.setItem('preferenciaContato',JSON.stringify(this.preferencia?.value));
+    localStorage.setItem(
+      'preferenciaContato',
+      JSON.stringify(this.preferencia?.value),
+    );
     localStorage.setItem('nomeContato', JSON.stringify(this.nome?.value));
-    localStorage.setItem('comentarioContato',JSON.stringify(this.comentario?.value));
-    localStorage.setItem('emailContato', JSON.stringify(this.email?.value))
-    localStorage.setItem('telefoneContato', JSON.stringify(this.telefone?.value))
-    this.service.pushLista()
+    localStorage.setItem(
+      'comentarioContato',
+      JSON.stringify(this.comentario?.value),
+    );
+    localStorage.setItem('emailContato', JSON.stringify(this.email?.value));
+    localStorage.setItem(
+      'telefoneContato',
+      JSON.stringify(this.telefone?.value),
+    );
+    this.service.pushLista();
     this.formContato.reset();
-    this.mostrarPopup = true; 
+    this.mostrarPopup = true;
   }
 
   fecharPopup() {
-    this.mostrarPopup = false; 
-}
+    this.mostrarPopup = false;
+  }
 }

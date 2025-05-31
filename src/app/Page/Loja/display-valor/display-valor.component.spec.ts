@@ -8,9 +8,8 @@ describe('DisplayValorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DisplayValorComponent]
-    })
-    .compileComponents();
+      imports: [DisplayValorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DisplayValorComponent);
     component = fixture.componentInstance;

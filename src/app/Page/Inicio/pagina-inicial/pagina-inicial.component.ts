@@ -5,10 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-pagina-inicial',
-  imports: [CarouselComponent, CommonModule, FormsModule,ReactiveFormsModule, RouterModule],
+  imports: [
+    CarouselComponent,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+  ],
   templateUrl: './pagina-inicial.component.html',
-  styleUrl: './pagina-inicial.component.css'
+  styleUrl: './pagina-inicial.component.css',
 })
 export class PaginaInicialComponent {
-slides:any[]=[]
+  slides: any[] = [];
 }

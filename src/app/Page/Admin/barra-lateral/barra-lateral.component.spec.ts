@@ -8,9 +8,8 @@ describe('BarraLateralComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BarraLateralComponent]
-    })
-    .compileComponents();
+      imports: [BarraLateralComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BarraLateralComponent);
     component = fixture.componentInstance;

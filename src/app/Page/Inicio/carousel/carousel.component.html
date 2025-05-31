@@ -1,32 +1,38 @@
 <div class="card card-raised card-carousel">
-  
-    
-    <div class="carousel-indicators">
-      <span *ngFor="let img of imagens; let i = index" class="indicator-dot"
-        [class.active]="i === index"></span>
-    </div>
-
-    <div class="carousel-inner">
-      <div *ngFor="let img of imagens; let i = index" class="carousel-item" [class.active]="i === index">
-        <img class="d-block w-100 img-fluid rounded border border-primary shadow" [src]="img.img" alt="Carousel Image">
-        <div class="carousel-caption d-none d-md-block">
-          <h4>
-            <a [href]="img.link" class="text-white text-decoration-none">
-              <i class="bi bi-geo-alt-fill"></i> {{ img.descricao }}
-            </a>
-          </h4>
-        </div>
-      </div>
-    </div>
-
-   
-    <button class="carousel-control-prev" (click)="prevImage()">
-  <i class="bi bi-arrow-left-circle-fill fs-2"></i>
-</button>
-
-<button class="carousel-control-next" (click)="nextImage()">
-  <i class="bi bi-arrow-right-circle-fill fs-2"></i>
-</button>
-
+  <div class="carousel-indicators">
+    <span
+      *ngFor="let img of imagens; let i = index"
+      class="indicator-dot"
+      [class.active]="i === index"
+    ></span>
   </div>
 
+  <div class="carousel-inner">
+    <div
+      *ngFor="let img of imagens; let i = index"
+      class="carousel-item"
+      [class.active]="i === index"
+    >
+      <img
+        class="d-block w-100 img-fluid rounded border border-primary shadow"
+        [src]="img.img"
+        alt="Carousel Image"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h4>
+          <a [href]="img.link" class="text-white text-decoration-none">
+            <i class="bi bi-geo-alt-fill"></i> {{ img.descricao }}
+          </a>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" (click)="prevImage()">
+    <i class="bi bi-arrow-left-circle-fill fs-2"></i>
+  </button>
+
+  <button class="carousel-control-next" (click)="nextImage()">
+    <i class="bi bi-arrow-right-circle-fill fs-2"></i>
+  </button>
+</div>

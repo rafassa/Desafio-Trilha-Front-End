@@ -1,6 +1,6 @@
-export interface Produto{
-    nome:string;
-    preco:number;
-    quantidade:number;
-    img:string;
+export interface Produto {
+  nome: string;
+  preco: number;
+  quantidade: number;
+  img: string;
 }

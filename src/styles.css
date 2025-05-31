@@ -1,18 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-app-root{
-    display: flex;
-    flex: 1;
-    overflow: auto;
-    height: 100%;
+app-root {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+  height: 100%;
 }
 
-
-html, body {
+html,
+body {
   overflow: auto !important;
   height: 100% !important;
 }

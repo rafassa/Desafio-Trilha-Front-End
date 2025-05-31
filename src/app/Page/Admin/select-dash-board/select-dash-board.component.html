@@ -1,27 +1,42 @@
-<select class="form-select form-select-lg d-flex mb-3 bg-white text-dark" 
-        name="SelectDoDashboard" id="SelectDoDashboard" [(ngModel)]="carSelect" (change)="carroSelecionado()">
-    <option value="0" disabled selected>Selecione uma opção</option>
-    <option value="0">Ranger</option>
-    <option value="1">Mustang</option>
-    <option value="2">Territory</option>
-    <option value="3">Bronco Sport</option>
+<select
+  class="form-select form-select-lg d-flex mb-3 bg-white text-dark"
+  name="SelectDoDashboard"
+  id="SelectDoDashboard"
+  [(ngModel)]="carSelect"
+  (change)="carroSelecionado()"
+>
+  <option value="0" disabled selected>Selecione uma opção</option>
+  <option value="0">Ranger</option>
+  <option value="1">Mustang</option>
+  <option value="2">Territory</option>
+  <option value="3">Bronco Sport</option>
 </select>
 
 <div class="text-center d-flex flex-wrap gap-3">
-    <div class="border rounded card-body bg-white text-dark">
-        <h6 class="card-title mb-0">Veículo:</h6>
-        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].vehicle : '—' }}</p>
-    </div>
-    <div class="border rounded card-body bg-white text-dark">
-        <h6 class="card-title mb-0">Conectado:</h6>
-        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].connected : '—' }}</p>
-    </div>
-    <div class="border rounded card-body bg-white text-dark">
-        <h6 class="card-title mb-0">Software:</h6>
-        <p class="card-text fs-6 mb-0">{{ carros && carros[carSelect] ? carros[carSelect].softwareUpdates : '—' }}</p>
-    </div>
+  <div class="border rounded card-body bg-white text-dark">
+    <h6 class="card-title mb-0">Veículo:</h6>
+    <p class="card-text fs-6 mb-0">
+      {{ carros && carros[carSelect] ? carros[carSelect].vehicle : "—" }}
+    </p>
+  </div>
+  <div class="border rounded card-body bg-white text-dark">
+    <h6 class="card-title mb-0">Conectado:</h6>
+    <p class="card-text fs-6 mb-0">
+      {{ carros && carros[carSelect] ? carros[carSelect].connected : "—" }}
+    </p>
+  </div>
+  <div class="border rounded card-body bg-white text-dark">
+    <h6 class="card-title mb-0">Software:</h6>
+    <p class="card-text fs-6 mb-0">
+      {{
+        carros && carros[carSelect] ? carros[carSelect].softwareUpdates : "—"
+      }}
+    </p>
+  </div>
 </div>
 
-
-<img class="img-fluid rounded mt-3 w-50" alt="Imagem do veículo"
-    [src]="carros && carros[carSelect] ? carros[carSelect].img : './mustang.png'">
+<img
+  class="img-fluid rounded mt-3 w-50"
+  alt="Imagem do veículo"
+  [src]="carros && carros[carSelect] ? carros[carSelect].img : './mustang.png'"
+/>

@@ -9,40 +9,35 @@ import { PesquisaService } from '../../../services/pesquisaLoja.service';
   selector: 'app-catalogo',
   imports: [CommonModule, PesquisaPipePipe],
   templateUrl: './catalogo.component.html',
-  styleUrl: './catalogo.component.css'
+  styleUrl: './catalogo.component.css',
 })
 export class CatalogoComponent {
-service = inject(ComprarService)
-servicePesquisa = inject(PesquisaService)
+  service = inject(ComprarService);
+  servicePesquisa = inject(PesquisaService);
 
-produtos:Produto[] | null=null
-valorPesquisa:string =''
-ngOnInit(){
+  produtos: Produto[] | null = null;
+  valorPesquisa: string = '';
+  ngOnInit() {
+    this.adicionar();
+    this.servicePesquisa.pesquisaObservable.subscribe((pesquisa) => {
+      this.valorPesquisa = pesquisa;
+    });
+  }
 
-this.adicionar()
-this.servicePesquisa.pesquisaObservable.subscribe((pesquisa)=>{
-this.valorPesquisa = pesquisa
-})
-}
+  adicionar() {
+    this.service.adicionar().subscribe({
+      next: (item: Produto[]) => {
+        this.produtos = item;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 
-adicionar(){
-  this.service.adicionar().subscribe({
-    next:(item:Produto[])=>{
-      
-      this.produtos = item
-    
-    },
-    error:(error)=>{
-      console.log(error)
-    }
-  })
-}
-
-enviarProduto(produto:Produto){
-this.service.PegarLocalInfo(produto)
-console.log(produto)
- console.log("LocalStorage:", localStorage.getItem("produto"));
-}
-
-
+  enviarProduto(produto: Produto) {
+    this.service.PegarLocalInfo(produto);
+    console.log(produto);
+    console.log('LocalStorage:', localStorage.getItem('produto'));
+  }
 }

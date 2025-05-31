@@ -1,15 +1,15 @@
 .footer {
-    background-color: #002868;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #002868;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .footer .social-icons a {
-    color: white; 
-    font-size: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .footer .social-icons a:hover {
-    color: #ffd700; 
+  color: #ffd700;
 }

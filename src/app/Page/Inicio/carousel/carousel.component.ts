@@ -7,50 +7,44 @@ import { CommonModule } from '@angular/common';
   selector: 'app-carousel',
   imports: [CommonModule],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css'
+  styleUrl: './carousel.component.css',
 })
 export class CarouselComponent {
+  service = inject(CarouselService);
 
-service = inject(CarouselService)
+  imagens: CarouselImage[] = [];
+  index = 0;
+  intervalo: any;
 
+  ngOnInit() {
+    this.service.pegarImagem().subscribe((data) => {
+      this.imagens = data;
+      this.autoPassar();
+    });
+  }
 
-imagens:CarouselImage[]=[]
-index=0
-intervalo:any
-
-
-
-ngOnInit(){
-  this.service.pegarImagem().subscribe((data)=>{
-    this.imagens = data
-    this.autoPassar()
-  })
-}
-
-
- prevImage() {
+  prevImage() {
     this.index = (this.index - 1 + this.imagens.length) % this.imagens.length;
-    this.resetarPassar()
+    this.resetarPassar();
   }
 
   nextImage() {
     this.index = (this.index + 1) % this.imagens.length;
-    this.resetarPassar()
+    this.resetarPassar();
   }
 
-  autoPassar(){
+  autoPassar() {
     this.intervalo = setInterval(() => {
-      this.nextImage()
+      this.nextImage();
     }, 3000);
   }
 
-  resetarPassar(){
-    clearInterval(this.intervalo)
-    this.autoPassar()
+  resetarPassar() {
+    clearInterval(this.intervalo);
+    this.autoPassar();
   }
 
-
-  ngOnDestroy(){
-    clearInterval(this.intervalo)
+  ngOnDestroy() {
+    clearInterval(this.intervalo);
   }
 }

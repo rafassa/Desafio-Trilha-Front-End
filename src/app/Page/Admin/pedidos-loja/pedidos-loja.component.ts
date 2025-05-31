@@ -5,26 +5,27 @@ import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component'
 
 @Component({
   selector: 'app-pedidos-loja',
-  imports: [CommonModule, BarraLateralComponent ],
+  imports: [CommonModule, BarraLateralComponent],
   templateUrl: './pedidos-loja.component.html',
   styleUrl: './pedidos-loja.component.css',
 })
 export class PedidosLojaComponent {
-
-listaPedidos: { valor: number | null, produto: Produto[] | null, nome: string | null }[] = []
+  listaPedidos: {
+    valor: number | null;
+    produto: Produto[] | null;
+    nome: string | null;
+  }[] = [];
 
   ngOnInit() {
-
     const dados = localStorage.getItem('arrayPedidos');
     if (dados) {
       this.listaPedidos = JSON.parse(dados);
     }
   }
 
-removerPedido(index: number) {
+  removerPedido(index: number) {
     this.listaPedidos.splice(index, 1);
     localStorage.setItem('arrayPedidos', JSON.stringify(this.listaPedidos));
-    this.ngOnInit(); 
-}
-
+    this.ngOnInit();
+  }
 }

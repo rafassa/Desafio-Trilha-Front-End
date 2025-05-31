@@ -4,24 +4,19 @@ import { Observable } from 'rxjs';
 import { Mercado } from '../Interface/Mercado.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FreteService {
+  http = inject(HttpClient);
 
- http = inject(HttpClient)
+  getFrete(): Observable<Mercado[]> {
+    return this.http.get<Mercado[]>(
+      'https://api-desafio-trilha-front-end.onrender.com/frete',
+    );
+  }
 
- getFrete(): Observable<Mercado[]> {
-  return this.http.get<Mercado[]>('https://api-desafio-trilha-front-end.onrender.com/frete');
+  salvarValor(valor: number) {
+    localStorage.setItem('valorTransferencia', JSON.stringify(valor));
+    localStorage.setItem('listaValor', JSON.stringify(valor));
+  }
 }
-
-
-
-
-salvarValor(valor:number){
-  localStorage.setItem('valorTransferencia', JSON.stringify(valor))
-  localStorage.setItem('listaValor', JSON.stringify(valor))
-}
-
-
-}
-

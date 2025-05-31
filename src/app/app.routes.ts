@@ -13,68 +13,63 @@ import { loginprotectionGuard } from './Guard/loginprotection.guard';
 import { PedidosLojaComponent } from './Page/Admin/pedidos-loja/pedidos-loja.component';
 import { PedidosContatoComponent } from './Page/Admin/pedidos-contato/pedidos-contato.component';
 
-
-
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: PaginaInicialComponent,
+  },
 
-    {
-        path:'',
-        redirectTo:'home',
-        pathMatch:'full'
-
-    },
-    {
-    path:'home',
-    component:PaginaInicialComponent
-   },
-  
-   {
-    path:'login',
-    component:LoginComponent,
-   },
-         {
-    path:'dashboard',
-    component:DashboardComponent,
-    canActivate:[loginprotectionGuard]
-   },
-    {
-    path:'homeAdmin',
-    component:boasVindasComponent,
-    canActivate:[loginprotectionGuard]
-   },
-   {
-    path:'loja',
-    component:LojaComponent,
-   },
-   {
-    path:'frete',
-    component:FreteComponent,
-   },
-   {
-    path:'compra',
-    component:CompraComponent
-   },
-   {
-    path:'boleto',
-    component:BoletoComponent
-   },
-   {
-    path:'lancamento',
-    component:LancamentoComponent
-   },
-   {
-    path:'contato',
-    component:ContatoComponent
-   },
-   {
-    path:'listaLoja',
-    component:PedidosLojaComponent,
-    canActivate:[loginprotectionGuard]
-   },
-   {
-    path:'listaContato',
-    component:PedidosContatoComponent,
-    canActivate:[loginprotectionGuard]
-   }
-
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [loginprotectionGuard],
+  },
+  {
+    path: 'homeAdmin',
+    component: boasVindasComponent,
+    canActivate: [loginprotectionGuard],
+  },
+  {
+    path: 'loja',
+    component: LojaComponent,
+  },
+  {
+    path: 'frete',
+    component: FreteComponent,
+  },
+  {
+    path: 'compra',
+    component: CompraComponent,
+  },
+  {
+    path: 'boleto',
+    component: BoletoComponent,
+  },
+  {
+    path: 'lancamento',
+    component: LancamentoComponent,
+  },
+  {
+    path: 'contato',
+    component: ContatoComponent,
+  },
+  {
+    path: 'listaLoja',
+    component: PedidosLojaComponent,
+    canActivate: [loginprotectionGuard],
+  },
+  {
+    path: 'listaContato',
+    component: PedidosContatoComponent,
+    canActivate: [loginprotectionGuard],
+  },
 ];

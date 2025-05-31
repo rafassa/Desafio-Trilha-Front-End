@@ -1,5 +1,4 @@
 export interface Mercado {
-    nome: string;         
-    multiplicador: number;
-  }
-  
+  nome: string;
+  multiplicador: number;
+}

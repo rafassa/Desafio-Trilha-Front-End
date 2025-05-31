@@ -1,28 +1,27 @@
 .table-bordered {
-    border: 2px solid #003C7D;
-    border-radius: 10px;
-    overflow: hidden;
+  border: 2px solid #003c7d;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th {
-    background-color: #003C7D;
-    color: white;
-    font-weight: bold;
+  background-color: #003c7d;
+  color: white;
+  font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #1C355E;
+  background-color: #1c355e;
 }
 
 tr:hover {
-    background-color: #28589D;
-    transition: 0.3s ease-in-out;
+  background-color: #28589d;
+  transition: 0.3s ease-in-out;
 }
 
-
 .form-control {
-    border: 2px solid #003C7D;
-    border-radius: 5px;
-    font-weight: bold;
-    color: #003C7D;
+  border: 2px solid #003c7d;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #003c7d;
 }

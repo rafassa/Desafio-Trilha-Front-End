@@ -4,8 +4,10 @@ import { CanActivateFn } from '@angular/router';
 import { loginprotectionGuard } from './loginprotection.guard';
 
 describe('loginprotectionGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => loginprotectionGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() =>
+      loginprotectionGuard(...guardParameters),
+    );
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

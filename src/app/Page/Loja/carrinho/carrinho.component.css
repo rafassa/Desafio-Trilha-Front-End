@@ -1,38 +1,32 @@
-
-.card { 
-  color: white; 
-  border: solid 2px linear-gradient(45deg, #007bff, #00509d);;
+.card {
+  color: white;
+  border: solid 2px linear-gradient(45deg, #007bff, #00509d);
 }
 
-
-.btn-success, .btn-warning {
+.btn-success,
+.btn-warning {
   background: linear-gradient(45deg, #007bff, #6610f2);
   border: none;
   color: white;
 }
 
-.btn-success:hover, .btn-warning:hover {
-  background: linear-gradient(45deg, #00509d, #440085); 
+.btn-success:hover,
+.btn-warning:hover {
+  background: linear-gradient(45deg, #00509d, #440085);
 }
-
 
 .offcanvas-header {
   background: linear-gradient(45deg, #007bff, #6610f2);
 }
 
 .card-img-top {
-  height: 120px; 
+  height: 120px;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-
-
-#card-body{
+#card-body {
   background: linear-gradient(135deg, #f8f9fa, #e0eaff);
-    border: 2px solid #007bff;
+  border: 2px solid #007bff;
 }
-
-
-

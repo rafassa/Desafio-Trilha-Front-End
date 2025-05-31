@@ -7,10 +7,6 @@ import { CarrinhoComponent } from '../carrinho/carrinho.component';
   selector: 'app-loja',
   imports: [PesquisaComponent, CatalogoComponent, CarrinhoComponent],
   templateUrl: './loja.component.html',
-  styleUrl: './loja.component.css'
+  styleUrl: './loja.component.css',
 })
-export class LojaComponent {
-
-
-  
-}
+export class LojaComponent {}

@@ -8,15 +8,14 @@ import { PesquisaService } from '../../../services/pesquisaLoja.service';
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './pesquisa.component.html',
-  styleUrl: './pesquisa.component.css'
+  styleUrl: './pesquisa.component.css',
 })
-export class PesquisaComponent  {
+export class PesquisaComponent {
   service = inject(PesquisaService);
   pesquisa: FormControl = new FormControl('');
-  textoPesquisa:any
+  textoPesquisa: any;
 
-mudanca(pesquisaValor:string){
-this.service.updatePesquisa(pesquisaValor)
-}
-
+  mudanca(pesquisaValor: string) {
+    this.service.updatePesquisa(pesquisaValor);
+  }
 }

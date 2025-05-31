@@ -1,28 +1,25 @@
-
-#imagem__De__Fundo{
-    background-image: url('/teste.png');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-    width: 100vw; 
-    height: 100vh; 
+#imagem__De__Fundo {
+  background-image: url("/teste.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
-:host{
-    display: flex;
-    flex: 1;
-}
-
-
-#imagem__De__Fundo__Carro{
-    background-image: url('/ranger.png');background-repeat: no-repeat;
-background-size: 100%;
-background-position: center;
+:host {
+  display: flex;
+  flex: 1;
 }
 
-@media (max-width:720px){
-    #imagem__De__Fundo__Carro{
-        padding-top: 30%;
-    }
+#imagem__De__Fundo__Carro {
+  background-image: url("/ranger.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
-
+@media (max-width: 720px) {
+  #imagem__De__Fundo__Carro {
+    padding-top: 30%;
+  }
+}

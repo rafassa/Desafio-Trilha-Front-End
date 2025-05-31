@@ -6,8 +6,6 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
   selector: 'app-compra',
   imports: [DisplayValorComponent, PagamentoComponent],
   templateUrl: './compra.component.html',
-  styleUrl: './compra.component.css'
+  styleUrl: './compra.component.css',
 })
-export class CompraComponent {
-
-}
+export class CompraComponent {}

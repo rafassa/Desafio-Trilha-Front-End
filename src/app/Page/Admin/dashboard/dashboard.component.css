@@ -1,43 +1,40 @@
-:host{
-    display: flex;
-    flex: 1;
+:host {
+  display: flex;
+  flex: 1;
 }
 
 #imagem__De__Fundo__Dashboard {
-    background-image: url('/teste.png');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-    width: 100vw; 
-    height: 100vh; 
+  background-image: url("/teste.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-
-#cor{
-    background-color:  #FFA500;
+#cor {
+  background-color: #ffa500;
 }
 
 @media (min-width: 768px) {
-    .d-flex-custom {
-        flex-direction: row !important;
-    }
+  .d-flex-custom {
+    flex-direction: row !important;
+  }
 }
 
 @media (max-width: 767px) {
-    .d-flex-custom {
-        flex-direction: column !important;
-    }
+  .d-flex-custom {
+    flex-direction: column !important;
+  }
 }
-
 
 app-select-dash-board {
-    display: block;
-    overflow-x: auto;
-    width: 100%;
+  display: block;
+  overflow-x: auto;
+  width: 100%;
 }
 
-
-#div{
-    align-self: center;
-    justify-self: center;
+#div {
+  align-self: center;
+  justify-self: center;
 }

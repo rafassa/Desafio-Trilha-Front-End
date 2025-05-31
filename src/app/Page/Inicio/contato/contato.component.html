@@ -1,114 +1,213 @@
-<div class="p-3 d-flex align-items-center justify-content-center" id="DivPrincipal">
-  <div class="w-100  d-flex align-items-center justify-content-center">
+<div
+  class="p-3 d-flex align-items-center justify-content-center"
+  id="DivPrincipal"
+>
+  <div class="w-100 d-flex align-items-center justify-content-center">
     <div class="w-100 d-flex align-items-center justify-content-center">
-      <img class="img-fluid rounded w-100" src="./xlsdiesel.png" alt="Imagem xls">
+      <img
+        class="img-fluid rounded w-100"
+        src="./xlsdiesel.png"
+        alt="Imagem xls"
+      />
     </div>
   </div>
-  <form [formGroup]="formContato" class="container m-0 p-4 w-100 border rounded shadow">
+  <form
+    [formGroup]="formContato"
+    class="container m-0 p-4 w-100 border rounded shadow"
+  >
     <div class="row">
       <div class="">
         <h4 class="mb-3">Formulário para contato</h4>
 
         <div class="mb-3 gap-1">
           <label for="nome" class="form-label">Nome Completo</label>
-          <input class="form-control" required name="nome" type="text" placeholder="Digite seu nome"
-            formControlName="nome">
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="nome?.hasError('required')&&(nome?.dirty || nome?.touched) ">Nome invalido</span>
+          <input
+            class="form-control"
+            required
+            name="nome"
+            type="text"
+            placeholder="Digite seu nome"
+            formControlName="nome"
+          />
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="nome?.hasError('required') && (nome?.dirty || nome?.touched)"
+            >Nome invalido</span
+          >
         </div>
-
-
 
         <div class="mb-3 gap-1">
           <label for="email" class="form-label">E-mail</label>
-          <input class="form-control" required name="email" type="email" placeholder="Digite seu E-MAIL"
-            formControlName="email">
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="email?.hasError('required')&&(email?.dirty || email?.touched) ">Email Invalido</span>
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="email?.hasError('pattern') && (email?.dirty || email?.touched)">
+          <input
+            class="form-control"
+            required
+            name="email"
+            type="email"
+            placeholder="Digite seu E-MAIL"
+            formControlName="email"
+          />
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              email?.hasError('required') && (email?.dirty || email?.touched)
+            "
+            >Email Invalido</span
+          >
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              email?.hasError('pattern') && (email?.dirty || email?.touched)
+            "
+          >
             Email inválido!
           </span>
         </div>
 
         <div class="mb-3 gap-1">
           <label for="telefone" class="form-label">Telefone</label>
-          <input class="form-control" required name="telefone" type="tel" placeholder="Digite seu telefone"
-            formControlName="telefone" [mask]="'(00) 00000-0000'">
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="telefone?.hasError('required')&&(telefone?.dirty || telefone?.touched) ">Número invalido</span>
+          <input
+            class="form-control"
+            required
+            name="telefone"
+            type="tel"
+            placeholder="Digite seu telefone"
+            formControlName="telefone"
+            [mask]="'(00) 00000-0000'"
+          />
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              telefone?.hasError('required') &&
+              (telefone?.dirty || telefone?.touched)
+            "
+            >Número invalido</span
+          >
         </div>
 
         <div class="mb-3 gap-1">
           <label for="contato" class="form-label">Preferência de Contato</label>
-          <select class="form-select" name="contato" id="opcao" formControlName="preferencia">
+          <select
+            class="form-select"
+            name="contato"
+            id="opcao"
+            formControlName="preferencia"
+          >
             <option value="" selected>Selecione uma opção</option>
             <option value="Email">Email</option>
             <option value="Telefone">Telefone</option>
           </select>
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="preferencia?.hasError('required')&&(preferencia?.dirty || preferencia?.touched) ">Nenhuma opção
-            selecionada</span>
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              preferencia?.hasError('required') &&
+              (preferencia?.dirty || preferencia?.touched)
+            "
+            >Nenhuma opção selecionada</span
+          >
         </div>
-
 
         <div class="mb-3 gap-1">
           <label for="contato" class="form-label">Motivos</label>
-          <select class="form-select" name="opcapo" id="opcao" formControlName="motivo">
+          <select
+            class="form-select"
+            name="opcapo"
+            id="opcao"
+            formControlName="motivo"
+          >
             <option value="" selected>Selecione uma opção</option>
             <option value="Reclamacao">reclamação</option>
             <option value="Elogio">elogio</option>
             <option value="Duvida">dúvida</option>
           </select>
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="motivo?.hasError('required')&&(motivo?.dirty || motivo?.touched) ">Nenhuma opção
-            selecionada</span>
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              motivo?.hasError('required') && (motivo?.dirty || motivo?.touched)
+            "
+            >Nenhuma opção selecionada</span
+          >
         </div>
-
-
-
 
         <div class="mb-3 gap-1">
           <label for="comentario" class="form-label">Comentário</label>
-          <textarea class="form-control" name="comentario" placeholder="Digite seu comentário"
-            formControlName="comentario" style="resize: none;"></textarea>
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="comentario?.hasError('required') && (comentario?.dirty || comentario?.touched)">
+          <textarea
+            class="form-control"
+            name="comentario"
+            placeholder="Digite seu comentário"
+            formControlName="comentario"
+            style="resize: none"
+          ></textarea>
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              comentario?.hasError('required') &&
+              (comentario?.dirty || comentario?.touched)
+            "
+          >
             adicione um comentario
           </span>
         </div>
 
         <p class="small text-muted">
-          Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será
-          possível editar ou remover tais dados.
-          <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e condições</a>
+          Os dados serão mantidos em nossa base de dados, só enquanto for
+          desejado por você. A qualquer momento, será possível editar ou remover
+          tais dados.
+          <a href="https://www.ford.com.br/politica-de-privacidade/"
+            >Termos e condições</a
+          >
         </p>
 
-
-
         <div class="form-check mb-2">
-          <input class="form-check-input" id="termoAceito" type="checkbox" formControlName="termoAceito">
+          <input
+            class="form-check-input"
+            id="termoAceito"
+            type="checkbox"
+            formControlName="termoAceito"
+          />
           <label class="form-check-label" for="termoAceito">
-            Sim, concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/">termos e condições</a>
+            Sim, concordo com os
+            <a href="https://www.ford.com.br/politica-de-privacidade/"
+              >termos e condições</a
+            >
           </label>
-          <span class="d-inline-block alert alert-danger p-1 small text-center w-auto" role="alert"
-            *ngIf="termoAceito?.hasError('required')&&(termoAceito?.dirty || termoAceito?.touched) ">Nescessário</span>
+          <span
+            class="d-inline-block alert alert-danger p-1 small text-center w-auto"
+            role="alert"
+            *ngIf="
+              termoAceito?.hasError('required') &&
+              (termoAceito?.dirty || termoAceito?.touched)
+            "
+            >Nescessário</span
+          >
         </div>
 
         <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox">
+          <input class="form-check-input" type="checkbox" />
           <label class="form-check-label">
             Sim, também quero receber descontos e novidades
           </label>
         </div>
 
-        <button id="botao" class="btn btn-primary w-100" type="submit" (click)="pegarInfor()"
-          [disabled]="formContato.invalid">Enviar</button>
+        <button
+          id="botao"
+          class="btn btn-primary w-100"
+          type="submit"
+          (click)="pegarInfor()"
+          [disabled]="formContato.invalid"
+        >
+          Enviar
+        </button>
       </div>
     </div>
   </form>
 </div>
-
 
 <div *ngIf="mostrarPopup" class="popup-container">
   <div class="popup-content">

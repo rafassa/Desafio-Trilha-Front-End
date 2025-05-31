@@ -8,9 +8,8 @@ describe('SelectDashBoardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectDashBoardComponent]
-    })
-    .compileComponents();
+      imports: [SelectDashBoardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SelectDashBoardComponent);
     component = fixture.componentInstance;

@@ -1,25 +1,23 @@
-li{
-    list-style: none;
-    
+li {
+  list-style: none;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .btn-custom {
-    background-color: #002868; 
-    color: white; 
-    border: none;
+  background-color: #002868;
+  color: white;
+  border: none;
 }
 
 .btn-custom:hover {
-    background-color: #001a48; 
+  background-color: #001a48;
 }
 
 .table-responsive {
   width: 100%;
   overflow-x: auto;
 }
-
