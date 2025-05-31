@@ -35,5 +35,6 @@ export class AutenticacaoService {
   pegarValorCheck(valorcheck: any, valorData: any) {
     localStorage.setItem('valorcheck', JSON.stringify(valorcheck));
     sessionStorage.setItem('valorDataRapida', JSON.stringify(valorData));
+    localStorage.setItem('valorData',JSON.stringify(valorData))
   }
 }
