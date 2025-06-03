@@ -33,8 +33,12 @@ export class AutenticacaoService {
   }
 
   pegarValorCheck(valorcheck: any, valorData: any) {
+    const check = localStorage.getItem('valorcheck')
     localStorage.setItem('valorcheck', JSON.stringify(valorcheck));
     sessionStorage.setItem('valorDataRapida', JSON.stringify(valorData));
+
+    if(check){
     localStorage.setItem('valorData',JSON.stringify(valorData))
   }
+}
 }

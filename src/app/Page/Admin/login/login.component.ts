@@ -18,16 +18,19 @@ export class LoginComponent {
   ) {}
   mensagemDeErro: string | null = null;
   isChecked = false;
-  checkboxVar: any;
+  checkboxVar:boolean = false
+  loginRapidoChecagem = ''
   ngOnInit() {
     const checkbox = localStorage.getItem('valorcheck');
-    if (checkbox) {
+    const loginSession = sessionStorage.getItem('valorDataRapida')
+    if (checkbox && loginSession) {
       this.checkboxVar = JSON.parse(checkbox);
     }
 
-    if (this.checkboxVar == true) {
-      this.router.navigateByUrl('/homeAdmin');
-    }
+   if (this.checkboxVar === true || loginSession) {
+    this.router.navigateByUrl('/homeAdmin');
+  } 
+    
   }
 
   addUser(user: Usuario[]) {
